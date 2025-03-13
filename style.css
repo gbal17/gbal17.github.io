@@ -26,19 +26,14 @@ body {
     min-width: 250px; /* Ensure stability */
 }
 
-/* .profile-img {
+.profile-img {
     width: 100%; /* Make the image take up the full width of its container */
     max-width: 250px; /* Optional: Set a max width to maintain structure */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Ensures the image fills the space */
     display: block; /* Remove extra inline spacing */
     margin: 0 auto 15px; /* Center the image */
-} */
-.profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+} 
 
 
 .profile h2 {
