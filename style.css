@@ -1,0 +1,82 @@
+/* Simple and Clean Design */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #fff;
+    padding: 40px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #666;
+}
+
+p {
+    font-size: 1em;
+    color: #555;
+}
+
+.social-links a {
+    margin: 10px;
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: 600;
+}
+
+.about, .projects {
+    background: white;
+    padding: 40px 0;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.projects ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.projects ul li {
+    margin: 10px 0;
+}
+
+.projects ul li a {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: 600;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-top: 20px;
+}
