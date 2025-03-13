@@ -1,82 +1,49 @@
-/* Simple and Clean Design */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    text-align: center;
-    color: #333;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-}
-
-header {
-    background-color: #fff;
-    padding: 40px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-h1 {
-    font-size: 2em;
-    margin: 10px 0;
-}
-
-h2 {
-    font-size: 1.2em;
-    font-weight: 300;
-    color: #666;
-}
-
-p {
-    font-size: 1em;
-    color: #555;
-}
-
-.social-links a {
-    margin: 10px;
-    text-decoration: none;
-    color: #0073e6;
-    font-weight: 600;
-}
-
-.about, .projects {
-    background: white;
-    padding: 40px 0;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.projects ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.projects ul li {
-    margin: 10px 0;
-}
-
-.projects ul li a {
-    text-decoration: none;
-    color: #0073e6;
-    font-weight: 600;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    margin-top: 20px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giuseppe Baldassarre | Researcher & GIS Specialist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="profile.jpg" alt="Giuseppe Baldassarre" class="profile-img">
+            <h1>Giuseppe Baldassarre</h1>
+            <h2>Data Scientist | GIS & Remote Sensing | Researcher</h2>
+            <p>Passionate about geographic information systems, remote sensing, and sustainable resource management.</p>
+            <div class="social-links">
+                <a href="https://github.com/gbal17" target="_blank">GitHub</a>
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="CV.pdf" target="_blank">CV</a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+    
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a researcher specializing in geospatial data science, GIS, and remote sensing. My work focuses on sustainable natural resources management and environmental governance.</p>
+        </div>
+    </section>
+    
+    <section class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="https://github.com/gbal17/GEEMMM" target="_blank">GEEMMM: Google Earth Engine Mangrove Mapping</a></li>
+                <li><a href="https://github.com/gbal17/MODIS_tools" target="_blank">MODIS Tools: Python scripts for monitoring floods</a></li>
+                <li><a href="https://github.com/gbal17/LFMC_maps" target="_blank">LFMC Maps: Near real-time LFMC mapping for Portugal</a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Giuseppe Baldassarre | Built with ❤️ and GitHub Pages</p>
+        </div>
+    </footer>
+</body>
+</html>
