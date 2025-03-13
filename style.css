@@ -1,23 +1,28 @@
-/* Simple and Clean Design */
+/* Global Styling */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    text-align: center;
     color: #333;
 }
 
+/* Container Layout */
 .container {
-    width: 80%;
+    display: flex;
+    max-width: 1100px;
     margin: auto;
     padding: 20px;
 }
 
-header {
-    background-color: #fff;
-    padding: 40px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+/* Left Profile Section */
+.profile {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
 }
 
 .profile-img {
@@ -25,58 +30,82 @@ header {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-h1 {
-    font-size: 2em;
+.profile h2 {
     margin: 10px 0;
+    font-size: 1.5em;
 }
 
-h2 {
-    font-size: 1.2em;
-    font-weight: 300;
-    color: #666;
-}
-
-p {
-    font-size: 1em;
+.profile h3 {
+    font-size: 1.1em;
     color: #555;
 }
 
-.social-links a {
+.profile p {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Icons */
+.icons a {
+    font-size: 1.5em;
     margin: 10px;
-    text-decoration: none;
     color: #0073e6;
-    font-weight: 600;
+    text-decoration: none;
 }
 
-.about, .projects {
+.icons a:hover {
+    color: #005bb5;
+}
+
+/* CV Download Button */
+.cv-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #0073e6;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cv-btn:hover {
+    background: #005bb5;
+}
+
+/* Right Content Section */
+.content {
+    flex: 1;
+    margin-left: 30px;
+}
+
+section {
     background: white;
-    padding: 40px 0;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.projects ul {
+h1, h2 {
+    color: #0073e6;
+}
+
+/* Interests & Education Lists */
+ul {
     list-style-type: none;
     padding: 0;
 }
 
-.projects ul li {
-    margin: 10px 0;
+ul li {
+    padding: 5px 0;
 }
 
-.projects ul li a {
-    text-decoration: none;
-    color: #0073e6;
-    font-weight: 600;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    margin-top: 20px;
+/* Email */
+.email {
+    font-size: 0.9em;
+    color: #555;
 }
