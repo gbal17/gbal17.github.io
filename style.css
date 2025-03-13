@@ -26,18 +26,12 @@ body {
 }
 
 .profile-img {
-    .profile-img {
-    width: 200px;  /* Keep the size as needed */
-    height: auto;  /* Maintain aspect ratio */
-    border-radius: 0;  /* Remove the circular shape */
-}
-
-/*     width: 200px;
+    width: 200px;
     height: 200px;
-    border-radius: 50%;
+    border-radius: 0%;
     object-fit: cover;
     margin-bottom: 15px;
-} */
+}
 
 .profile h2 {
     margin: 10px 0;
