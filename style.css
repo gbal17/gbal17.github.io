@@ -22,7 +22,8 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 25%;
+    width: 25%; /* Keep profile area the same */
+    min-width: 250px; /* Ensure stability */
 }
 
 .profile-img {
@@ -80,6 +81,7 @@ body {
 /* Right Content Section */
 .content {
     flex: 1.5;
+    flex-grow: 2; /* Expand the right section without affecting the profile */
     margin-left: 30px;
 }
 
