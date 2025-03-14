@@ -99,6 +99,9 @@ section {
     line-height: 1.2; /* 🔹 Reduced spacing between text */
     margin-bottom: 3px; /* 🔹 Reduced spacing between paragraphs */
 }
+.about p {
+    margin-bottom: 2px; /* 🔹 Reduce space between paragraphs in About Me */
+}
 
 /* 🔹 Retained the original blue color for session titles */
 h1, h2 {
