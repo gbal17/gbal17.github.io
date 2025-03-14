@@ -121,3 +121,12 @@ ul li {
     font-size: 0.9em;
     color: #555;
 }
+
+/* Reduce spacing between rows in Interests, Affiliations, and Education */
+.interests p,
+.affiliations p,
+.education p {
+    margin-bottom: 3px; /* Reduce space between rows */
+    line-height: 1.2; /* Reduce line spacing */
+}
+
