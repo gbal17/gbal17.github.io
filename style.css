@@ -102,7 +102,8 @@ section {
 
 h1, h2 {
     color: #0073e6;
-    margin-bottom: 8px; /* Reduced from default spacing */
+    margin-top: 5px; /* Reduced from default (~20px) */
+    margin-bottom: 5px; /* Tightens spacing below title */
 }
 
 /* Interests & Education Lists */
