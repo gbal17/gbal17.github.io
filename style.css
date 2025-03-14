@@ -102,9 +102,10 @@ section {
 
 /* 🔹 Retained the original blue color for session titles */
 h1, h2 {
-    font-size: 1.2em; /* 🔹 Reduced font size */
-    margin-bottom: 2px; /* 🔹 Reduced space between title and first line */
-    color: #0073e6; /* 🔹 Kept the original blue color */
+    font-size: 1.2em;
+    margin-bottom: 5px; /* 🔹 Set same margin for consistency */
+    margin-top: 10px; /* 🔹 Ensure equal spacing above the title */
+    color: #0073e6;
 }
 
 /* Interests & Education Lists */
@@ -151,16 +152,16 @@ ul {
 
 .publications {
     background: white;
-    padding: 5px 15px; /* Matches Affiliations & Education */
-    margin-bottom: 10px; /* Matches Affiliations & Education */
+    padding: 8px 15px; /* 🔹 Increase top padding to match Education */
+    margin-bottom: 10px; /* Keep same bottom spacing */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .publications h2 {
-    font-size: 1.2em; /* Same size as other sections */
-    color: #0073e6; /* Same blue as titles */
-    margin-bottom: 1px; /* 🔹 Reduce gap between title & first item */
+    font-size: 1.2em;
+    color: #0073e6;
+    margin-bottom: 5px; /* 🔹 Matches Education section */
 }
 
 .publications ul {
