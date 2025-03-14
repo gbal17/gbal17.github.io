@@ -131,13 +131,13 @@ ul {
 .affiliations p,
 .education p {
     margin-bottom: 2px; /* 🔹 Reduce space between rows */
-    line-height: 1; /* 🔹 Keep it readable but more compact */
+    line-height: .5; /* 🔹 Keep it readable but more compact */
 }
 
 /* Add more space at the bottom of Affiliation and Education boxes */
 .affiliations,
 .education {
-    padding-bottom: 15px; /* 🔹 Increased bottom padding */
+    padding-bottom: 10px; /* 🔹 Increased bottom padding */
 }
 
 
