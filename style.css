@@ -127,13 +127,19 @@ ul {
     text-align: left;
 }
 
-/* 🔹 Reduce spacing between rows in Interests, Affiliations, and Education */
-.interests p,
+/* Reduce spacing between rows but add space at the bottom */
 .affiliations p,
 .education p {
-    margin-bottom: .2px; /* 🔹 Reduce space between rows */
-    line-height: .5; /* 🔹 Keep it readable but more compact */
+    margin-bottom: 2px; /* 🔹 Reduce space between rows */
+    line-height: 1; /* 🔹 Keep it readable but more compact */
 }
+
+/* Add more space at the bottom of Affiliation and Education boxes */
+.affiliations,
+.education {
+    padding-bottom: 15px; /* 🔹 Increased bottom padding */
+}
+
 
 /* Email */
 .email {
