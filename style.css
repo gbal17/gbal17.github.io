@@ -88,7 +88,7 @@ body {
 /* Reduced padding and margin to make content more compact */
 section {
     background: white;
-    padding: 3px 15px; /* 🔹 Reduced top padding further */
+    padding: 3px 15px; /* 🔹 Reduced top padding */
     margin-bottom: 3px; /* 🔹 Reduced space between sections */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -100,15 +100,11 @@ section {
     margin-bottom: 3px; /* 🔹 Reduced spacing between paragraphs */
 }
 
-/* 🔹 Reduced title font sizes to make layout more compact */
-h1 {
-    font-size: 1.4em;
+/* 🔹 Retained the original blue color for session titles */
+h1, h2 {
+    font-size: 1.2em; /* 🔹 Reduced font size */
     margin-bottom: 2px; /* 🔹 Reduced space between title and first line */
-}
-
-h2 {
-    font-size: 1.2em;
-    margin-bottom: 2px; /* 🔹 Reduced space between title and first line */
+    color: #0073e6; /* 🔹 Kept the original blue color */
 }
 
 /* Interests & Education Lists */
