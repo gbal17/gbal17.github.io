@@ -86,16 +86,24 @@ body {
     margin-left: 30px;
 }
 
+/* Reduced padding and margin to make content more compact */
 section {
     background: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 15px; /* Reduced from 20px */
+    margin-bottom: 10px; /* Reduced from 20px */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Reduced line height to tighten text spacing */
+.content p {
+    line-height: 1.2; /* Reduced from default ~1.5 */
+    margin-bottom: 5px; /* Reduced spacing between paragraphs */
+}
+
 h1, h2 {
     color: #0073e6;
+    margin-bottom: 8px; /* Reduced from default spacing */
 }
 
 /* Interests & Education Lists */
@@ -105,7 +113,7 @@ ul {
 }
 
 ul li {
-    padding: 5px 0;
+    padding: 3px 0; /* Reduced spacing between list items */
 }
 
 /* Email */
