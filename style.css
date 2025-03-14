@@ -22,17 +22,17 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 25%; /* Keep profile area the same */
-    min-width: 250px; /* Ensure stability */
+    width: 25%;
+    min-width: 250px;
 }
 
 .profile-img {
-    width: 100%; /* Make the image take up the full width of its container */
-    max-width: 250px; /* Optional: Set a max width to maintain structure */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensures the image fills the space */
-    display: block; /* Remove extra inline spacing */
-    margin: 0 auto 15px; /* Center the image */
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
 } 
 
 .profile h2 {
@@ -88,22 +88,27 @@ body {
 /* Reduced padding and margin to make content more compact */
 section {
     background: white;
-    padding: 5px 15px; /* Reduced top padding from 15px to 10px */
-    margin-bottom: 5px; /* Reduced bottom margin from 10px to 5px */
+    padding: 3px 15px; /* 🔹 Reduced top padding further */
+    margin-bottom: 3px; /* 🔹 Reduced space between sections */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Reduced line height to tighten text spacing */
 .content p {
-    line-height: 1.2; /* Reduced from default ~1.5 */
-    margin-bottom: 5px; /* Reduced spacing between paragraphs */
+    line-height: 1.2; /* 🔹 Reduced spacing between text */
+    margin-bottom: 3px; /* 🔹 Reduced spacing between paragraphs */
 }
 
-h1, h2 {
-    color: #0073e6;
-    margin-top: 1px; /* Reduced from default (~20px) */
-    margin-bottom: 1px; /* Tightens spacing below title */
+/* 🔹 Reduced title font sizes to make layout more compact */
+h1 {
+    font-size: 1.4em;
+    margin-bottom: 2px; /* 🔹 Reduced space between title and first line */
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 2px; /* 🔹 Reduced space between title and first line */
 }
 
 /* Interests & Education Lists */
@@ -112,26 +117,26 @@ ul {
     padding: 0;
 }
 
-/* Interests Section: Two Items Per Row */
+/* 🔹 Interests Section: Two Items Per Row */
 .interests-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Space between items */
+    gap: 5px; /* 🔹 Reduced space between items */
     list-style-type: none;
     padding: 0;
 }
 
 .interests-list li {
-    width: 48%; /* Each item takes half the width */
+    width: 48%; /* 🔹 Each item takes half the width */
     text-align: left;
 }
 
-/* Reduce spacing between rows in Interests, Affiliations, and Education */
+/* 🔹 Reduce spacing between rows in Interests, Affiliations, and Education */
 .interests p,
 .affiliations p,
 .education p {
-    margin-bottom: .5px; /* Reduce space between rows */
-    line-height: .5; /* Keep it readable but more compact */
+    margin-bottom: 3px; /* 🔹 Reduce space between rows */
+    line-height: 1; /* 🔹 Keep it readable but more compact */
 }
 
 /* Email */
