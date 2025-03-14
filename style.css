@@ -147,3 +147,28 @@ ul {
     font-size: 0.9em;
     color: #555;
 }
+
+
+.publications {
+    background: white;
+    padding: 5px 15px; /* Matches Affiliations & Education */
+    margin-bottom: 10px; /* Matches Affiliations & Education */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.publications h2 {
+    font-size: 1.2em; /* Same size as other sections */
+    color: #0073e6; /* Same blue as titles */
+    margin-bottom: 5px; /* Reduce gap between title & first item */
+}
+
+.publications ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.publications ul li {
+    padding: 2px 0; /* Reduce space between lines */
+    line-height: 1.2; /* Make it more compact */
+}
