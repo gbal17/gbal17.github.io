@@ -160,7 +160,7 @@ ul {
 .publications h2 {
     font-size: 1.2em; /* Same size as other sections */
     color: #0073e6; /* Same blue as titles */
-    margin-bottom: 2px; /* 🔹 Reduce gap between title & first item */
+    margin-bottom: 1px; /* 🔹 Reduce gap between title & first item */
 }
 
 .publications ul {
