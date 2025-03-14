@@ -129,7 +129,7 @@ ul {
 .interests p,
 .affiliations p,
 .education p {
-    margin-bottom: 1px; /* Reduce space between rows */
+    margin-bottom: .5px; /* Reduce space between rows */
     line-height: .5; /* Keep it readable but more compact */
 }
 
