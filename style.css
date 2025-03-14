@@ -127,6 +127,6 @@ ul li {
 .affiliations p,
 .education p {
     margin-bottom: 3px; /* Reduce space between rows */
-    line-height: 1.2; /* Reduce line spacing */
+    line-height: 0.8; /* Reduce line spacing */
 }
 
