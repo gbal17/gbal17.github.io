@@ -88,8 +88,8 @@ body {
 /* Reduced padding and margin to make content more compact */
 section {
     background: white;
-    padding: 15px; /* Reduced from 20px */
-    margin-bottom: 10px; /* Reduced from 20px */
+    padding: 10px 15px; /* Reduced top padding from 15px to 10px */
+    margin-bottom: 5px; /* Reduced bottom margin from 10px to 5px */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
