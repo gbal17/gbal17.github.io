@@ -100,9 +100,15 @@ section {
     margin-bottom: 3px; /* 🔹 Reduced spacing between paragraphs */
 }
 .about p {
-    margin-bottom: 0px; /* 🔹 Further reduces space between paragraphs */
-    line-height: 1.1;  /* 🔹 Reduces the height of each line */
+    margin-bottom: 0px !important; /* 🔹 Remove bottom margin */
+    padding-bottom: 0px !important; /* 🔹 Ensure no extra padding */
+    line-height: 1.1; /* 🔹 Reduce spacing between lines */
 }
+
+.about {
+    padding-bottom: 5px !important; /* 🔹 Reduce extra spacing below */
+}
+
 
 /* 🔹 Retained the original blue color for session titles */
 h1, h2 {
