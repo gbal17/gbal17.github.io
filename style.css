@@ -132,7 +132,7 @@ ul {
 .affiliations p,
 .education p {
     margin-bottom: .2px; /* 🔹 Reduce space between rows */
-    line-height: 1; /* 🔹 Keep it readable but more compact */
+    line-height: .5; /* 🔹 Keep it readable but more compact */
 }
 
 /* Email */
