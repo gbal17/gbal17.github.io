@@ -35,7 +35,6 @@ body {
     margin: 0 auto 15px; /* Center the image */
 } 
 
-
 .profile h2 {
     margin: 10px 0;
     font-size: 1.5em;
@@ -112,8 +111,26 @@ ul {
     padding: 0;
 }
 
-ul li {
-    padding: 3px 0; /* Reduced spacing between list items */
+/* Interests Section: Two Items Per Row */
+.interests-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between items */
+    list-style-type: none;
+    padding: 0;
+}
+
+.interests-list li {
+    width: 48%; /* Each item takes half the width */
+    text-align: left;
+}
+
+/* Reduce spacing between rows in Interests, Affiliations, and Education */
+.interests p,
+.affiliations p,
+.education p {
+    margin-bottom: 2px; /* Reduce space between rows */
+    line-height: 1; /* Keep it readable but more compact */
 }
 
 /* Email */
@@ -121,12 +138,3 @@ ul li {
     font-size: 0.9em;
     color: #555;
 }
-
-/* Reduce spacing between rows in Interests, Affiliations, and Education */
-.interests p,
-.affiliations p,
-.education p {
-    margin-bottom: 3px; /* Reduce space between rows */
-    line-height: 0.8; /* Reduce line spacing */
-}
-
