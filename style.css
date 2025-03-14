@@ -128,6 +128,7 @@ ul {
 }
 
 /* Reduce spacing between rows but add space at the bottom */
+.interests p,
 .affiliations p,
 .education p {
     margin-bottom: 2px; /* 🔹 Reduce space between rows */
