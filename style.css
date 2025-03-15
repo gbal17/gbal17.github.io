@@ -198,7 +198,7 @@ ul {
 }
 
 .quote-author {
-    font-size: 1.1em; /* ✅ Slightly bigger author name */
+    font-size: 0.8em; /* ✅ Slightly bigger author name */
     font-weight: bold;
     display: block;
     margin-top: 5px;
