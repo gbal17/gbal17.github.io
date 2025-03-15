@@ -247,7 +247,7 @@ ul {
     font-size: 1.3em; /* ✅ Same size as the quote */
     font-style: normal; /* ✅ Same as the quote */
     text-align: center;
-    color: #0073e6; /* ✅ Same blue as section titles */
+    color: #0073e6 !important; /* Force same blue as section titles */
     margin-top: 25px; /* ✅ Increased space above "My Journey, So Far..." */
     margin-bottom: 10px; /* ✅ Space between title and map */
     font-weight: normal; /* ✅ Ensures no bold effect */
