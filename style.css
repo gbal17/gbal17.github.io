@@ -124,19 +124,21 @@ ul {
     padding: 0;
 }
 
-/* 🔹 Interests Section: Two Items Per Row */
+/* Interests Section: Display all items in one line */
 .interests-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px; /* 🔹 Reduced space between items */
+    gap: 15px; /* Adjust spacing between items */
     list-style-type: none;
     padding: 0;
+    justify-content: center; /* Aligns items properly */
 }
 
 .interests-list li {
-    width: 48%; /* 🔹 Each item takes half the width */
-    text-align: left;
+    display: inline-flex; /* Ensures items stay in one row */
+    white-space: nowrap; /* Prevents text from breaking into multiple lines */
 }
+
 
 /* Reduce spacing between rows but add space at the bottom */
 .interests p,
