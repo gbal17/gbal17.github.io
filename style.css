@@ -235,7 +235,7 @@ ul {
 /* Journey Title Styling */
 .journey-title {
     font-family: "American Typewriter", serif; /* ✅ Match the quote font */
-    font-size: 1.3em; /* ✅ Same size as the quote */
+    font-size: 1.0em; /* ✅ Same size as the quote */
     font-style: normal; /* ✅ Same as the quote */
     text-align: center;
     color: #333; /* ✅ Darker text for contrast */
