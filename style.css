@@ -206,10 +206,10 @@ ul {
 
 /* Map Image Styling */
 .map-image {
-    width: 100%; /* Make it fit the sidebar width */
-    max-width: 250px; /* Keep it proportional */
-    display: block; /* Remove any inline spacing */
-    margin: 15px auto; /* Center the image */
-    border-radius: 8px; /* Soft rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%; /* ✅ Make it fit the sidebar width */
+    max-width: 250px; /* ✅ Keep it proportional */
+    display: block; /* ✅ Remove any inline spacing */
+    margin: 15px auto; /* ✅ Center the image */
+    border-radius: 8px; /* ✅ Soft rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* ✅ Subtle shadow */
 }
