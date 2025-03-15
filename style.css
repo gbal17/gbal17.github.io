@@ -184,3 +184,21 @@ ul {
     line-height: 1.2; /* Make it more compact */
 }
 
+
+/* Quote Styling */
+.quote {
+    font-family: 'Dancing Script', cursive; /* Beautiful handwriting-style font */
+    font-size: 1.2em;
+    font-style: italic;
+    text-align: center;
+    color: #444; /* Soft dark grey */
+    margin-top: 15px; /* Space between CV and quote */
+    padding: 10px;
+}
+
+.quote-author {
+    font-size: 1em;
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+}
