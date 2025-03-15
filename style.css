@@ -188,7 +188,7 @@ ul {
 /* Quote Styling */
 .quote {
     font-family: "American Typewriter", serif !important; /* ✅ Ensure correct font */
-    font-size: 0.9em !important; /* ✅ Force the font size update */
+    font-size: 0.8em !important; /* ✅ Force the font size update */
     font-style: normal;
     text-align: center;
     color: #222; /* ✅ Slightly darker for better contrast */
@@ -199,7 +199,7 @@ ul {
 
 /* Quote Author */
 .quote-author {
-    font-size: 0.9em !important; /* ✅ Slightly bigger author name */
+    font-size: 0.8em !important; /* ✅ Slightly bigger author name */
     font-weight: bold;
     display: block;
     margin-top: 5px;
