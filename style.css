@@ -218,8 +218,10 @@ ul {
 .journey-title {
     font-family: "American Typewriter", serif; /* ✅ Match the quote font */
     font-size: 1.3em; /* ✅ Same size as the quote */
-    font-weight: bold;
+    font-style: italic; /* ✅ Same as the quote */
     text-align: center;
     color: #333; /* ✅ Darker text for contrast */
     margin-bottom: 10px; /* ✅ Space between title and map */
+    font-weight: normal; /* ✅ Ensures no bold effect */
 }
+
