@@ -187,17 +187,18 @@ ul {
 
 /* Quote Styling */
 .quote {
-    font-family: 'Dancing Script', cursive; /* Beautiful handwriting-style font */
-    font-size: 1.2em;
+    font-family: "American Typewriter", serif; /* ✅ Use American Typewriter font */
+    font-size: 1.3em; /* ✅ Slightly increase font size */
     font-style: italic;
     text-align: center;
-    color: #444; /* Soft dark grey */
-    margin-top: 15px; /* Space between CV and quote */
+    color: #333; /* ✅ Darker text for contrast */
+    margin-top: 15px; /* ✅ Space between CV and quote */
     padding: 10px;
+    line-height: 1.4; /* ✅ Improve readability */
 }
 
 .quote-author {
-    font-size: 1em;
+    font-size: 1.1em; /* ✅ Slightly bigger author name */
     font-weight: bold;
     display: block;
     margin-top: 5px;
