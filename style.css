@@ -187,22 +187,24 @@ ul {
 
 /* Quote Styling */
 .quote {
-    font-family: "American Typewriter", serif; /* ✅ Use American Typewriter font */
-    font-size: 0.5em; /* ✅ Slightly increase font size */
-    font-style: normal;
+    font-family: "American Typewriter", serif !important; /* ✅ Ensure correct font */
+    font-size: 1.3em !important; /* ✅ Force the font size update */
+    font-style: italic;
     text-align: center;
-    color: #333; /* ✅ Darker text for contrast */
-    margin-top: 15px; /* ✅ Space between CV and quote */
-    padding: 10px;
-    line-height: 1.4; /* ✅ Improve readability */
+    color: #222; /* ✅ Slightly darker for better contrast */
+    margin-top: 20px;
+    padding: 15px;
+    line-height: 1.5 !important; /* ✅ Ensure better readability */
 }
 
+/* Quote Author */
 .quote-author {
-    font-size: 1.0em; /* ✅ Slightly bigger author name */
+    font-size: 1.1em !important; /* ✅ Slightly bigger author name */
     font-weight: bold;
     display: block;
     margin-top: 5px;
 }
+
 
 /* Map Image Styling */
 .map-image {
