@@ -128,16 +128,20 @@ ul {
 .interests-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px; /* Adjust spacing between items */
+    gap: 15px;
     list-style-type: none;
     padding: 0;
-    justify-content: center; /* Aligns items properly */
+    justify-content: space-between; /* 🔹 Justify items */
+    text-align: justify; /* 🔹 Ensure text is justified */
 }
 
 .interests-list li {
-    display: inline-flex; /* Ensures items stay in one row */
-    white-space: nowrap; /* Prevents text from breaking into multiple lines */
+    display: inline-flex;
+    white-space: nowrap;
+    flex-grow: 1; /* 🔹 Ensure items distribute evenly */
+    justify-content: flex-start; /* 🔹 Align items properly */
 }
+
 
 
 /* Reduce spacing between rows but add space at the bottom */
