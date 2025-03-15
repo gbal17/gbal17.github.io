@@ -188,8 +188,8 @@ ul {
 /* Quote Styling */
 .quote {
     font-family: "American Typewriter", serif !important; /* ✅ Ensure correct font */
-    font-size: 1.3em !important; /* ✅ Force the font size update */
-    font-style: italic;
+    font-size: 0.5em !important; /* ✅ Force the font size update */
+    font-style: normal;
     text-align: center;
     color: #222; /* ✅ Slightly darker for better contrast */
     margin-top: 20px;
