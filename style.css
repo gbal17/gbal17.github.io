@@ -127,18 +127,18 @@ ul {
 /* Interests Section: Display all items in one line */
 .interests-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* 🔹 Reduce spacing between items */
+    flex-wrap: wrap; /* ✅ Allow natural line breaking */
+    gap: 8px; /* ✅ Small space between items */
     list-style-type: none;
     padding: 0;
-    justify-content: flex-start; /* 🔹 Align items properly */
 }
 
 .interests-list li {
-    flex: 1 1 calc(33.33% - 10px); /* 🔹 Each item takes equal width */
     display: flex;
     align-items: center;
-    white-space: nowrap;
+    white-space: nowrap; /* ✅ Prevents text from wrapping */
+    padding: 2px 10px; /* ✅ Small horizontal spacing */
+    flex: 0 1 auto; /* ✅ Adjusts based on content size */
 }
 
 
