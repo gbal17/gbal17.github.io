@@ -255,6 +255,8 @@ ul {
 }
 
 
+
+/* GEE Apps Section */
 .gee-apps {
     background: white;
     padding: 8px 15px;
@@ -275,9 +277,13 @@ ul {
 }
 
 .gee-apps li {
-    padding: 3px 0;
-    font-size: 1em;
+    padding: 2px 0; /* Reduce space between items */
     line-height: 1.2;
+}
+
+.gee-apps li::before {
+    content: "🛰️"; /* Same style as other list items */
+    margin-right: 5px;
 }
 
 .gee-apps a {
