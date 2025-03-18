@@ -297,5 +297,20 @@ ul {
     text-decoration: underline;
 }
 
+/* Standardized link style for all links in parentheses */
+.publications a,
+.gee-apps a {
+    text-decoration: none;
+    color: #0073e6; /* Keep links blue */
+    font-weight: normal;
+    font-style: italic; /* Make them stand out */
+}
+
+.publications a:hover,
+.gee-apps a:hover {
+    color: #005bb5;
+    text-decoration: underline;
+}
+
 
 
