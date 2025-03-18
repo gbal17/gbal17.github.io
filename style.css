@@ -261,6 +261,7 @@ ul {
     background: white;
     padding: 8px 15px; /* Ensure same padding as Publications */
     margin-bottom: 3px; /* Reduce bottom margin to match other sections */
+    margin-top: 3px; /* Reduce top margin to match Publications */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
