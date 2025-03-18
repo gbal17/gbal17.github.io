@@ -288,13 +288,14 @@ ul {
 
 .gee-apps a {
     text-decoration: none;
-    color: #000; /* 🔹 Make links BLACK */
+    color: #0073e6; /* Same blue color as 'read' in Publications */
     font-weight: normal;
 }
 
 .gee-apps a:hover {
-    color: #444; /* 🔹 Slightly lighter black on hover */
+    color: #005bb5;
     text-decoration: underline;
 }
+
 
 
