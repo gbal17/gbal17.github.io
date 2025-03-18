@@ -277,21 +277,23 @@ ul {
 }
 
 .gee-apps li {
-    padding: 2px 0; /* Reduce space between items */
-    line-height: 1.2;
+    padding: 1px 0; /* Match spacing with other sections */
+    line-height: 1.1; /* Slightly reduce line spacing */
 }
 
 .gee-apps li::before {
-    content: "🛰️"; /* Same style as other list items */
-    margin-right: 5px;
+    content: none; /* Removes duplicate satellite icon */
 }
+
 
 .gee-apps a {
     text-decoration: none;
-    color: #0073e6;
-    font-weight: bold;
+    color: #0073e6; /* Keep links blue */
+    font-weight: normal; /* Ensure normal text weight */
 }
 
 .gee-apps a:hover {
     color: #005bb5;
+    text-decoration: underline;
 }
+
