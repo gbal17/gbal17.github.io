@@ -259,29 +259,29 @@ ul {
 /* GEE Apps Section */
 .gee-apps {
     background: white;
-    padding: 8px 15px; /* Ensure same padding as Publications */
-    margin-bottom: 3px; /* Reduce bottom margin to match other sections */
-    margin-top: 3px; /* Reduce top margin to match Publications */
+    padding: 8px 15px; /* ✅ Match Publications */
+    margin-bottom: 5px; /* ✅ Same bottom margin as all sections */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .gee-apps h2 {
     font-size: 1.2em;
-    color: #0073e6; /* Match section titles */
+    color: #0073e6; /* ✅ Match section titles */
     margin-bottom: 5px;
 }
 
 .gee-apps ul {
     list-style-type: none;
     padding: 0;
-    margin: 0; /* Remove extra space */
+    margin: 0; /* ✅ Remove extra space */
 }
 
 .gee-apps li {
-    padding: 2px 0; /* Match spacing with Publications */
-    line-height: 1.2; /* Reduce vertical spacing */
+    padding: 2px 0; /* ✅ Match spacing with Publications */
+    line-height: 1.2; /* ✅ Ensure proper text density */
 }
+
 
 .gee-apps li::before {
     content: none; /* Removes duplicate satellite icon */
