@@ -288,12 +288,13 @@ ul {
 
 .gee-apps a {
     text-decoration: none;
-    color: #0073e6; /* Keep links blue */
-    font-weight: normal; /* Ensure normal text weight */
+    color: #000; /* 🔹 Make links BLACK */
+    font-weight: normal;
 }
 
 .gee-apps a:hover {
-    color: #005bb5;
+    color: #444; /* 🔹 Slightly lighter black on hover */
     text-decoration: underline;
 }
+
 
