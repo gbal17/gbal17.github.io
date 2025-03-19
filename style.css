@@ -178,7 +178,7 @@ ul {
 .publications h2 {
     font-size: 1.2em;
     color: #0073e6;
-    margin-bottom: 5px; /* 🔹 Matches Education section */
+    margin-bottom: 0px; /* 🔹 Matches Education section */
 }
 
 .publications ul {
