@@ -260,7 +260,7 @@ ul {
 .gee-apps {
     background: white;
     padding: 8px 15px; /* 🔹 Increase top padding to match Education */
-    margin-top: 15px; /* Ensure consistent spacing */
+    margin-top: 1px; /* Ensure consistent spacing */
     margin-bottom: 10px; /* Keep same bottom spacing */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
