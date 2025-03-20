@@ -118,7 +118,8 @@ h1, h2 {
     font-size: 1.2em;
     margin-bottom: 5px;
     margin-top: 10px;
-    color: #008E97 !important; /* Muted dark blue */
+    /* color: #008E97 !important; */
+    color: #622454 !important; /* Muted dark blue */
 }
 
 /* Interests Section */
