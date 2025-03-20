@@ -118,7 +118,7 @@ h1, h2 {
     font-size: 1.2em;
     margin-bottom: 5px;
     margin-top: 10px;
-    color: #0073e6;
+    color: #888 !important; /* Light gray */
 }
 
 /* Interests Section */
