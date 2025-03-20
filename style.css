@@ -296,3 +296,14 @@ a:visited {
     color: #005bb5 !important;
     text-decoration: underline !important;
 }
+
+.journey-title {
+    font-family: "American Typewriter", serif;
+    font-size: 1.3em;
+    font-style: normal;
+    text-align: center;
+    color: #6B7280 !important; /* Modern Slate Gray */
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
