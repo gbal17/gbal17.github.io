@@ -121,7 +121,9 @@ h1, h2 {
     /* color: #008E97 !important; */
     /* color: #9d4a74 !important; */
     /* color: #af138a !important;  */
-    color: #9d9a9b !important;
+    /* color: #9d9a9b !important; */
+    color: #cf9b39 !important; 
+
 }
 
 /* Interests Section */
@@ -302,7 +304,8 @@ a:visited {
     font-size: 1.3em;
     font-style: normal;
     text-align: center;
-    color: #9d9a9b !important; /* Modern Slate Gray */
+    /* color: #9d9a9b !important;  */
+    color: #cf9b39 !important; 
     margin-top: 25px;
     margin-bottom: 10px;
     font-weight: bold !important; /* Make it bold */
