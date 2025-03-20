@@ -64,18 +64,19 @@ body {
 
 /* CV Download Button */
 .cv-btn {
-    color: #0073e6 !important; /* Make the text blue */
-    text-decoration: none !important; /* Remove underline */
-    font-weight: normal; /* Ensure normal font weight */
-    background: none !important; /* Remove the blue box */
+    color: #0073e6 !important; /* Blue text */
+    text-decoration: none !important; /* No underline by default */
+    font-weight: bold; /* Make it stand out */
+    font-size: 1.2em !important; /* Increase font size */
+    background: none !important; /* Remove any background */
     padding: 0 !important; /* Remove padding */
-    border: none !important; /* Ensure no border */
-    display: inline; /* Make it behave like a normal link */
+    border: none !important; /* No border */
+    display: inline; /* Behave like a normal link */
 }
 
 .cv-btn:hover {
     color: #005bb5 !important; /* Darker blue on hover */
-    text-decoration: underline !important; /* Add underline on hover */
+    text-decoration: underline !important; /* Underline on hover */
 }
 
 
