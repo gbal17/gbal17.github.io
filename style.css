@@ -72,6 +72,7 @@ body {
     padding: 0 !important; /* Remove padding */
     border: none !important; /* No border */
     display: inline; /* Behave like a normal link */
+    margin-top: 5px !important; /* Reduce space between email and CV */
 }
 
 .cv-btn:hover {
@@ -154,6 +155,7 @@ h1, h2 {
 .email {
     font-size: 0.9em;
     color: #555;
+    margin-bottom: 5px !important; /* Reduce space below the email */
 }
 
 /* Publications Section */
