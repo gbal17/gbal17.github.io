@@ -81,54 +81,48 @@ body {
 /* Right Content Section */
 .content {
     flex: 1.5;
-    flex-grow: 2; /* Expand the right section without affecting the profile */
+    flex-grow: 2;
     margin-left: 30px;
 }
 
-/* Reduced padding and margin to make content more compact */
+/* Section Styling */
 section {
     background: white;
-    padding: 3px 15px; /* 🔹 Reduced top padding */
-    margin-bottom: 3px; /* 🔹 Reduced space between sections */
+    padding: 3px 15px;
+    margin-bottom: 3px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Reduced line height to tighten text spacing */
+/* Text Styling */
 .content p {
-    line-height: 1.2; /* 🔹 Reduced spacing between text */
-    margin-bottom: 3px; /* 🔹 Reduced spacing between paragraphs */
+    line-height: 1.2;
+    margin-bottom: 3px;
 }
+
 .about p {
-    margin-bottom: 0px !important; /* 🔹 Remove bottom margin */
-    padding-bottom: 0px !important; /* 🔹 Ensure no extra padding */
-    line-height: 1.1; /* 🔹 Reduce spacing between lines */
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    line-height: 1.1;
 }
 
 .about {
-    padding-bottom: 5px !important; /* 🔹 Reduce extra spacing below */
+    padding-bottom: 5px !important;
 }
 
-
-/* 🔹 Retained the original blue color for session titles */
+/* Section Titles */
 h1, h2 {
     font-size: 1.2em;
-    margin-bottom: 5px; /* 🔹 Set same margin for consistency */
-    margin-top: 10px; /* 🔹 Ensure equal spacing above the title */
+    margin-bottom: 5px;
+    margin-top: 10px;
     color: #0073e6;
 }
 
-/* Interests & Education Lists */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-/* Interests Section: Display all items in one line */
+/* Interests Section */
 .interests-list {
     display: flex;
-    flex-wrap: wrap; /* ✅ Natural wrapping */
-    gap: 5px 12px; /* ✅ Reduced vertical spacing, keeping horizontal space */
+    flex-wrap: wrap;
+    gap: 5px 12px;
     list-style-type: none;
     padding: 0;
 }
@@ -136,41 +130,35 @@ ul {
 .interests-list li {
     display: flex;
     align-items: center;
-    white-space: nowrap; /* ✅ Prevents text from wrapping */
-    padding: 1px 8px; /* ✅ Reducing spacing further */
-    flex: 0 1 auto; /* ✅ Adjusts based on content */
+    white-space: nowrap;
+    padding: 1px 8px;
+    flex: 0 1 auto;
 }
 
-
-
-
-
-/* Reduce spacing between rows but add space at the bottom */
+/* Reduced Spacing */
 .interests p,
 .affiliations p,
 .education p {
-    margin-bottom: 2px; /* 🔹 Reduce space between rows */
-    line-height: .5; /* 🔹 Keep it readable but more compact */
+    margin-bottom: 2px;
+    line-height: .5;
 }
 
-/* Add more space at the bottom of Affiliation and Education boxes */
 .affiliations,
 .education {
-    padding-bottom: 10px; /* 🔹 Increased bottom padding */
+    padding-bottom: 10px;
 }
 
-
-/* Email */
+/* Email Styling */
 .email {
     font-size: 0.9em;
     color: #555;
 }
 
-
+/* Publications Section */
 .publications {
     background: white;
-    padding: 8px 15px; /* 🔹 Increase top padding to match Education */
-    margin-bottom: 12.5px; /* Keep same bottom spacing */
+    padding: 8px 15px;
+    margin-bottom: 12.5px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -178,7 +166,7 @@ ul {
 .publications h2 {
     font-size: 1.2em;
     color: #0073e6;
-    margin-bottom: 5px; /* 🔹 Matches Education section */
+    margin-bottom: 5px;
 }
 
 .publications ul {
@@ -187,48 +175,43 @@ ul {
 }
 
 .publications ul li {
-    padding: 2px 0; /* Reduce space between lines */
-    line-height: 1.2; /* Make it more compact */
+    padding: 2px 0;
+    line-height: 1.2;
 }
-
 
 /* Quote Styling */
 .quote {
-    font-family: "American Typewriter", serif !important; /* ✅ Ensure correct font */
-    font-size: 0.8em !important; /* ✅ Force the font size update */
+    font-family: "American Typewriter", serif !important;
+    font-size: 0.8em !important;
     font-style: normal;
     text-align: center;
-    color: #222; /* ✅ Slightly darker for better contrast */
+    color: #222;
     margin-top: 20px;
     padding: 15px;
-    line-height: 1.5 !important; /* ✅ Ensure better readability */
+    line-height: 1.5 !important;
 }
 
-/* Quote Author */
 .quote-author {
-    font-size: 1.0em !important; /* ✅ Slightly bigger author name */
+    font-size: 1.0em !important;
     font-weight: bold;
     display: block;
     margin-top: 5px;
 }
 
-
-/* Map Image Styling */
+/* Map Styling */
 .map-image {
-    width: 100%; /* ✅ Make it fit the sidebar width */
-    max-width: 250px; /* ✅ Keep it proportional */
-    display: block; /* ✅ Remove any inline spacing */
-    margin: 15px auto; /* ✅ Center the image */
-    border-radius: 8px; /* ✅ Soft rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* ✅ Subtle shadow */
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-
-/* CV Download Button */
+/* CV Button */
 .cv-btn {
     display: inline-block;
-    margin-top: 20px; /* ✅ Increased space from 10px to 20px */
+    margin-top: 20px;
     padding: 10px 15px;
     background: #0073e6;
     color: white;
@@ -241,80 +224,68 @@ ul {
     background: #005bb5;
 }
 
-/* Journey Title Styling */
-.journey-title {
-    font-family: "American Typewriter", serif; /* ✅ Match the quote font */
-    font-size: 1.3em; /* ✅ Same size as the quote */
-    font-style: normal; /* ✅ Same as the quote */
-    text-align: center;
-    /* color: #333;  */
-    color: #0073e6 !important; /* Force same blue as section titles */
-    margin-top: 25px; /* ✅ Increased space above "My Journey, So Far..." */
-    margin-bottom: 10px; /* ✅ Space between title and map */
-    font-weight: normal; /* ✅ Ensures no bold effect */
-}
-
-
-
 /* GEE Apps Section */
 .gee-apps {
     background: white;
-    padding: 8px 15px; /* 🔹 Increase top padding to match Education */
-    margin-top: -10px; /* Ensure consistent spacing */
-    margin-bottom: 10px; /* Keep same bottom spacing */
+    padding: 8px 15px;
+    margin-top: -10px;
+    margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 .gee-apps h2 {
     font-size: 1.2em;
-    color: #0073e6; /* ✅ Match section titles */
+    color: #0073e6;
     margin-bottom: 5px;
 }
 
 .gee-apps ul {
     list-style-type: none;
     padding: 0;
-    margin: 0; /* ✅ Remove extra space */
+    margin: 0;
 }
 
 .gee-apps li {
-    padding: 2px 0; /* ✅ Match spacing with Publications */
-    line-height: 1.2; /* ✅ Ensure proper text density */
+    padding: 2px 0;
+    line-height: 1.2;
 }
-
 
 .gee-apps li::before {
-    content: none; /* Removes duplicate satellite icon */
+    content: none;
 }
 
-
-.gee-apps a {
-    text-decoration: none;
-    color: #0073e6; /* Same blue color as 'read' in Publications */
+/* Standardized Link Styling */
+a {
+    color: #0073e6 !important; /* Blue color */
+    text-decoration: none !important;
     font-weight: normal;
 }
 
-.gee-apps a:hover {
-    color: #005bb5;
-    text-decoration: underline;
+a:hover {
+    color: #005bb5 !important;
+    text-decoration: underline !important;
 }
 
-/* Standardized link style for all links in parentheses */
+/* Prevent visited links from turning purple */
+a:visited {
+    color: #0073e6 !important;
+    text-decoration: none !important;
+}
+
+/* Specific Sections */
+.affiliations a,
+.education a,
 .publications a,
 .gee-apps a {
-    text-decoration: none;
-    color: #0073e6; /* Keep links blue */
+    color: #0073e6 !important;
     font-weight: normal;
-    font-style: italic; /* Make them stand out */
 }
 
+.affiliations a:hover,
+.education a:hover,
 .publications a:hover,
 .gee-apps a:hover {
-    color: #005bb5;
-    text-decoration: underline;
+    color: #005bb5 !important;
+    text-decoration: underline !important;
 }
-
-
-
