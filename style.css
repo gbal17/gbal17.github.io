@@ -149,8 +149,8 @@ h1, h2 {
 .interests p,
 .affiliations p,
 .education p {
-    margin-bottom: 0.5px;
-    line-height: 1.2;
+    margin-bottom: 2px;
+    line-height: 0.5;
     padding: 2px 0;
 }
 .interests-list li {
