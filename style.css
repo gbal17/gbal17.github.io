@@ -314,7 +314,7 @@ a:visited {
 /* Consistent spacing between section titles and first content */
 section > p:first-of-type,
 section > ul:first-of-type {
-    margin-top: -5px;
+    margin-top: 0px;
 }
 
 
