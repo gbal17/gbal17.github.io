@@ -310,6 +310,15 @@ a:visited {
     text-decoration: underline !important;
 }
 
+
+/* Consistent spacing between section titles and first content */
+section > p:first-of-type,
+section > ul:first-of-type {
+    margin-top: 8px;
+}
+
+
+
 .journey-title {
     font-family: "American Typewriter", serif;
     font-size: 1.3em;
