@@ -326,7 +326,7 @@ section li:last-of-type {
 }
 
 section + section {
-    margin-top: -5px;
+    margin-top: -8px;
 }
 
 
