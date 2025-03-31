@@ -178,7 +178,7 @@ h1, h2 {
 .publications {
     background: white;
     padding: 8px 15px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -324,6 +324,12 @@ section ul:last-of-type,
 section li:last-of-type {
     margin-bottom: 0; /* or 5px for a bit more spacing */
 }
+
+section + section {
+    margin-top: -10px;
+}
+
+
 
 .journey-title {
     font-family: "American Typewriter", serif;
