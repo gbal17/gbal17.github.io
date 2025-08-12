@@ -3,6 +3,11 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url('back.jpg'); /* path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     background-color: #f4f4f4;
     color: #333;
 }
