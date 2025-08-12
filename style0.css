@@ -1,21 +1,11 @@
-:root {
-    --section-bg-color: 255, 255, 255; /* R, G, B values - currently white */
-    --section-opacity: 0.70; /* Change between 0 and 1 for transparency */
-}
 
 body {
     font-family: 'Futura', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('back.jpg'); /* path to your image */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
     color: #000;
     line-height: 1.6;
 }
-
 /* Container Layout */
 .container {
     display: flex;
@@ -26,7 +16,7 @@ body {
 
 /* Left Profile Section */
 .profile {
-    background: rgba(var(--section-bg-color), var(--section-opacity));
+    background: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -73,21 +63,22 @@ body {
 
 /* CV Download Button */
 .cv-btn {
-    color: #0073e6 !important;
-    text-decoration: none !important;
-    font-weight: bold;
-    font-size: 2em !important;
-    background: none !important;
-    padding: 0 !important;
-    border: none !important;
-    display: inline;
-    margin-top: 5px !important;
+    color: #0073e6 !important; /* Blue text */
+    text-decoration: none !important; /* No underline by default */
+    font-weight: bold; /* Make it stand out */
+    font-size: 2em !important; /* Increase font size */
+    background: none !important; /* Remove any background */
+    padding: 0 !important; /* Remove padding */
+    border: none !important; /* No border */
+    display: inline; /* Behave like a normal link */
+    margin-top: 5px !important; /* Reduce space between email and CV */
 }
 
 .cv-btn:hover {
-    color: #005bb5 !important;
-    text-decoration: underline !important;
+    color: #005bb5 !important; /* Darker blue on hover */
+    text-decoration: underline !important; /* Underline on hover */
 }
+
 
 /* Right Content Section */
 .content {
@@ -98,12 +89,13 @@ body {
 
 /* Section Styling */
 section {
-    background: rgba(var(--section-bg-color), var(--section-opacity));
+    background: white;
     padding: 10px 15px;
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Text Styling */
 .content p {
@@ -126,7 +118,14 @@ h1, h2 {
     font-size: 1.2em;
     margin-top: 0;
     margin-bottom: 8px;
+    /* color: #008E97 !important; */
+    /* color: #9d4a74 !important; */
+    /* color: #af138a !important;  */
+    /* color: #9d9a9b !important; */
+    /* color: #cf9b39 !important;  */
+    /* color: #afaa9f !important;  */
     color: #c5ad7a !important;
+
 }
 
 /* Interests Section */
@@ -160,6 +159,8 @@ h1, h2 {
     padding: 2px 0;
 }
 
+
+
 .affiliations,
 .education {
     padding-bottom: 10px;
@@ -169,12 +170,12 @@ h1, h2 {
 .email {
     font-size: 0.9em;
     color: #555;
-    margin-bottom: 5px !important;
+    margin-bottom: 5px !important; /* Reduce space below the email */
 }
 
 /* Publications Section */
 .publications {
-    background: rgba(var(--section-bg-color), var(--section-opacity));
+    background: white;
     padding: 8px 15px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -205,9 +206,9 @@ h1, h2 {
     text-align: center;
     color: #222;
     margin-top: 10px;
-    padding: 8px 10px 4px 10px;
+    padding: 8px 10px 4px 10px; /* reduced bottom padding */
     line-height: 1.4 !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 0 !important; /* remove extra margin */
 }
 
 .quote-author {
@@ -245,8 +246,9 @@ h1, h2 {
 
 /* GEE Apps Section */
 .gee-apps {
-    background: rgba(var(--section-bg-color), var(--section-opacity));
+    background: white;
     padding: 8px 15px;
+    /* margin-top: -10px; */
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -275,7 +277,7 @@ h1, h2 {
 
 /* Standardized Link Styling */
 a {
-    color: #0073e6 !important;
+    color: #0073e6 !important; /* Blue color */
     text-decoration: none !important;
     font-weight: normal;
 }
@@ -308,6 +310,7 @@ a:visited {
     text-decoration: underline !important;
 }
 
+
 /* Consistent spacing between section titles and first content */
 section > p:first-of-type,
 section > ul:first-of-type {
@@ -318,20 +321,25 @@ section > ul:first-of-type {
 section p:last-of-type,
 section ul:last-of-type,
 section li:last-of-type {
-    margin-bottom: 0;
+    margin-bottom: 0; /* or 5px for a bit more spacing */
 }
 
 section + section {
     margin-top: -8px;
 }
 
+
+
 .journey-title {
     font-family: "American Typewriter", serif;
     font-size: 1.3em;
     font-style: normal;
     text-align: center;
+    /* color: #9d9a9b !important;  */
+    /* color: #cf9b39 !important;  */
+    /* color: #afaa9f !important;  */
     color: #c5ad7a !important;
     margin-top: 25px;
     margin-bottom: 10px;
-    font-weight: bold !important;
+    font-weight: bold !important; /* Make it bold */
 }
