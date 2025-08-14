@@ -9,20 +9,13 @@ body {
     font-family: 'Futura', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('back.jpg');
+    background-image: url('back.jpg'); /* path to your image */
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0% 0%;
+    background-attachment: fixed;
+    background-position: center;
     color: #000;
     line-height: 1.6;
-
-    /* Animate background diagonally and restart from top-left */
-    animation: panBackground 90s linear infinite;
-}
-
-@keyframes panBackground {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 100% 100%; }
 }
 
 
