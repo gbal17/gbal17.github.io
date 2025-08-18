@@ -5,27 +5,48 @@
 
 
 
+/* Ensure the viewport height is stable on mobile */
+html, body { height: 100%; min-height: 100dvh; }
+
 body {
-    font-family: 'Futura', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('back.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0% 0%;
-    color: #000;
-    line-height: 1.6;
-
-    /* Animate background diagonally and restart from top-left */
-    animation: panBackground 90s linear infinite;
+  font-family: 'Futura', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  line-height: 1.6;
+  background: none;        /* moved to pseudo-element */
+  overflow-x: hidden;      /* prevent any horizontal jiggle on mobile */
+  position: relative;
 }
 
+/* Fixed, full-viewport animated background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('back.jpg');
+  /* Make the image larger than the viewport so edges never show */
+  background-size: 150% 150%;
+  /* Repeat lets the animation wrap without flashing; safe if your image tiles ok.
+     If your image isn't tileable, change to: background-repeat: no-repeat; */
+  background-repeat: repeat;
+  background-position: 0% 0%;
+  will-change: background-position;
+  animation: panBackground 90s linear infinite;
+}
+
+/* Ping-pong to avoid a visible jump when looping */
 @keyframes panBackground {
-  0%   { background-position: 0% 0%; }
-  50%  { background-position: 100% 0%; }  /* move fully to the right only */
-  100% { background-position: 0% 0%; }    /* return smoothly */
+  0%   { background-position:   0%   0%; }
+  50%  { background-position: 100% 100%; }
+  100% { background-position:   0%   0%; }
 }
 
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; background-position: center center; }
+}
 
 
 

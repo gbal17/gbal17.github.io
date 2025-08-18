@@ -21,12 +21,9 @@ body {
 }
 
 @keyframes panBackground {
-  0%   { background-position: 0% 0%; }
-  50%  { background-position: 100% 0%; }  /* move fully to the right only */
-  100% { background-position: 0% 0%; }    /* return smoothly */
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
 }
-
-
 
 
 
