@@ -490,8 +490,12 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
   /* Content sits right under tabs */
   .content{ margin-top:0 !important; }
 
-  /* Tabs snug under the card — increase first value to push them DOWN */
-  .tabbar{ margin: -10px 0 4px !important; justify-content:flex-start; } /* ← adjust here */
+  /* Tabs snug under the card — adjust first value to move closer/farther */
+  .tabbar{
+    margin: -14px 0 4px !important;   /* -10px was not visible → try -14px */
+    top: auto !important;             /* cancel earlier sticky offset */
+    justify-content:flex-start;
+  }
 
   /* Slightly smaller tabs */
   .tab-btn{ padding:5px 8px !important; }
@@ -502,6 +506,7 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
   /* Titles compact */
   h1, h2{ margin:0 0 6px 0 !important; }
 }
+
 
 /* ===== Very small phones ===== */
 @media (max-width: 380px){
