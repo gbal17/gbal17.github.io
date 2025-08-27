@@ -387,6 +387,13 @@ body[data-bg="bg-2"] .tab-btn.active {
   }
 }
 
+@media (max-width: 600px) {
+  .content {
+    margin-top: 120px;   /* instead of 160px, adjust to taste */
+  }
+}
+
+
 /* Very small phones */
 @media (max-width: 380px){
   .profile-info-panel{
