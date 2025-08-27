@@ -505,7 +505,7 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
 
 /* even tighter on very small phones */
 @media (max-width: 380px) {
-  .content { margin-top: 14px !important; }   /* was 40px → then 28px → now 14px */
+  .content { margin-top: 0px !important; }   /* was 40px → then 28px → now 14px */
   .tabbar { margin: 2px 8px 4px !important; } /* smaller vertical gap */
   #quote-box { margin: 4px 8px 0 !important; }
 }
