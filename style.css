@@ -503,13 +503,11 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
 
 
 
-
-
 /* even tighter on very small phones */
 @media (max-width: 380px) {
-  .content { margin-top: 40px; }        /* reduce a bit more */
-  .tabbar { margin: 4px 10px 6px; }
-  #quote-box { margin: 8px 10px 0; }
+  .content { margin-top: 14px !important; }   /* was 40px → then 28px → now 14px */
+  .tabbar { margin: 2px 8px 4px !important; } /* smaller vertical gap */
+  #quote-box { margin: 4px 8px 0 !important; }
 }
 
 
@@ -519,18 +517,18 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
   .profile-info-panel { top: 92px; left: 12px; right: 12px; }
 
   /* reduce vertical spacer below the fixed card (1/4 of before) */
-  .content { margin-top: 36px !important; }   /* try 28–44 if you want finer tuning */
+  .content { margin-top: 20px !important; }   /* was 36px */
 
   /* align container & tabs to card edges (12px) */
   .container { padding: 0 12px !important; }
-  .tabbar { margin: 6px 0 8px !important; justify-content: flex-start; }
+  .tabbar { margin: 4px 0 6px !important; justify-content: flex-start; }
 
   /* slightly smaller tabs so they sit closer */
-  .tab-btn { padding: 6px 10px !important; }
+  .tab-btn { padding: 5px 8px !important; }
 }
 
 /* extra-tight on very small phones */
 @media (max-width: 380px) {
-  .content { margin-top: 28px !important; }
-  .tabbar { margin: 4px 0 6px !important; }
+  .content { margin-top: 14px !important; }   /* keep consistent */
+  .tabbar { margin: 2px 0 4px !important; }
 }
