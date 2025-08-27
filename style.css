@@ -467,7 +467,6 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
 
 /* Keep quotes readable against busy video */
 
-
 /* ===== Mobile overlap fix: stack profile card, quote, and sessions ===== */
 @media (max-width: 700px) {
   .profile { width: 100%; min-width: 0; padding: 16px; }
@@ -480,18 +479,19 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
     position: static !important;
     left: auto; right: auto; top: auto;
     width: auto; max-width: 100%;
-    margin: 12px 12px 0;
+    margin: 10px 12px 0;               /* tighter */
     z-index: auto;
   }
   #quote-box {
     position: static !important;
     width: auto;
-    margin: 12px;
+    margin: 6px 12px 0;                 /* tighter */
+    padding: 8px 10px;                  /* tighter */
     z-index: auto;
   }
   /* push section cards away from edges for readability */
-  .section-content { margin: 12px; }
-  .tab-section { padding: 8px 0; }
+  .section-content { margin: 8px 12px; } /* was 12px */
+  .tab-section { padding: 4px 0; }       /* was 8px */
 
   /* make tabbar sticky if present, and keep it clear of notches */
   nav.tabbar {
@@ -501,34 +501,36 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
   }
 }
 
-
-
-/* even tighter on very small phones */
-@media (max-width: 380px) {
-  .content { margin-top: -40px !important; }   /* was 40px → then 28px → now 14px */
-  .tabbar { margin: 2px 8px 4px !important; } /* smaller vertical gap */
-  #quote-box { margin: 4px 8px 0 !important; }
-}
-
-
 /* ===== Tighten gap + align with card (phones) ===== */
 @media (max-width: 600px) {
-  /* keep card fixed where it is */
-  .profile-info-panel { top: 92px; left: 12px; right: 12px; }
+  /* keep card where it is (static in this layout) */
+  .profile-info-panel { top: auto; left: auto; right: auto; }
 
-  /* reduce vertical spacer below the fixed card (1/4 of before) */
-  .content { margin-top: -40px !important; }   /* was 36px */
+  /* content top margin no longer needed when card is static */
+  .content { margin-top: 0 !important; }
 
-  /* align container & tabs to card edges (12px) */
+  /* align container & tabs to card edges (12px) and pull closer */
   .container { padding: 0 12px !important; }
-  .tabbar { margin: 4px 0 6px !important; justify-content: flex-start; }
+  .tabbar { margin: 2px 0 4px !important; justify-content: flex-start; }
 
   /* slightly smaller tabs so they sit closer */
   .tab-btn { padding: 5px 8px !important; }
+
+  /* quote + sections tighter on phones */
+  #quote-box { margin: 4px 12px 0 !important; padding: 6px 8px !important; }
+  .section-content { margin: 6px 12px !important; }
+
+  /* make the very first section hug the tabs */
+  .tab-section:first-of-type .section-content:first-child { margin-top: 2px !important; }
+
+  /* reduce bottom margin under titles */
+  h1, h2 { margin: 0 0 6px 0 !important; }
 }
 
-/* extra-tight on very small phones */
+/* ===== extra-tight on very small phones ===== */
 @media (max-width: 380px) {
-  .content { margin-top: 14px !important; }   /* keep consistent */
-  .tabbar { margin: 2px 0 4px !important; }
+  #quote-box { margin: 2px 10px 0 !important; padding: 4px 6px !important; }
+  .tabbar { margin: 2px 0 3px !important; }
+  .section-content { margin: 4px 10px !important; }
+  .tab-section:first-of-type .section-content:first-child { margin-top: 1px !important; }
 }
