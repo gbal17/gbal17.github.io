@@ -501,6 +501,41 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
   }
 }
 
+
+/* ===== Mobile overlap fix: stack profile card, quote, and sessions ===== */
+@media (max-width: 700px) {
+  .profile { width: 100%; min-width: 0; padding: 16px; }
+  #profilePicToggle {
+    position: static !important;
+    display: block;
+    margin: 12px auto 0;
+  }
+  .profile-info-panel {
+    position: static !important;
+    left: auto; right: auto; top: auto;
+    width: auto; max-width: 100%;
+    margin: 10px 12px 0;               /* tighter */
+    z-index: auto;
+  }
+  #quote-box {
+    position: static !important;
+    width: auto;
+    margin: 6px 12px 0;                 /* tighter */
+    padding: 8px 10px;                  /* tighter */
+    z-index: auto;
+  }
+  /* push section cards away from edges for readability */
+  .section-content { margin: 8px 12px; } /* was 12px */
+  .tab-section { padding: 4px 0; }       /* was 8px */
+
+  /* make tabbar sticky if present, and keep it clear of notches */
+  nav.tabbar {
+    position: sticky;
+    top: calc(8px + var(--safe-top));
+    z-index: 10;
+  }
+}
+
 /* ===== Tighten gap + align with card (phones) ===== */
 @media (max-width: 600px) {
   /* keep card where it is (static in this layout) */
@@ -511,7 +546,7 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
 
   /* align container & tabs to card edges (12px) and pull closer */
   .container { padding: 0 12px !important; }
-  .tabbar { margin: .5px 0 4px !important; justify-content: flex-start; }
+  .tabbar { margin: 2px 0 4px !important; justify-content: flex-start; }
 
   /* slightly smaller tabs so they sit closer */
   .tab-btn { padding: 5px 8px !important; }
