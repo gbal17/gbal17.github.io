@@ -500,3 +500,31 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
     z-index: 10;
   }
 }
+
+
+
+/* ===== Tighter spacing + alignment on narrow screens ===== */
+@media (max-width: 600px) {
+  /* keep the card where it is */
+  .profile-info-panel { top: 92px; left: 12px; right: 12px; }
+
+  /* close up the space between the card and session titles */
+  .content { margin-top: 48px; }        /* was 120/160 — now ~1/4 */
+
+  /* align the session titles (tabbar) with the card edges */
+  .tabbar { margin: 6px 12px 8px; }     /* left/right = 12px to match card */
+
+  /* align the quote box with the card edges too */
+  #quote-box {
+    position: static !important;
+    margin: 10px 12px 0;                /* same side padding as card */
+    max-width: 100%;
+  }
+}
+
+/* even tighter on very small phones */
+@media (max-width: 380px) {
+  .content { margin-top: 40px; }        /* reduce a bit more */
+  .tabbar { margin: 4px 10px 6px; }
+  #quote-box { margin: 8px 10px 0; }
+}
