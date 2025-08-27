@@ -420,152 +420,93 @@ body[data-bg="bg-2"] .tab-btn.active {
 
 
 
-/* ===== Mobile & Accessibility Enhancements ===== */
 
-/* Fluid type for base body text */
+
+
+
+
+/* ===== Mobile & Accessibility Enhancements ===== */
 html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
 
-/* Respect users who prefer less motion */
 @media (prefers-reduced-motion: reduce) {
-  body { animation: none !important; }
-  #bg-video { animation: none !important; }
+  body, #bg-video { animation: none !important; }
 }
 
-/* Safe-area insets for iOS notches */
-:root {
+/* iOS safe areas */
+:root{
   --safe-top: env(safe-area-inset-top);
   --safe-right: env(safe-area-inset-right);
   --safe-bottom: env(safe-area-inset-bottom);
   --safe-left: env(safe-area-inset-left);
 }
 
-/* Use safe-area padding for fixed panels */
-.profile-info-panel {
+.profile-info-panel{
   padding-top: calc(12px + var(--safe-top));
   padding-bottom: calc(12px + var(--safe-bottom));
   margin-left: var(--safe-left);
   margin-right: var(--safe-right);
 }
 
-/* Ensure the sticky tabs never collide with the fixed card on small screens */
-@media (max-width: 600px) {
+@media (max-width: 600px){
   .tabbar { top: calc(8px + var(--safe-top)); }
   body { padding-bottom: var(--safe-bottom); }
-}
-
-/* Improve link tap area on mobile */
-@media (max-width: 600px) {
   a, .tab-btn { -webkit-tap-highlight-color: rgba(0,0,0,0.1); }
+  #quote-box .quote { font-size: .9em; line-height: 1.5; }
 }
 
-@media (max-width: 600px) {
-  #quote-box .quote {
-    font-size: .9em;
-    line-height: 1.5;
+/* ===== Stack card, quote, and sessions on small screens ===== */
+@media (max-width: 700px){
+  .profile { width:100%; min-width:0; padding:16px; }
+  #profilePicToggle { position:static !important; display:block; margin:12px auto 0; }
+
+  /* Card becomes part of normal flow */
+  .profile-info-panel{
+    position:static !important;
+    left:auto; right:auto; top:auto;
+    width:auto; max-width:100%;
+    margin:10px 12px 0; /* top,horizontal,bottom */
+    z-index:auto;
   }
+
+  /* Quote below card, compact */
+  #quote-box{
+    position:static !important;
+    width:auto;
+    margin:4px 12px 0;   /* tighter */
+    padding:6px 8px;
+    z-index:auto;
+  }
+
+  /* Section cards */
+  .section-content{ margin:6px 12px; }
+  .tab-section{ padding:4px 0; }
+
+  /* Sticky tabs */
+  nav.tabbar{ position:sticky; top:calc(8px + var(--safe-top)); z-index:10; }
 }
 
-/* Keep quotes readable against busy video */
+/* ===== Phones: pull content up closer to the card ===== */
+@media (max-width: 600px){
+  /* Content sits right under tabs */
+  .content{ margin-top:0 !important; }
 
-/* ===== Mobile overlap fix: stack profile card, quote, and sessions ===== */
-@media (max-width: 700px) {
-  .profile { width: 100%; min-width: 0; padding: 16px; }
-  #profilePicToggle {
-    position: static !important;
-    display: block;
-    margin: 12px auto 0;
-  }
-  .profile-info-panel {
-    position: static !important;
-    left: auto; right: auto; top: auto;
-    width: auto; max-width: 100%;
-    margin: 10px 12px 0;               /* tighter */
-    z-index: auto;
-  }
-  #quote-box {
-    position: static !important;
-    width: auto;
-    margin: 6px 12px 0;                 /* tighter */
-    padding: 8px 10px;                  /* tighter */
-    z-index: auto;
-  }
-  /* push section cards away from edges for readability */
-  .section-content { margin: 8px 12px; } /* was 12px */
-  .tab-section { padding: 4px 0; }       /* was 8px */
+  /* Tabs snug under the card — increase first value to push them DOWN */
+  .tabbar{ margin: 0 0 4px !important; justify-content:flex-start; } /* ← adjust here */
 
-  /* make tabbar sticky if present, and keep it clear of notches */
-  nav.tabbar {
-    position: sticky;
-    top: calc(8px + var(--safe-top));
-    z-index: 10;
-  }
+  /* Slightly smaller tabs */
+  .tab-btn{ padding:5px 8px !important; }
+
+  /* First section hugs the tabs */
+  .tab-section:first-of-type .section-content:first-child{ margin-top:2px !important; }
+
+  /* Titles compact */
+  h1, h2{ margin:0 0 6px 0 !important; }
 }
 
-
-/* ===== Mobile overlap fix: stack profile card, quote, and sessions ===== */
-@media (max-width: 700px) {
-  .profile { width: 100%; min-width: 0; padding: 16px; }
-  #profilePicToggle {
-    position: static !important;
-    display: block;
-    margin: 12px auto 0;
-  }
-  .profile-info-panel {
-    position: static !important;
-    left: auto; right: auto; top: auto;
-    width: auto; max-width: 100%;
-    margin: 10px 12px 0;               /* tighter */
-    z-index: auto;
-  }
-  #quote-box {
-    position: static !important;
-    width: auto;
-    margin: 6px 12px 0;                 /* tighter */
-    padding: 8px 10px;                  /* tighter */
-    z-index: auto;
-  }
-  /* push section cards away from edges for readability */
-  .section-content { margin: 8px 12px; } /* was 12px */
-  .tab-section { padding: 4px 0; }       /* was 8px */
-
-  /* make tabbar sticky if present, and keep it clear of notches */
-  nav.tabbar {
-    position: sticky;
-    top: calc(8px + var(--safe-top));
-    z-index: 10;
-  }
-}
-
-/* ===== Tighten gap + align with card (phones) ===== */
-@media (max-width: 600px) {
-  /* keep card where it is (static in this layout) */
-  .profile-info-panel { top: auto; left: auto; right: auto; }
-
-  /* content top margin no longer needed when card is static */
-  .content { margin-top: 0 !important; }
-
-  /* align container & tabs to card edges (12px) and pull closer */
-  .container { padding: 0 12px !important; }
-  .tabbar { margin: 2px 0 4px !important; justify-content: flex-start; }
-
-  /* slightly smaller tabs so they sit closer */
-  .tab-btn { padding: 5px 8px !important; }
-
-  /* quote + sections tighter on phones */
-  #quote-box { margin: 4px 12px 0 !important; padding: 6px 8px !important; }
-  .section-content { margin: 6px 12px !important; }
-
-  /* make the very first section hug the tabs */
-  .tab-section:first-of-type .section-content:first-child { margin-top: 2px !important; }
-
-  /* reduce bottom margin under titles */
-  h1, h2 { margin: 0 0 6px 0 !important; }
-}
-
-/* ===== extra-tight on very small phones ===== */
-@media (max-width: 380px) {
-  #quote-box { margin: 2px 10px 0 !important; padding: 4px 6px !important; }
-  .tabbar { margin: 2px 0 3px !important; }
-  .section-content { margin: 4px 10px !important; }
-  .tab-section:first-of-type .section-content:first-child { margin-top: 1px !important; }
+/* ===== Very small phones ===== */
+@media (max-width: 380px){
+  #quote-box{ margin:2px 10px 0 !important; padding:4px 6px !important; }
+  .tabbar{ margin:0 0 3px !important; }  /* keep tight under the card */
+  .section-content{ margin:4px 10px !important; }
+  .tab-section:first-of-type .section-content:first-child{ margin-top:1px !important; }
 }
