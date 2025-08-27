@@ -195,7 +195,7 @@ a:visited{ color:#0073e6 !important; }
   opacity:1; pointer-events:auto; position:relative; z-index:1;
 }
 #quote-box .quote.active:hover{
-  font-size:0.9em; line-height:1.6; transform:scale(1.05);
+  font-size:0.8em; line-height:1.6; transform:scale(1.025);
 }
 
 /* ---------------- Sections quick tweaks ---------------- */
