@@ -487,23 +487,17 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
 
 /* ===== Phones: pull content up closer to the card ===== */
 @media (max-width: 600px){
-  /* Content sits right under tabs */
-  .content{ margin-top:-10px !important; }   /* was 0, now pulled up */
+  .content{ margin-top:-10px !important; }
 
-  /* Tabs snug under the card — top margin more negative, bottom tighter */
   .tabbar{
-    margin: -50px 0 2px !important;   /* was -14px 0 4px */
-    top: auto !important;             /* cancel earlier sticky offset */
+    position: relative !important;    /* disable sticky on phones */
+    top: auto !important;             /* cancel sticky offset */
+    margin: -20px 0 2px !important;   /* fine-tune this */
     justify-content:flex-start;
   }
 
-  /* Slightly smaller tabs */
   .tab-btn{ padding:5px 8px !important; }
-
-  /* First section hugs the tabs */
-  .tab-section:first-of-type .section-content:first-child{ margin-top:0 !important; } /* was 2px */
-
-  /* Titles compact */
+  .tab-section:first-of-type .section-content:first-child{ margin-top:0 !important; }
   h1, h2{ margin:0 0 6px 0 !important; }
 }
 
@@ -512,7 +506,16 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
 /* ===== Very small phones ===== */
 @media (max-width: 380px){
   #quote-box{ margin:2px 10px 0 !important; padding:4px 6px !important; }
-  .tabbar{ margin:0 0 3px !important; }  /* keep tight under the card */
+
+  /* Pull tabs up under the card + disable sticky pinning */
+  .tabbar{
+    position: relative !important;   /* disable sticky on tiny phones */
+    top: auto !important;            /* cancel sticky offset */
+    margin: -16px 0 3px !important;  /* make first value more negative to move closer */
+    justify-content: flex-start;
+  }
+
+  /* Tighten section spacing */
   .section-content{ margin:4px 10px !important; }
-  .tab-section:first-of-type .section-content:first-child{ margin-top:1px !important; }
+  .tab-section:first-of-type .section-content:first-child{ margin-top:0 !important; } /* was 1px */
 }
