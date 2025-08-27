@@ -1,355 +1,380 @@
-:root {
-    --section-bg-color: 255, 255, 255; /* R, G, B values - currently white */
-    --section-opacity: 0.70; /* Change between 0 and 1 for transparency */
+/* ---------------- Core variables ---------------- */
+:root{
+  --section-bg-color: 255,255,255;
+  --section-opacity: 0.70;
+  --card-bg: rgba(20,28,58,0.35);
+}
+
+/* ---------------- Global & background video ---------------- */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  font-family:'Futura',sans-serif;
+  margin:0;
+  color:#000;
+  line-height:1.6;
+  background:none;
+  animation: panBackground 90s linear infinite;
+}
+@keyframes panBackground{
+  0%{background-position:0% 0%}
+  50%{background-position:100% 0%}
+  100%{background-position:0% 0%}
+}
+#bg-video{
+  position:fixed; inset:0; width:100%; height:100%;
+  object-fit:cover; z-index:-1; opacity:.9; pointer-events:none;
+}
+
+/* ---------------- Layout ---------------- */
+.container{
+  display:flex;
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+  position:relative;
+}
+.profile{
+  text-align:center;
+  width:25%;
+  min-width:250px;
+  padding:30px;
+  border-radius:10px;
+}
+.content{
+  flex:1.5;
+  flex-grow:2;
+  margin-left:30px;
+  display:block;
+}
+
+/* ---------------- Profile: circle + card ---------------- */
+.profile-pic-wrapper{
+  position:relative;
+  width:120px; height:120px;
+  border-radius:50%; overflow:hidden;
+  border:1px solid #000;
+  display:inline-flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  margin-top:-40px;  /* keep your offsets */
+  margin-left:-40px;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.profile-pic-wrapper#profilePicToggle {
+  position: fixed;      /* ⬅️ was relative — now fixed */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border:1px solid #000;
+  overflow: hidden;
+  cursor: pointer;
+  top: 50px;            /* ⬅️ vertical position from top */
+  left: 75px;           /* ⬅️ horizontal position from left */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-pic-wrapper:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 16px rgba(0,0,0,.4);
+}
+.profile-img{
+  width:100%; height:100%; object-fit:contain; border-radius:50%;
+  display:block; pointer-events:none;
+}
+/* white outline variant when you add body.video2 if you need */
+body.video2 .profile-pic-wrapper{ border:1px solid #fff !important; }
+
+/* Profile info card — visible by default; JS toggles .is-hidden */
+.profile-info-panel{
+  display:block !important;
+  position:fixed;          /* fixed so it doesn’t shift with tabs */
+  left:24px;               /* adjust to taste */
+  top:120px;               /* adjust to taste */
+  width:max-content;
+  padding:12px 18px;
+  /* background:var(--card-bg); */
+  backdrop-filter: blur(6px);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  text-align:left;
+  z-index:1000;
+}
+
+
+.profile-info-panel.is-hidden{ display:none !important; }
+
+.name{
+  font-weight:normal;
+  color:#0c0c0c;
+  /* text-shadow:0 1px 4px rgba(0,0,0,.8); */
+}
+.job-title,
+.email1{
+  font-family:"American Typewriter",serif;
+  color:#fff;
+  text-shadow:0 1px 4px rgba(0,0,0,.8);
+  line-height:1.4;
+  margin:2px 0;
+}
+.job-title{ font-size:1em; font-weight:normal; margin-top:5px; }
+.email1 a{ color:inherit; text-decoration:none; }
+.email1 a:hover{ text-decoration:underline; }
+
+/* Social / CV icons (blue by default) */
+.permanent-icons a,
+.cv-icon{
+  font-size: 1.1em;   /* ⬅️ change this to control icon size */
+  color:#0073e6 !important;
+  transition:color .3s ease;
+  margin-right:6px;
+}
+.permanent-icons a:hover,
+.cv-icon:hover{ color:#005bb5 !important; }
+
+/* ---------------- Tabs ---------------- */
+.tabbar{
+  position:sticky; top:8px;
+  display:flex; gap:10px; justify-content:center;
+  margin:0 0 8px 0; z-index:5;
+}
+.tab-btn{
+  background:transparent;
+  color:#000;
+  border:1px solid #070707;
+  border-radius:6px;
+  padding:4px 10px;
+  font: normal 12px 'Futura',sans-serif;
+  cursor:pointer;
+  box-shadow:0 2px 4px rgba(0,0,0,.1);
+  transition: background .2s ease, border-color .2s ease;
+}
+.tab-btn:hover{ background:#f7f7f7; border-color:#999; }
+.tab-btn.active{ background:#fff; border-color:#666; }
+
+.tab-section{ display:none; width:100%; margin:0; padding:0; }
+.tab-section.active{ display:block; }
+.tab-section > h2{ display:none; }
+.section-content{
+  background: rgba(var(--section-bg-color), var(--section-opacity));
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,.1);
+  padding:10px 15px;
+  margin:0;
+}
+.section-content > *:first-child{ margin-top:0; }
+.section-content p{ margin:6px 0; }
+
+/* ---------------- Typography & links ---------------- */
+h1,h2,.quick-info .dropdown-toggle,.journey .dropdown-toggle{
+  font-size:1.2em; margin:0 0 8px 0;
+  color:#FFD700 !important;
+  text-shadow:0 0 4px rgba(0,0,0,.7);
+}
+a{ color:#0073e6 !important; text-decoration:none !important; font-weight:normal; }
+a:hover{ color:#005bb5 !important; text-decoration:underline !important; }
+a:visited{ color:#0073e6 !important; }
+
+/* ---------------- Quotes ---------------- */
+#quote-box{
+  position:absolute; top:400px; left:0px; width:350px;
+  height:auto; overflow:hidden;
+  display:flex; align-items:flex-start; justify-content:center;
+  text-align:center; padding:4px 0; z-index:2;
+}
+#quote-box .quote{
+  opacity:0; pointer-events:none;
+  transition: opacity 1s ease, font-size .3s ease, transform .3s ease;
+  font-family:"American Typewriter",serif;
+  font-size:0.8em; line-height:1.4; color:#fff;
+  text-shadow:0 1px 4px rgba(0,0,0,.8);
+  margin:0; padding:0;
+  position:absolute; top:0; left:0; right:0;
+}
+#quote-box .quote.active{
+  opacity:1; pointer-events:auto; position:relative; z-index:1;
+}
+#quote-box .quote.active:hover{
+  font-size:0.9em; line-height:1.6; transform:scale(1.05);
+}
+
+/* ---------------- Sections quick tweaks ---------------- */
+section{ padding:10px 15px; margin-bottom:10px; border-radius:10px; }
+.content p{ line-height:1.2; margin-bottom:3px; }
+.interests-list{ display:flex; flex-wrap:wrap; gap:5px 12px; list-style:none; padding:0; }
+.interests-list li{ display:flex; align-items:center; white-space:nowrap; padding:1px 8px; }
+.affiliations p, .education p{ line-height:1.2; padding:2px 0; margin:0; }
+
+/* ---------------- Optional: when using body.video2 theme ---------------- */
+body.video2 h1,
+body.video2 h2,
+body.video2 .dropdown-toggle,
+body.video2 .quick-info .dropdown-toggle,
+body.video2 .journey .dropdown-toggle{
+  color:#fff !important;
+  text-shadow:0 0 8px rgba(0,0,0,.8) !important;
+}
+body.video2 .tab-btn{
+  color:#fff !important; border-color:#fff !important;
+  text-shadow:0 0 6px rgba(0,0,0,.6) !important;
+  background:transparent !important;
+}
+body.video2 .tab-btn:hover,
+body.video2 .tab-btn.active{
+  color:#fff !important; border-color:#fff !important;
+  background:rgba(255,255,255,.12) !important;
+}
+
+
+/* ---------------- Optional: when using back1.mp4 (bg-1) ---------------- */
+body[data-bg="bg-1"] .permanent-icons a,
+body[data-bg="bg-1"] .cv-icon {
+  color: #FFD700 !important;   /* yellow */
+}
+
+body[data-bg="bg-1"] .permanent-icons a:hover,
+body[data-bg="bg-1"] .cv-icon:hover {
+  color: #e6d300 !important;   /* darker yellow on hover */
+}
+
+/* ---------------- Optional: when using back2.mp4 (bg-2) ---------------- */
+body[data-bg="bg-2"] .profile-pic-wrapper {
+  border: 1px solid #fff !important;   /* white outline around profile */
+}
+
+body[data-bg="bg-2"] h1,
+body[data-bg="bg-2"] h2,
+body[data-bg="bg-2"] .dropdown-toggle,
+body[data-bg="bg-2"] .quick-info .dropdown-toggle,
+body[data-bg="bg-2"] .journey .dropdown-toggle {
+  color: #fff !important;              /* session titles white */
+  text-shadow: 0 0 8px rgba(0,0,0,0.8) !important;
+}
+
+body[data-bg="bg-2"] .tab-btn {
+  color: #fff !important;              /* tab buttons white */
+  border-color: #fff !important;       /* white outline */
+  text-shadow: 0 0 6px rgba(0,0,0,0.6) !important;
+  background: transparent !important;
+}
+
+body[data-bg="bg-2"] .tab-btn:hover,
+body[data-bg="bg-2"] .tab-btn.active {
+  color: #fff !important;
+  border-color: #fff !important;
+  background: rgba(255,255,255,0.12) !important;
 }
 
 
 
-body {
-    font-family: 'Futura', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('back.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0% 0%;
-    color: #000;
-    line-height: 1.6;
 
-    /* Animate background diagonally and restart from top-left */
-    animation: panBackground 90s linear infinite;
+/* ===================== */
+/* MOBILE OPTIMIZATIONS  */
+/* Paste this at the END */
+/* ===================== */
+
+/* Tablets & small laptops */
+@media (max-width: 900px) {
+  .container{
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .content{
+    margin-left: 0;
+  }
+
+  /* Make tabs scrollable if they overflow */
+  .tabbar{
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 4px;
+  }
+  .tabbar::-webkit-scrollbar{ display:none; }
+
+  /* Bigger tap targets */
+  .tab-btn{
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  /* Slightly tighter section box on mobile */
+  .section-content{
+    padding: 12px;
+  }
 }
 
-@keyframes panBackground {
-  0%   { background-position: 0% 0%; }
-  50%  { background-position: 100% 0%; }  /* move fully to the right only */
-  100% { background-position: 0% 0%; }    /* return smoothly */
+/* Phones */
+@media (max-width: 600px) {
+  /* Keep the circle fixed but smaller and tucked to the top-left */
+  .profile-pic-wrapper#profilePicToggle{
+    width: 72px;
+    height: 72px;
+    top: 12px;      /* adjust here if you want */
+    left: 12px;     /* adjust here if you want */
+    border-width: 1px;
+  }
+
+  /* Card fixed under the circle, full width minus margins */
+  .profile-info-panel{
+    top: 92px;                     /* sits just below the circle */
+    left: 12px;
+    right: 12px;                   /* allow it to grow to the right edge */
+    width: auto;                   /* override max-content */
+    max-width: none;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  /* Text sizing inside the card */
+  .name{ font-size: 1rem; }
+  .job-title{ font-size: .95rem; }
+  .email1{ font-size: .9rem; }
+
+  /* Icon tap size */
+  .permanent-icons a, .cv-icon{
+    font-size: 1.2rem;     /* slightly larger for touch */
+    margin-right: 10px;
+  }
+
+  /* Content stack: more readable padding */
+  .section-content{
+    padding: 12px;
+  }
+
+  /* Make quotes fit and move off the extreme left */
+  #quote-box{
+    position: fixed;
+    bottom: 14px;
+    left: 12px;
+    right: 12px;
+    top: auto;
+    width: auto;
+    padding: 6px 0;
+  }
+  #quote-box .quote{
+    font-size: .9em;
+    line-height: 1.5;
+  }
+
+  /* Allow the main page to breathe below the fixed card */
+  .content{
+    margin-top: 160px;   /* pushes sections below the fixed card; adjust if needed */
+  }
 }
 
-
-
-
-
-
-
-
-
-/* Container Layout */
-.container {
-    display: flex;
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* Left Profile Section */
-.profile {
-    background: rgba(var(--section-bg-color), var(--section-opacity));
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 25%;
-    min-width: 250px;
-}
-
-.profile-img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 15px;
-} 
-
-.profile h2 {
-    margin: 10px 0;
-    font-size: 1.5em;
-}
-
-.profile h3 {
-    font-size: 1.1em;
-    color: #555;
-}
-
-.profile p {
-    font-size: 0.9em;
-    color: #777;
-}
-
-/* Icons */
-.icons a {
-    font-size: 1.5em;
-    margin: 10px;
-    color: #0073e6;
-    text-decoration: none;
-}
-
-.icons a:hover {
-    color: #005bb5;
-}
-
-/* CV Download Button */
-.cv-btn {
-    color: #0073e6 !important;
-    text-decoration: none !important;
-    font-weight: bold;
-    font-size: 2em !important;
-    background: none !important;
-    padding: 0 !important;
-    border: none !important;
-    display: inline;
-    margin-top: 5px !important;
-}
-
-.cv-btn:hover {
-    color: #005bb5 !important;
-    text-decoration: underline !important;
-}
-
-/* Right Content Section */
-.content {
-    flex: 1.5;
-    flex-grow: 2;
-    margin-left: 30px;
-}
-
-/* Section Styling */
-section {
-    background: rgba(var(--section-bg-color), var(--section-opacity));
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Text Styling */
-.content p {
-    line-height: 1.2;
-    margin-bottom: 3px;
-}
-
-.about p {
-    margin-bottom: 0px !important;
-    padding-bottom: 0px !important;
-    line-height: 1.1;
-}
-
-.about {
-    padding-bottom: 5px !important;
-}
-
-/* Section Titles */
-h1, h2 {
-    font-size: 1.2em;
-    margin-top: 0;
-    margin-bottom: 8px;
-    color: #c5ad7a !important;
-}
-
-/* Interests Section */
-.interests-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px 12px;
-    list-style-type: none;
-    padding: 0;
-}
-
-.interests-list li {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    padding: 1px 8px;
-    flex: 0 1 auto;
-}
-
-/* Reduced Spacing */
-.interests p,
-.affiliations p,
-.education p {
-    line-height: 1.2;
-    padding: 2px 0;
-    margin: 0;
-    word-wrap: break-word;
-}
-.interests-list li {
-    line-height: 1.2;
-    padding: 2px 0;
-}
-
-.affiliations,
-.education {
-    padding-bottom: 10px;
-}
-
-/* Email Styling */
-.email {
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 5px !important;
-}
-
-/* Publications Section */
-.publications {
-    background: rgba(var(--section-bg-color), var(--section-opacity));
-    padding: 8px 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.publications h2 {
-    font-size: 1.2em;
-    color: #0073e6;
-    margin-bottom: 5px;
-}
-
-.publications ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.publications ul li {
-    padding: 2px 0;
-    line-height: 1.2;
-}
-
-/* Quote Styling */
-.quote {
-    font-family: "American Typewriter", serif !important;
-    font-size: 0.8em !important;
-    font-style: normal;
-    text-align: center;
-    color: #222;
-    margin-top: 10px;
-    padding: 8px 10px 4px 10px;
-    line-height: 1.4 !important;
-    margin-bottom: 0 !important;
-}
-
-.quote-author {
-    font-size: 1.0em !important;
-    font-weight: bold;
-    display: block;
-    margin-top: 2px;
-}
-
-/* Map Styling */
-.map-image {
-    width: 100%;
-    max-width: 250px;
-    display: block;
-    margin: 15px auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* CV Button */
-.cv-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 15px;
-    background: #0073e6;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.cv-btn:hover {
-    background: #005bb5;
-}
-
-/* GEE Apps Section */
-.gee-apps {
-    background: rgba(var(--section-bg-color), var(--section-opacity));
-    padding: 8px 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.gee-apps h2 {
-    font-size: 1.2em;
-    color: #0073e6;
-    margin-bottom: 5px;
-}
-
-.gee-apps ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.gee-apps li {
-    padding: 2px 0;
-    line-height: 1.2;
-}
-
-.gee-apps li::before {
-    content: none;
-}
-
-/* Standardized Link Styling */
-a {
-    color: #0073e6 !important;
-    text-decoration: none !important;
-    font-weight: normal;
-}
-
-a:hover {
-    color: #005bb5 !important;
-    text-decoration: underline !important;
-}
-
-/* Prevent visited links from turning purple */
-a:visited {
-    color: #0073e6 !important;
-    text-decoration: none !important;
-}
-
-/* Specific Sections */
-.affiliations a,
-.education a,
-.publications a,
-.gee-apps a {
-    color: #0073e6 !important;
-    font-weight: normal;
-}
-
-.affiliations a:hover,
-.education a:hover,
-.publications a:hover,
-.gee-apps a:hover {
-    color: #005bb5 !important;
-    text-decoration: underline !important;
-}
-
-/* Consistent spacing between section titles and first content */
-section > p:first-of-type,
-section > ul:first-of-type {
-    margin-top: 0px;
-}
-
-/* Consistent spacing below last content inside each section */
-section p:last-of-type,
-section ul:last-of-type,
-section li:last-of-type {
-    margin-bottom: 0;
-}
-
-section + section {
-    margin-top: -8px;
-}
-
-.journey-title {
-    font-family: "American Typewriter", serif;
-    font-size: 1.3em;
-    font-style: normal;
-    text-align: center;
-    color: #c5ad7a !important;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-weight: bold !important;
+/* Very small phones */
+@media (max-width: 380px){
+  .profile-info-panel{
+    top: 88px;
+    padding: 8px 10px;
+  }
+  .name{ font-size: .95rem; }
+  .job-title{ font-size: .9rem; }
+  .email1{ font-size: .85rem; }
+  .permanent-icons a, .cv-icon{ font-size: 1.1rem; }
+  .tab-btn{ font-size: 12px; padding: 7px 10px; }
 }
