@@ -216,7 +216,7 @@ function playIndex(i) {
   // Set currentTime after metadata is available
   video.onloadedmetadata = () => {
     if (/back\.mp4$/i.test(src) && !playIndex._skippedBack) {
-      video.currentTime = 5;          // ⬅️ jump ahead (adjust seconds)
+      video.currentTime = 10;          // ⬅️ jump ahead (adjust seconds)
       playIndex._skippedBack = true;  // mark as done (only first time)
     } else {
       video.currentTime = 0;
