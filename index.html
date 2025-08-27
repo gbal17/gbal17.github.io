@@ -204,19 +204,33 @@
     const playlist = ["back.mp4", "back1.mp4", "back2.mp4", "back3.mp4"];
     let vIndex = 0;
 
-    function playIndex(i) {
-      vIndex = (i + playlist.length) % playlist.length;
-      video.src = playlist[vIndex];
-      video.load();
-      video.playbackRate = 0.5;
+function playIndex(i) {
+  vIndex = (i + playlist.length) % playlist.length;
+  const src = playlist[vIndex];
+
+  video.src = src;
+  video.load();
+  video.playbackRate = 0.5;
+
+  // Set currentTime after metadata is available
+  video.onloadedmetadata = () => {
+    if (/back\.mp4$/i.test(src) && !playIndex._skippedBack) {
+      video.currentTime = 5;          // ⬅️ jump ahead (adjust seconds)
+      playIndex._skippedBack = true;  // mark as done (only first time)
+    } else {
       video.currentTime = 0;
-      video.onloadeddata = () => {
-        const p = video.play();
-        if (p && typeof p.catch === 'function') p.catch(() => {});
-      };
-      // add data attribute for per-bg CSS, if needed
-      document.body.dataset.bg = `bg-${vIndex}`;
     }
+  };
+
+  video.onloadeddata = () => {
+    const p = video.play();
+    if (p && typeof p.catch === 'function') p.catch(() => {});
+  };
+
+  // add data attribute for per-bg CSS, if needed
+  document.body.dataset.bg = `bg-${vIndex}`;
+}
+
 
     video.addEventListener('ended', () => playIndex(vIndex + 1));
     playIndex(0);

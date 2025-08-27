@@ -494,7 +494,7 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
   .tabbar{
     position: relative !important;   /* disable sticky on phones */
     top: auto !important;            /* cancel sticky offset */
-    margin: 8px 0 4px !important;    /* was -20px, now pushes DOWN slightly */
+    margin: 10px 0 4px !important;    /* was -20px, now pushes DOWN slightly */
     justify-content:flex-start;
   }
 
@@ -511,7 +511,7 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
   .tabbar{
     position: relative !important;   /* disable sticky */
     top: auto !important;
-    margin: 9px 0 4px !important;    /* safe buffer below card */
+    margin: 8px 0 4px !important;    /* safe buffer below card */
     justify-content:flex-start;
   }
 
