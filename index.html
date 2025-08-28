@@ -264,13 +264,15 @@ function playIndex(i) {
       e.stopPropagation();
       const isHidden = profilePanel.classList.toggle('is-hidden');
 
-      // if the card is hidden, enlarge the profile icon
       if (isHidden) {
         profilePic.classList.add('expanded');
+        document.body.classList.add('profile-expanded');   // ⬅️ add
       } else {
         profilePic.classList.remove('expanded');
+        document.body.classList.remove('profile-expanded'); // ⬅️ remove
       }
     });
+
 
   });
   </script>

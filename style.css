@@ -522,9 +522,29 @@ html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
   .tab-section:first-of-type .section-content:first-child{ margin-top:2px !important; }
 }
 
+/* smooth tab movement */
+.tabbar { transition: margin 0.25s ease; }
+
+/* phones */
+@media (max-width: 600px){
+  /* when profile is enlarged, add space under it */
+  body.profile-expanded .tabbar{
+    margin-top: 60px !important;  /* adjust: ~ (scale-1)*100px; e.g., scale(1.6) → 60px */
+  }
+}
+
+/* very small phones */
+@media (max-width: 380px){
+  body.profile-expanded .tabbar{
+    margin-top: 56px !important;  /* tweak for tiny screens if needed */
+  }
+}
+
+
+
 
 /* Profile picture grows when active */
 .profile-pic-wrapper.expanded {
-  transform: scale(2);   /* adjust scale to taste */
+  transform: scale(2.5);   /* adjust scale to taste */
   transition: transform 0.3s ease;
 }
