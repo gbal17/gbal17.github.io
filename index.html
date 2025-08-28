@@ -147,7 +147,15 @@
       stirs your spirit and your body."<br/>
 <span class="quote-author">— Konstantinos Petrou Kavafis</span>
 </p>
+
+
+
 </div>
+
+<div class="quote-badge">
+  <img src="gif.gif" alt="Animated GIF">
+</div>
+
 <!-- Scripts -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -250,7 +258,16 @@ function playIndex(i) {
     startRotation();
     quoteBox.addEventListener('mouseenter', stopRotation);
     quoteBox.addEventListener('mouseleave', () => { nextQuote(); startRotation(); });
-    quoteBox.addEventListener('click', () => playIndex(vIndex + 1));
+    // quoteBox.addEventListener('click', () => playIndex(vIndex + 1));
+    // Background change on GIF click instead of quote box
+    const gifBadge = document.querySelector('.quote-badge');
+    if (gifBadge) {
+      gifBadge.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playIndex(vIndex + 1);
+      });
+}
+
 
     /* ---------- Profile card: visible by default, toggle on circle click ---------- */
     const profilePic   = document.getElementById('profilePicToggle');
