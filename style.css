@@ -184,10 +184,10 @@ a:visited{ color:#0073e6 !important; }
   top: 320px;               /* adjust so it sits below profile card */
   max-width: 320px;
   padding: 12px 18px;
-  backdrop-filter: blur(6px);
+  /* backdrop-filter: blur(6px);
   border: 1px solid rgba(255,255,255,.15);
   border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35); */
   text-align: center;
   z-index: 1000;
 }
