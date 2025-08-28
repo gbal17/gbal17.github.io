@@ -262,8 +262,16 @@ function playIndex(i) {
     // toggle only when clicking the circle
     profilePic.addEventListener('click', (e) => {
       e.stopPropagation();
-      profilePanel.classList.toggle('is-hidden');
+      const isHidden = profilePanel.classList.toggle('is-hidden');
+
+      // if the card is hidden, enlarge the profile icon
+      if (isHidden) {
+        profilePic.classList.add('expanded');
+      } else {
+        profilePic.classList.remove('expanded');
+      }
     });
+
   });
   </script>
 </body>
