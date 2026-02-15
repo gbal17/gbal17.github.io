@@ -1,306 +1,336 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>Giuseppe Baldassarre</title>
-<link href="style.css" rel="stylesheet"/>
-<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<meta content="#000000" name="theme-color"/><meta content="yes" name="apple-mobile-web-app-capable"/></head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Giuseppe Baldassarre</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&amp;display=swap" rel="stylesheet"/>
+
+  <meta name="theme-color" content="#000000"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+</head>
+
 <body>
-<!-- Background video -->
-<video autoplay="" id="bg-video" muted="" playsinline="" preload="auto">
-<source src="back.mp4" type="video/mp4"/>
+  <!-- Background video -->
+  <video autoplay="" id="bg-video" muted="" playsinline="" preload="auto">
+    <source src="back.mp4" type="video/mp4"/>
     Your browser does not support HTML5 video.
   </video>
-<div class="container">
-<!-- Left: profile -->
-<aside class="profile">
-<div class="profile-pic-wrapper" id="profilePicToggle">
-<img alt="Giuseppe Baldassarre" class="profile-img" src="profile.jpg"/>
-</div>
-<!-- Profile info card (visible by default; toggled by clicking the circle) -->
-<div class="profile-info-panel profile-card" id="profileInfo">
-<div class="name">Giuseppe Baldassarre</div>
-<div class="job-title">Geospatial Analyst @ FAO</div>
-<div class="permanent-icons">
-<a href="https://www.linkedin.com/in/giuseppe-baldassarre-671a7623/" target="_blank"><i class="fab fa-linkedin"></i></a>
-<a href="https://scholar.google.com/citations?user=M8b10awAAAAJ&amp;hl=en-EN" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-<a href="https://www.researchgate.net/profile/Giuseppe-Baldassarre?ev=prf_overview" target="_blank"><i class="fab fa-researchgate"></i></a>
-<a href="https://github.com/gbal17" target="_blank"><i class="fab fa-github"></i></a>
-<a class="cv-icon" href="cv.pdf" target="_blank">CV</a>
-<a href="https://medium.com/@gi.baldassarre" target="_blank"><i class="fab fa-medium"></i></a>
-</div>
-<div class="email1">Giuseppe.Baldassarre@fao.org</div>
-<div class="email1">gi.baldassarre@gmail.com</div>
-</div>
-</aside>
-<!-- Right: content -->
-<main class="content">
-<!-- Tabs -->
-<nav class="tabbar" role="tablist">
-<button aria-controls="about" aria-pressed="false" class="tab-btn" data-target="about" role="tab">About me</button>
-<button aria-controls="publications" aria-pressed="false" class="tab-btn" data-target="publications" role="tab">Publications</button>
-<button aria-controls="gee" aria-pressed="false" class="tab-btn" data-target="gee" role="tab">GEE Apps</button>
-<button aria-controls="trainings" aria-pressed="false" class="tab-btn" data-target="trainings" role="tab">Trainings</button>
-</nav>
-<section aria-hidden="true" class="tab-section affiliations" id="about" role="tabpanel">
-<div class="section-content">
-<!-- <p><strong>Summary</strong></p> -->
-<p>With research and work experience in Remote Sensing for Environmental Applications across Italy, the USA, Peru, Turkey, Portugal, Vietnam, and the Gambia, I've seen firsthand the deep link between social injustice and environmental degradation.<br/>
-          For this reason, I am passionate about harnessing geospatial analysis to deepen our understanding of this connection, striving to drive meaningful change.</p>
-<p><strong></strong></p>
-<p><strong></strong></p>
-<p><strong>Affiliations</strong></p>
-<p>🌍 <strong>International GIS/RS Consultant</strong>, <a href="https://www.fao.org/geospatial/en/" target="_blank">FAO Geospatial Unit</a> (2023 - Present)</p>
-<p>🎓 <strong>Post-Doctoral Researcher</strong>, <a href="https://www.researchgate.net/lab/Pyrogeography-Lab-Jose-MC-Pereira" target="_blank">University of Lisbon</a> (2020 - 2023)</p>
-<p>🌱 <strong>EUaid Volunteer</strong>, <a href="https://www.srd.org.vn/" target="_blank">SRD Vietnam</a> (2020 - 2022)</p>
-<p>🎓 <strong>Post-Doctoral Researcher</strong>, <a href="https://fires.itu.edu.tr/bbeurasia/index.html" target="_blank">Istanbul Technical University</a> (2012 - 2018)</p>
-<p>🌱 <strong>Volunteer</strong>, <a href="https://aprodeperu.org/" target="_blank">Aprode Peru</a> (2011)</p>
-<p>🎓 <strong>Ph.D.Scholar</strong>, <a href="https://www.wisc.edu/" target="_blank">University of Wisconsin, Madison</a> (2008 - 2010)</p>
-<p><strong></strong></p>
-<p><strong></strong></p>
-<p><strong>Education</strong></p>
-<p>🎓 Ph.D. in Environmental Applications with Remote Sensing</p>
-<p>🎓 M.S. in Mediterranean Forestry &amp; Natural Resource Management (<a href="https://www.medfor.eu/testimonial/7th-edition-20182020/giuseppe-baldassarre" target="_blank">Erasmus Mundus</a>)</p>
-<p>🎓 B.S. &amp; M.S. in Environmental Engineering (Summa Cum Laude)</p>
-<p><strong></strong></p>
-<p><strong></strong></p>
-<p><strong>Documents:</strong>
-  <a href="https://drive.google.com/file/d/1TurHo7zIqE6_efP7Ho0fWwewve0lyJq2/view" target="_blank" rel="noopener noreferrer">certificates</a> ·
-  <a href="https://drive.google.com/file/d/1QmVIYiWMHVG7rS61SMaESllyqTxkrcRU/view" target="_blank" rel="noopener noreferrer">grades</a> ·
-  <a href="https://drive.google.com/file/d/1D3z3y6sKUg0MaK5rGoZvrykGRFlAcdOk/view" target="_blank" rel="noopener noreferrer">extra-courses</a> ·
-  <a href="https://drive.google.com/file/d/1KgUw_HTc51RGX6VVkrUTtVh2zfrgpXEz/view" target="_blank" rel="noopener noreferrer">international cooperation</a> ·
-  <a href="https://drive.google.com/file/d/1dj5vOcAGKw-qrIa63V-UigJ2MN-MjlRj/view" target="_blank" rel="noopener noreferrer">references</a>
-</p>
 
-</div>
-</section>
-<section aria-hidden="true" class="tab-section affiliations" id="publications" role="tabpanel">
-<div class="section-content">
-<p><strong>FAO</strong></p>
-<p>📄 Flood impact assessment in Pakistan, Aug–Sep 2025 (<a href="https://openknowledge.fao.org/handle/20.500.14283/cd7250en" target="_blank">KP</a>, <a href="https://openknowledge.fao.org/handle/20.500.14283/cd7249en" target="_blank">Punjab</a>, <a href="https://openknowledge.fao.org/handle/20.500.14283/cd7248en" target="_blank">Sindh</a>)</p>
-<p>🗣️ FAO presents the Gambia GeoLab at Geo for Good Summit in Singapore (<a href="https://www.fao.org/geospatial/news/news-detail/fao-presents-the-gambia-geolab-at-geo-for-good-summit-in-singapore/en" target="_blank">read</a>)</p>
-<p>📄 2023 land cover map of the Gambia, 2025 (<a href="https://openknowledge.fao.org/items/9bb51030-7521-4c72-97d0-5603c5221049" target="_blank">read</a>)</p>
-<p>📚 Land Cover Atlas of Yemen, 2025 (<a href="https://openknowledge.fao.org/items/3ca05f72-f0b0-4ccb-9567-531fa8d84619" target="_blank">read</a>)</p>
-<p>📚 A framework for monitoring geospatial indicators of the Resilience of Organizations for Transformative Smallholder Agriculture project, 2024 (<a href="https://openknowledge.fao.org/items/f3175f42-56ff-4b85-892b-528dd124b73a" target="_blank">read</a>)</p>
-<p>📚 Mapping land cover in the Maputo and Gaza provinces in Mozambique, 2024 (<a href="https://openknowledge.fao.org/server/api/core/bitstreams/94d03d6b-68ca-4ad7-9e9d-f9c1624bafb4/content" target="_blank">read</a>)</p>
-<p>📺 Land Cover as a fundamental spatial information for sustainable resilient agriculture in the Gambia, 2023 (<a href="https://www.youtube.com/watch?v=5cydX2MixNs" target="_blank">watch</a>)</p>
-<p><strong></strong></p>
-<p><strong></strong></p>
-<p><strong>Papers</strong></p>
-<p>📚 A Near-Real-Time Operational Live Fuel Moisture Content (LFMC) Product to Support Decision-Making at the National Level, 2025 (<a href="https://www.mdpi.com/2571-6255/8/5/178" target="_blank">read</a>)</p>
-<p>📚 Regimes de fogo em Portugal Continental, 2022 (<a href="https://www.researchgate.net/publication/366124207_Regimes_de_fogo_em_Portugal_Continental" target="_blank">read</a>)</p>
-<p>📚 Cartografia de Regimes de Fogo à Escala da Freguesia (1980-2017), 2022 (<a href="https://www.researchgate.net/publication/360227465_Cartografia_de_Regimes_de_Fogo_a_Escala_da_Freguesia_1980-2017" target="_blank">read</a>)</p>
-<p>📚 Fuel Break Monitoring with Sentinel-2 Imagery and GEDI Validation, 2022 (<a href="https://link.springer.com/chapter/10.1007/978-3-030-96466-5_5" target="_blank">read</a>)</p>
-<p>📚 Describing fire regimes over Turkey using MODIS fire observations, 2020 (<a href="https://www.researchgate.net/publication/389813750_Describing_fire_regimes_over_Turkey_using_MODIS_fire_observations?channel=doi&amp;linkId=67d2d9137c5b5569dcba5162&amp;showFulltext=true" target="_blank">read</a>)</p>
-<p>📚 Describing fire regimes over Turkey using MODIS fire observations, 2020 (<a href="https://drive.google.com/file/d/14u_IW1Lxuo61FKg9Rt7fMjjeLRXRlzNz/view" target="_blank">cool maps!</a>)</p>
-<p>📚 Using SEVIRI fire observations to drive smoke plumes in the CMAQ air quality model: a case study over Antalya in 2008, 2015 (<a href="https://acp.copernicus.org/articles/15/8539/2015/acp-15-8539-2015.html" target="_blank">read</a>)</p>
-<p>📚 Automatic RST-based system for a rapid detection of fires, 2010 (<a href="https://www.researchgate.net/publication/234055644_Automatic_RST-based_system_for_a_rapid_detection_of_fires" target="_blank">read</a>)</p>
-<p><strong></strong></p>
-<p><strong></strong></p>
-<p><strong>Videos</strong></p>
-<p>📺 Agroforestry practices in coffee production to reverse deforestation and soil erosion in NW Vietnam, 2023 (<a href="https://www.youtube.com/watch?v=i9aKtECsYz8" target="_blank">watch</a>)</p>
-<p>📺 The Garbage Dump of Chulucanas (Perú), 2011 (<a href="https://www.youtube.com/watch?v=av93xA8a-ls" target="_blank">watch</a>)</p>
-<p>📺 La realidad actual de los botaderos de basura en el Bajo Piura (Perú), 2011 (<a href="https://www.youtube.com/watch?v=MwyE_AYgdfQ" target="_blank">watch</a>)</p>
-</div>
-</section>
-<section aria-hidden="true" class="tab-section gee-apps" id="gee" role="tabpanel">
-<div class="section-content">
-<p><strong>Platforms</strong></p>
-<p>🌍 The Gambia GeoLab (<a href="https://medium.com/@gi.baldassarre/turning-research-and-data-into-actionable-insights-for-agriculture-and-natural-resource-management-b2d035aa96a8" target="_blank">read</a>, <a href="http://34.78.39.234:8082/" target="_blank">visit</a>)</p>
-<p>🌍 Biomass Burning Eurasia (<a href="https://fires.itu.edu.tr/bbeurasia/index.html" target="_blank">visit</a>)</p>
-<p>🌍 Uyanbil: Integrate Satellite Data into Fire Information System of Turkey (<a href="https://fires.itu.edu.tr/" target="_blank">visit</a>)</p>
-  <p><strong></strong></p>
-<p><strong></strong></p>
-<p><strong>GEE Apps</strong></p>
-<p>🏝️ the Gambia Mangrove Extent, Height and Biomass Explorer (<a href="https://ee-gibaldassarre.projects.earthengine.app/view/pf1" target="_blank">visit</a>)</p>
-<p>🌳 the Gambia 2010 NFA Design Explorer (<a href="https://ee-gibaldassarre.projects.earthengine.app/view/gfidesignexplorer20101" target="_blank">visit</a>)</p>
-<p>🌾 Vegetation Status of Monitored Rice Fields in the Gambia (<a href="https://ee-gibaldassarre.projects.earthengine.app/view/ind011" target="_blank">visit</a>)</p>
-<p>🌳 Vietnam Forest Change Explorer (<a href="https://ee-gibaldassarre.projects.earthengine.app/view/tccvn#lat=15.409503;lon=106.008563;zoom=6;" target="_blank">visit</a>)</p>
-<p>🏝️ Cà Mau Canopy Cover &amp; Mangrove Extent/Loss Explorer (2000-2020) (<a href="https://baldassarre.users.earthengine.app/view/srd" target="_blank">visit</a>)</p>
-</p></div>
-</section>
-<section aria-hidden="true" class="tab-section gee-apps" id="trainings" role="tabpanel">
-<div class="section-content">
-<p>📚 Geospatial Tools for Mangrove Monitoring in The Gambia (<a href="https://drive.google.com/file/d/1bKH9oAmR6DfebORUtqPH44YM-akl8gxG/view?usp=drive_link" target="_blank">visit</a>)</p>
-<p>📚 Using SEPAL, Google Earth Engine and Collect Earth Online to produce a Land Cover Map of Gambia for the year 2023 (<a href="https://drive.google.com/file/d/1gtUpSWBR5gW9FGgZv1lKpaMOALRHdjy3/view" target="_blank">visit</a>)</p>
-</div>
-</section>
-</main>
-</div>
-<!-- Quotes -->
-<div id="quote-box">
-<p class="quote active">
+  <div class="container">
+    <!-- Left: profile -->
+    <aside class="profile">
+      <div class="profile-pic-wrapper" id="profilePicToggle">
+        <img alt="Giuseppe Baldassarre" class="profile-img" src="profile.jpg"/>
+      </div>
+
+      <!-- Profile info card (visible by default; toggled by clicking the circle) -->
+      <div class="profile-info-panel profile-card" id="profileInfo">
+        <div class="name">Giuseppe Baldassarre</div>
+        <div class="job-title">Geospatial Analyst @ FAO</div>
+
+        <div class="permanent-icons">
+          <a href="https://www.linkedin.com/in/giuseppe-baldassarre-671a7623/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://scholar.google.com/citations?user=M8b10awAAAAJ&amp;hl=en-EN" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://www.researchgate.net/profile/Giuseppe-Baldassarre?ev=prf_overview" target="_blank"><i class="fab fa-researchgate"></i></a>
+          <a href="https://github.com/gbal17" target="_blank"><i class="fab fa-github"></i></a>
+          <a class="cv-icon" href="cv.pdf" target="_blank">CV</a>
+          <a href="https://medium.com/@gi.baldassarre" target="_blank"><i class="fab fa-medium"></i></a>
+        </div>
+
+        <div class="email1">Giuseppe.Baldassarre@fao.org</div>
+        <div class="email1">gi.baldassarre@gmail.com</div>
+      </div>
+    </aside>
+
+    <!-- Right: content -->
+    <main class="content">
+      <!-- Tabs -->
+      <nav class="tabbar" role="tablist">
+        <button aria-controls="about" aria-pressed="false" class="tab-btn" data-target="about" role="tab">About me</button>
+        <button aria-controls="publications" aria-pressed="false" class="tab-btn" data-target="publications" role="tab">Publications</button>
+        <button aria-controls="gee" aria-pressed="false" class="tab-btn" data-target="gee" role="tab">GEE Apps</button>
+        <button aria-controls="trainings" aria-pressed="false" class="tab-btn" data-target="trainings" role="tab">Trainings</button>
+        <button aria-controls="stories" aria-pressed="false" class="tab-btn" data-target="stories" role="tab">Stories</button>
+      </nav>
+
+      <section aria-hidden="true" class="tab-section affiliations" id="about" role="tabpanel">
+        <div class="section-content">
+          <!-- <p><strong>Summary</strong></p> -->
+          <p>
+            With research and work experience in Remote Sensing for Environmental Applications across Italy, the USA, Peru, Turkey,
+            Portugal, Vietnam, and the Gambia, I've seen firsthand the deep link between social injustice and environmental degradation.<br/>
+            For this reason, I am passionate about harnessing geospatial analysis to deepen our understanding of this connection,
+            striving to drive meaningful change.
+          </p>
+
+          <p><strong></strong></p>
+          <p><strong></strong></p>
+
+          <p><strong>Affiliations</strong></p>
+          <p>🌍 <strong>International GIS/RS Consultant</strong>, <a href="https://www.fao.org/geospatial/en/" target="_blank">FAO Geospatial Unit</a> (2023 - Present)</p>
+          <p>🎓 <strong>Post-Doctoral Researcher</strong>, <a href="https://www.researchgate.net/lab/Pyrogeography-Lab-Jose-MC-Pereira" target="_blank">University of Lisbon</a> (2020 - 2023)</p>
+          <p>🌱 <strong>EUaid Volunteer</strong>, <a href="https://www.srd.org.vn/" target="_blank">SRD Vietnam</a> (2020 - 2022)</p>
+          <p>🎓 <strong>Post-Doctoral Researcher</strong>, <a href="https://fires.itu.edu.tr/bbeurasia/index.html" target="_blank">Istanbul Technical University</a> (2012 - 2018)</p>
+          <p>🌱 <strong>Volunteer</strong>, <a href="https://aprodeperu.org/" target="_blank">Aprode Peru</a> (2011)</p>
+          <p>🎓 <strong>Ph.D.Scholar</strong>, <a href="https://www.wisc.edu/" target="_blank">University of Wisconsin, Madison</a> (2008 - 2010)</p>
+
+          <p><strong></strong></p>
+          <p><strong></strong></p>
+
+          <p><strong>Education</strong></p>
+          <p>🎓 Ph.D. in Environmental Applications with Remote Sensing</p>
+          <p>🎓 M.S. in Mediterranean Forestry &amp; Natural Resource Management (<a href="https://www.medfor.eu/testimonial/7th-edition-20182020/giuseppe-baldassarre" target="_blank">Erasmus Mundus</a>)</p>
+          <p>🎓 B.S. &amp; M.S. in Environmental Engineering (Summa Cum Laude)</p>
+
+          <p><strong></strong></p>
+          <p><strong></strong></p>
+
+          <p><strong>Documents:</strong>
+            <a href="https://drive.google.com/file/d/1TurHo7zIqE6_efP7Ho0fWwewve0lyJq2/view" target="_blank" rel="noopener noreferrer">certificates</a> ·
+            <a href="https://drive.google.com/file/d/1QmVIYiWMHVG7rS61SMaESllyqTxkrcRU/view" target="_blank" rel="noopener noreferrer">grades</a> ·
+            <a href="https://drive.google.com/file/d/1D3z3y6sKUg0MaK5rGoZvrykGRFlAcdOk/view" target="_blank" rel="noopener noreferrer">extra-courses</a> ·
+            <a href="https://drive.google.com/file/d/1KgUw_HTc51RGX6VVkrUTtVh2zfrgpXEz/view" target="_blank" rel="noopener noreferrer">international cooperation</a> ·
+            <a href="https://drive.google.com/file/d/1dj5vOcAGKw-qrIa63V-UigJ2MN-MjlRj/view" target="_blank" rel="noopener noreferrer">references</a>
+          </p>
+        </div>
+      </section>
+
+      <section aria-hidden="true" class="tab-section affiliations" id="publications" role="tabpanel">
+        <div class="section-content">
+          <p><strong>FAO</strong></p>
+          <p>📄 Flood impact assessment in Pakistan, Aug–Sep 2025 (<a href="https://openknowledge.fao.org/handle/20.500.14283/cd7250en" target="_blank">KP</a>, <a href="https://openknowledge.fao.org/handle/20.500.14283/cd7249en" target="_blank">Punjab</a>, <a href="https://openknowledge.fao.org/handle/20.500.14283/cd7248en" target="_blank">Sindh</a>)</p>
+          <p>🗣️ FAO presents the Gambia GeoLab at Geo for Good Summit in Singapore (<a href="https://www.fao.org/geospatial/news/news-detail/fao-presents-the-gambia-geolab-at-geo-for-good-summit-in-singapore/en" target="_blank">read</a>)</p>
+          <p>📄 2023 land cover map of the Gambia, 2025 (<a href="https://openknowledge.fao.org/items/9bb51030-7521-4c72-97d0-5603c5221049" target="_blank">read</a>)</p>
+          <p>📚 Land Cover Atlas of Yemen, 2025 (<a href="https://openknowledge.fao.org/items/3ca05f72-f0b0-4ccb-9567-531fa8d84619" target="_blank">read</a>)</p>
+          <p>📚 A framework for monitoring geospatial indicators of the Resilience of Organizations for Transformative Smallholder Agriculture project, 2024 (<a href="https://openknowledge.fao.org/items/f3175f42-56ff-4b85-892b-528dd124b73a" target="_blank">read</a>)</p>
+          <p>📚 Mapping land cover in the Maputo and Gaza provinces in Mozambique, 2024 (<a href="https://openknowledge.fao.org/server/api/core/bitstreams/94d03d6b-68ca-4ad7-9e9d-f9c1624bafb4/content" target="_blank">read</a>)</p>
+          <p>📺 Land Cover as a fundamental spatial information for sustainable resilient agriculture in the Gambia, 2023 (<a href="https://www.youtube.com/watch?v=5cydX2MixNs" target="_blank">watch</a>)</p>
+
+          <p><strong></strong></p>
+          <p><strong></strong></p>
+
+          <p><strong>Papers</strong></p>
+          <p>📚 A Near-Real-Time Operational Live Fuel Moisture Content (LFMC) Product to Support Decision-Making at the National Level, 2025 (<a href="https://www.mdpi.com/2571-6255/8/5/178" target="_blank">read</a>)</p>
+          <p>📚 Regimes de fogo em Portugal Continental, 2022 (<a href="https://www.researchgate.net/publication/366124207_Regimes_de_fogo_em_Portugal_Continental" target="_blank">read</a>)</p>
+          <p>📚 Cartografia de Regimes de Fogo à Escala da Freguesia (1980-2017), 2022 (<a href="https://www.researchgate.net/publication/360227465_Cartografia_de_Regimes_de_Fogo_a_Escala_da_Freguesia_1980-2017" target="_blank">read</a>)</p>
+          <p>📚 Fuel Break Monitoring with Sentinel-2 Imagery and GEDI Validation, 2022 (<a href="https://link.springer.com/chapter/10.1007/978-3-030-96466-5_5" target="_blank">read</a>)</p>
+          <p>📚 Describing fire regimes over Turkey using MODIS fire observations, 2020 (<a href="https://www.researchgate.net/publication/389813750_Describing_fire_regimes_over_Turkey_using_MODIS_fire_observations?channel=doi&amp;linkId=67d2d9137c5b5569dcba5162&amp;showFulltext=true" target="_blank">read</a>)</p>
+          <p>📚 Describing fire regimes over Turkey using MODIS fire observations, 2020 (<a href="https://drive.google.com/file/d/14u_IW1Lxuo61FKg9Rt7fMjjeLRXRlzNz/view" target="_blank">cool maps!</a>)</p>
+          <p>📚 Using SEVIRI fire observations to drive smoke plumes in the CMAQ air quality model: a case study over Antalya in 2008, 2015 (<a href="https://acp.copernicus.org/articles/15/8539/2015/acp-15-8539-2015.html" target="_blank">read</a>)</p>
+          <p>📚 Automatic RST-based system for a rapid detection of fires, 2010 (<a href="https://www.researchgate.net/publication/234055644_Automatic_RST-based_system_for_a_rapid_detection_of_fires" target="_blank">read</a>)</p>
+
+          <!-- <p><strong></strong></p>
+          <p><strong></strong></p>
+
+          <p><strong>Videos</strong></p>
+          <p>📺 Agroforestry practices in coffee production to reverse deforestation and soil erosion in NW Vietnam, 2023 (<a href="https://www.youtube.com/watch?v=i9aKtECsYz8" target="_blank">watch</a>)</p>
+          <p>📺 The Garbage Dump of Chulucanas (Perú), 2011 (<a href="https://www.youtube.com/watch?v=av93xA8a-ls" target="_blank">watch</a>)</p>
+          <p>📺 La realidad actual de los botaderos de basura en el Bajo Piura (Perú), 2011 (<a href="https://www.youtube.com/watch?v=MwyE_AYgdfQ" target="_blank">watch</a>)</p> -->
+        </div>
+      </section>
+
+      <section aria-hidden="true" class="tab-section gee-apps" id="gee" role="tabpanel">
+        <div class="section-content">
+          <p><strong>Platforms</strong></p>
+          <p>🌍 The Gambia GeoLab (<a href="https://medium.com/@gi.baldassarre/turning-research-and-data-into-actionable-insights-for-agriculture-and-natural-resource-management-b2d035aa96a8" target="_blank">read</a>, <a href="http://34.78.39.234:8082/" target="_blank">visit</a>)</p>
+          <p>🌍 Biomass Burning Eurasia (<a href="https://fires.itu.edu.tr/bbeurasia/index.html" target="_blank">visit</a>)</p>
+          <p>🌍 Uyanbil: Integrate Satellite Data into Fire Information System of Turkey (<a href="https://fires.itu.edu.tr/" target="_blank">visit</a>)</p>
+
+          <p><strong></strong></p>
+          <p><strong></strong></p>
+
+          <p><strong>GEE Apps</strong></p>
+          <p>🏝️ the Gambia Mangrove Extent, Height and Biomass Explorer (<a href="https://ee-gibaldassarre.projects.earthengine.app/view/pf1" target="_blank">visit</a>)</p>
+          <p>🌳 the Gambia 2010 NFA Design Explorer (<a href="https://ee-gibaldassarre.projects.earthengine.app/view/gfidesignexplorer20101" target="_blank">visit</a>)</p>
+          <p>🌾 Vegetation Status of Monitored Rice Fields in the Gambia (<a href="https://ee-gibaldassarre.projects.earthengine.app/view/ind011" target="_blank">visit</a>)</p>
+          <p>🌳 Vietnam Forest Change Explorer (<a href="https://ee-gibaldassarre.projects.earthengine.app/view/tccvn#lat=15.409503;lon=106.008563;zoom=6;" target="_blank">visit</a>)</p>
+          <p>🏝️ Cà Mau Canopy Cover &amp; Mangrove Extent/Loss Explorer (2000-2020) (<a href="https://baldassarre.users.earthengine.app/view/srd" target="_blank">visit</a>)</p>
+        </div>
+      </section>
+
+      <section aria-hidden="true" class="tab-section gee-apps" id="trainings" role="tabpanel">
+        <div class="section-content">
+          <p>📚 Geospatial Tools for Mangrove Monitoring in The Gambia (<a href="https://drive.google.com/file/d/1bKH9oAmR6DfebORUtqPH44YM-akl8gxG/view?usp=drive_link" target="_blank">visit</a>)</p>
+          <p>📚 Using SEPAL, Google Earth Engine and Collect Earth Online to produce a Land Cover Map of Gambia for the year 2023 (<a href="https://drive.google.com/file/d/1gtUpSWBR5gW9FGgZv1lKpaMOALRHdjy3/view" target="_blank">visit</a>)</p>
+        </div>
+      </section>
+
+      <section aria-hidden="true" class="tab-section gee-apps" id="stories" role="tabpanel">
+        <div class="section-content">
+          <p>🌍 “Coffee Is Not Forest!” — But Can It Be Part of a Solution? (<a href="https://medium.com/@gi.baldassarre/coffee-is-not-forest-but-can-it-be-part-of-a-solution-c49e86b7acaa" target="_blank">read</a>)</p>
+          <p>📺 Agroforestry practices in coffee production to reverse deforestation and soil erosion in NW Vietnam, 2023 (<a href="https://www.youtube.com/watch?v=i9aKtECsYz8" target="_blank">watch</a>)</p>
+          <p>📺 The Garbage Dump of Chulucanas (Perú), 2011 (<a href="https://www.youtube.com/watch?v=av93xA8a-ls" target="_blank">watch</a>)</p>
+          <p>📺 La realidad actual de los botaderos de basura en el Bajo Piura (Perú), 2011 (<a href="https://www.youtube.com/watch?v=MwyE_AYgdfQ" target="_blank">watch</a>)</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Quotes -->
+  <div id="quote-box">
+    <p class="quote active">
       "We shall not cease from exploration<br/>
       And the end of all our exploring<br/>
       Will be to arrive where we started<br/>
       And know the place for the first time."<br/>
-<span class="quote-author">— T.S. Eliot</span>
-</p>
-<p class="quote">
+      <span class="quote-author">— T.S. Eliot</span>
+    </p>
+
+    <p class="quote">
       "If only the possible happened,<br/>
       nothing more would happen.<br/>
       If I only did what I can do,<br/>
       I wouldn't do anything."<br/>
-<span class="quote-author">— Jacques Derrida</span>
-</p>
-<p class="quote">
+      <span class="quote-author">— Jacques Derrida</span>
+    </p>
+
+    <p class="quote">
       "As you set out for Ithaka,<br/>
       hope your road is a long one,<br/>
       full of adventure, full of discovery."<br/>
-</p>
-<p class="quote">
+    </p>
+
+    <p class="quote">
       "Laistrygonians, Cyclops,<br/>
       angry Poseidon—don’t be afraid of them:<br/>
       you’ll never find things like that on your way<br/>
       as long as you keep your thoughts raised high,<br/>
       as long as a rare excitement<br/>
       stirs your spirit and your body."<br/>
-<span class="quote-author">— Konstantinos Petrou Kavafis</span>
-</p>
+      <span class="quote-author">— Konstantinos Petrou Kavafis</span>
+    </p>
+  </div>
 
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      /* ---------- Tabs: hover preview + click to pin ---------- */
+      const tabbar   = document.querySelector('.tabbar');
+      const buttons  = [...document.querySelectorAll('.tab-btn')];
+      const sections = [...document.querySelectorAll('.tab-section')];
+      const panels   = [...document.querySelectorAll('.tab-section .section-content')];
 
+      let pinnedId = null, hideTimer = null;
 
+      const setActive = (id) => {
+        sections.forEach(sec => sec.classList.toggle('active', !!id && sec.id === id));
+        buttons.forEach(btn => btn.classList.toggle('active', !!id && btn.dataset.target === id));
+      };
 
-<!-- Scripts -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    /* ---------- Tabs: hover preview + click to pin ---------- */
-    const tabbar   = document.querySelector('.tabbar');
-    const buttons  = [...document.querySelectorAll('.tab-btn')];
-    const sections = [...document.querySelectorAll('.tab-section')];
-    const panels   = [...document.querySelectorAll('.tab-section .section-content')];
+      const startHideTimer = () => {
+        if (pinnedId) return;
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => { if (!pinnedId) setActive(null); }, 120);
+      };
+      const cancelHideTimer = () => clearTimeout(hideTimer);
 
-    let pinnedId = null, hideTimer = null;
+      // Click = pin/unpin
+      buttons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = btn.dataset.target;
+          pinnedId = (pinnedId === id) ? null : id;
+          setActive(pinnedId);
+          e.stopPropagation();
+        });
+      });
 
-    const setActive = (id) => {
-      sections.forEach(sec => sec.classList.toggle('active', !!id && sec.id === id));
-      buttons.forEach(btn => btn.classList.toggle('active', !!id && btn.dataset.target === id));
-    };
+      // Hover preview
+      buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+          if (!pinnedId) { setActive(btn.dataset.target); cancelHideTimer(); }
+        });
+      });
 
-    const startHideTimer = () => {
-      if (pinnedId) return;
-      clearTimeout(hideTimer);
-      hideTimer = setTimeout(() => { if (!pinnedId) setActive(null); }, 120);
-    };
-    const cancelHideTimer = () => clearTimeout(hideTimer);
+      tabbar.addEventListener('mouseleave', startHideTimer);
+      tabbar.addEventListener('mouseenter', cancelHideTimer);
+      panels.forEach(p => {
+        p.addEventListener('mouseenter', cancelHideTimer);
+        p.addEventListener('mouseleave', startHideTimer);
+      });
 
-    // Click = pin/unpin
-    buttons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const id = btn.dataset.target;
-        pinnedId = (pinnedId === id) ? null : id;
-        setActive(pinnedId);
+      // Click outside => unpin & close
+      document.addEventListener('click', (e) => {
+        const inBtn  = e.target.closest('.tab-btn');
+        const inPane = e.target.closest('.tab-section.active .section-content');
+        if (!inBtn && !inPane && pinnedId){ pinnedId = null; setActive(null); }
+      });
+
+      /* ---------- Background video playlist + quote click ---------- */
+      const video = document.getElementById('bg-video');
+      const playlist = ["back.mp4", "back1.mp4", "back2.mp4", "back3.mp4"];
+      let vIndex = 0;
+
+      function playIndex(i) {
+        vIndex = (i + playlist.length) % playlist.length;
+        const src = playlist[vIndex];
+
+        video.src = src;
+        video.load();
+        video.playbackRate = 0.5;
+
+        // Set currentTime after metadata is available
+        video.onloadedmetadata = () => {
+          if (/back\.mp4$/i.test(src) && !playIndex._skippedBack) {
+            video.currentTime = 10;          // ⬅️ jump ahead (adjust seconds)
+            playIndex._skippedBack = true;  // mark as done (only first time)
+          } else {
+            video.currentTime = 0;
+          }
+        };
+
+        video.onloadeddata = () => {
+          const p = video.play();
+          if (p && typeof p.catch === 'function') p.catch(() => {});
+        };
+
+        // add data attribute for per-bg CSS, if needed
+        document.body.dataset.bg = `bg-${vIndex}`;
+      }
+
+      video.addEventListener('ended', () => playIndex(vIndex + 1));
+      playIndex(0);
+
+      /* ---------- Quotes: rotate, pause on hover, click to advance bg ---------- */
+      const quotes = document.querySelectorAll('#quote-box .quote');
+      const quoteBox = document.getElementById('quote-box');
+      let qIndex = 0, interval;
+
+      const showQuote = (i) => { quotes.forEach((q, j) => q.classList.toggle('active', j === i)); };
+      const nextQuote = () => { qIndex = (qIndex + 1) % quotes.length; showQuote(qIndex); };
+      const startRotation = () => { interval = setInterval(nextQuote, 6000); };
+      const stopRotation  = () => { clearInterval(interval); };
+
+      showQuote(qIndex);
+      startRotation();
+      quoteBox.addEventListener('mouseenter', stopRotation);
+      quoteBox.addEventListener('mouseleave', () => { nextQuote(); startRotation(); });
+      quoteBox.addEventListener('click', () => playIndex(vIndex + 1));
+
+      /* ---------- Profile card: visible by default, toggle on circle click ---------- */
+      const profilePic   = document.getElementById('profilePicToggle');
+      const profilePanel = document.getElementById('profileInfo');
+
+      // ensure visible on load
+      profilePanel.classList.remove('is-hidden');
+
+      // toggle only when clicking the circle
+      profilePic.addEventListener('click', (e) => {
         e.stopPropagation();
+        const isHidden = profilePanel.classList.toggle('is-hidden');
+
+        if (isHidden) {
+          profilePic.classList.add('expanded');
+          document.body.classList.add('profile-expanded');   // ⬅️ add
+        } else {
+          profilePic.classList.remove('expanded');
+          document.body.classList.remove('profile-expanded'); // ⬅️ remove
+        }
       });
     });
-
-    // Hover preview
-    buttons.forEach(btn => {
-      btn.addEventListener('mouseenter', () => { if (!pinnedId) { setActive(btn.dataset.target); cancelHideTimer(); } });
-    });
-
-    tabbar.addEventListener('mouseleave', startHideTimer);
-    tabbar.addEventListener('mouseenter', cancelHideTimer);
-    panels.forEach(p => {
-      p.addEventListener('mouseenter', cancelHideTimer);
-      p.addEventListener('mouseleave', startHideTimer);
-    });
-
-    // Click outside => unpin & close
-    document.addEventListener('click', (e) => {
-      const inBtn  = e.target.closest('.tab-btn');
-      const inPane = e.target.closest('.tab-section.active .section-content');
-      if (!inBtn && !inPane && pinnedId){ pinnedId = null; setActive(null); }
-    });
-
-    /* ---------- Background video playlist + quote click ---------- */
-    const video = document.getElementById('bg-video');
-    const playlist = ["back.mp4", "back1.mp4", "back2.mp4", "back3.mp4"];
-    let vIndex = 0;
-
-function playIndex(i) {
-  vIndex = (i + playlist.length) % playlist.length;
-  const src = playlist[vIndex];
-
-  video.src = src;
-  video.load();
-  video.playbackRate = 0.5;
-
-  // Set currentTime after metadata is available
-  video.onloadedmetadata = () => {
-    if (/back\.mp4$/i.test(src) && !playIndex._skippedBack) {
-      video.currentTime = 10;          // ⬅️ jump ahead (adjust seconds)
-      playIndex._skippedBack = true;  // mark as done (only first time)
-    } else {
-      video.currentTime = 0;
-    }
-  };
-
-  video.onloadeddata = () => {
-    const p = video.play();
-    if (p && typeof p.catch === 'function') p.catch(() => {});
-  };
-
-  // add data attribute for per-bg CSS, if needed
-  document.body.dataset.bg = `bg-${vIndex}`;
-}
-
-
-    video.addEventListener('ended', () => playIndex(vIndex + 1));
-    playIndex(0);
-
-    /* ---------- Quotes: rotate, pause on hover, click to advance bg ---------- */
-    const quotes = document.querySelectorAll('#quote-box .quote');
-    const quoteBox = document.getElementById('quote-box');
-    let qIndex = 0, interval;
-
-    const showQuote = (i) => { quotes.forEach((q, j) => q.classList.toggle('active', j === i)); };
-    const nextQuote = () => { qIndex = (qIndex + 1) % quotes.length; showQuote(qIndex); };
-    const startRotation = () => { interval = setInterval(nextQuote, 6000); };
-    const stopRotation  = () => { clearInterval(interval); };
-
-    showQuote(qIndex);
-    startRotation();
-    quoteBox.addEventListener('mouseenter', stopRotation);
-    quoteBox.addEventListener('mouseleave', () => { nextQuote(); startRotation(); });
-    quoteBox.addEventListener('click', () => playIndex(vIndex + 1));
-    // Background change on GIF click instead of quote box
-    // const gifBadge = document.querySelector('.quote-badge');
-    // if (gifBadge) {
-    //   gifBadge.addEventListener('click', (e) => {
-    //     e.stopPropagation();
-    //     playIndex(vIndex + 1);
-    //   });
-    // }
-
-
-    /* ---------- Profile card: visible by default, toggle on circle click ---------- */
-    const profilePic   = document.getElementById('profilePicToggle');
-    const profilePanel = document.getElementById('profileInfo');
-
-    // ensure visible on load
-    profilePanel.classList.remove('is-hidden');
-
-    // toggle only when clicking the circle
-    profilePic.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isHidden = profilePanel.classList.toggle('is-hidden');
-
-      if (isHidden) {
-        profilePic.classList.add('expanded');
-        document.body.classList.add('profile-expanded');   // ⬅️ add
-      } else {
-        profilePic.classList.remove('expanded');
-        document.body.classList.remove('profile-expanded'); // ⬅️ remove
-      }
-    });
-
-
-  });
   </script>
 </body>
 </html>
