@@ -1,0 +1,426 @@
+<!-- filename: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic metadata -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giuseppe Baldassarre — Geospatial Analyst @ FAO</title>
+  <meta name="description" content="Giuseppe Baldassarre — Geospatial Analyst focused on Remote Sensing for Environmental Applications, social justice, and geospatial analysis.">
+  <meta name="author" content="Giuseppe Baldassarre">
+
+  <!-- Open Graph for better sharing -->
+  <meta property="og:title" content="Giuseppe Baldassarre — Geospatial Analyst @ FAO">
+  <meta property="og:description" content="Remote Sensing for Environmental Applications, social justice, and geospatial analysis.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Prefers color scheme: use system dark/light -->
+  <meta name="color-scheme" content="light dark">
+
+  <style>
+    /* Design tokens */
+    :root {
+      --bg: #ffffff;
+      --text: #1c1e21;
+      --muted: #5f6773;
+      --primary: #0b5fff;
+      --primary-contrast: #ffffff;
+      --surface: #f5f7fb;
+      --border: #e3e7ef;
+      --focus: #ffbf47;
+      --link: #0b5fff;
+      --code: #2f333a;
+      --shadow: 0 1px 4px rgba(0,0,0,0.08);
+      --radius: 12px;
+      --maxw: 1080px;
+      --space: 16px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --text: #e6e8eb;
+        --muted: #a9b0bb;
+        --primary: #76a8ff;
+        --primary-contrast: #0f1115;
+        --surface: #13161c;
+        --border: #2a2f37;
+        --link: #76a8ff;
+        --code: #cbd1da;
+        --shadow: 0 1px 4px rgba(0,0,0,0.3);
+      }
+    }
+
+    /* Base */
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Layout */
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(120%) blur(6px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 24px;
+    }
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    nav ul {
+      display: flex;
+      gap: 14px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--link);
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+    nav a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+    nav a:hover { background: var(--surface); }
+
+    .hero {
+      padding: 40px 24px 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 40px);
+    }
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+    section h2 {
+      margin-top: 0;
+      font-size: 22px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    /* Lists and cards */
+    .list {
+      display: grid;
+      gap: 10px;
+      padding-left: 18px;
+    }
+    .list li {
+      margin-bottom: 4px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Quotes */
+    blockquote {
+      margin: 8px 0;
+      padding: 10px 12px;
+      border-left: 4px solid var(--primary);
+      background: var(--bg);
+      border-radius: 8px;
+      color: var(--text);
+    }
+    cite {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    /* Footer */
+    footer {
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* Utility */
+    .inline-links a {
+      margin-right: 8px;
+    }
+    .chip {
+      display: inline-block;
+      padding: 4px 8px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+      background: var(--surface);
+    }
+
+    /* Print */
+    @media print {
+      header, nav { display: none; }
+      section { box-shadow: none; background: transparent; }
+      .container { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header role="banner" aria-label="Site header">
+    <div class="site-nav">
+      <div class="brand">Giuseppe Baldassarre</div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#affiliations">Affiliations</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#fao">FAO Work</a></li>
+          <li><a href="#papers">Papers</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#platforms">Platforms</a></li>
+          <li><a href="#gee-apps">GEE Apps</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#documents">Documents</a></li>
+          <li><a href="[CV](https://gbal17.github.io/cv.pdf)" aria-label="Open CV">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hero container" id="about">
+      <h1>Giuseppe Baldassarre</h1>
+      <p>Geospatial Analyst @ FAO</p>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section aria-labelledby="about-title">
+      <h2 id="about-title">About me</h2>
+      <p>
+        With research and work experience in Remote Sensing for Environmental Applications across Italy, the USA, Peru, Turkey, Portugal, Vietnam, and the Gambia, I've seen firsthand the deep link between social injustice and environmental degradation.
+        For this reason, I am passionate about harnessing geospatial analysis to deepen our understanding of this connection, striving to drive meaningful change.
+      </p>
+      <div class="inline-links" aria-label="Quick links">
+        <a href="#fao">FAO Work</a>
+        <a href="#gee-apps">GEE Apps</a>
+        <a href="#papers">Publications</a>
+        <a href="#documents">Documents</a>
+      </div>
+    </section>
+
+    <section id="affiliations" aria-labelledby="affiliations-title">
+      <h2 id="affiliations-title">Affiliations</h2>
+      <ul class="list">
+        <li>🌍 <strong>International GIS/RS Consultant</strong>, <a href="[FAO Geospatial Unit](https://www.fao.org/geospatial/en/)">FAO Geospatial Unit</a> (2023 – Present)</li>
+        <li>🎓 <strong>Post-Doctoral Researcher</strong>, <a href="[University of Lisbon](https://www.researchgate.net/lab/Pyrogeography-Lab-Jose-MC-Pereira)">University of Lisbon</a> (2020 – 2023)</li>
+        <li>🌱 <strong>EUaid Volunteer</strong>, <a href="[SRD Vietnam](https://www.srd.org.vn/)">SRD Vietnam</a> (2020 – 2022)</li>
+        <li>🎓 <strong>Post-Doctoral Researcher</strong>, <a href="[Istanbul Technical University](https://fires.itu.edu.tr/bbeurasia/index.html)">Istanbul Technical University</a> (2012 – 2018)</li>
+        <li>🌱 <strong>Volunteer</strong>, <a href="[Aprode Peru](https://aprodeperu.org/)">Aprode Peru</a> (2011)</li>
+        <li>🎓 <strong>Ph.D. Scholar</strong>, <a href="[University of Wisconsin, Madison](https://www.wisc.edu/)">University of Wisconsin, Madison</a> (2008 – 2010)</li>
+      </ul>
+    </section>
+
+    <section id="education" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <ul class="list">
+        <li>🎓 Ph.D. in Environmental Applications with Remote Sensing</li>
+        <li>🎓 M.S. in Mediterranean Forestry &amp; Natural Resource Management (<a href="[Erasmus Mundus](https://www.medfor.eu/testimonial/7th-edition-20182020/giuseppe-baldassarre)">Erasmus Mundus</a>)</li>
+        <li>🎓 B.S. &amp; M.S. in Environmental Engineering (Summa Cum Laude)</li>
+      </ul>
+    </section>
+
+    <section id="documents" aria-labelledby="documents-title">
+      <h2 id="documents-title">Documents</h2>
+      <p class="inline-links">
+        <a href="[certificates](https://drive.google.com/file/d/1TurHo7zIqE6_efP7Ho0fWwewve0lyJq2/view)">Certificates</a> ·
+        <a href="[grades](https://drive.google.com/file/d/1QmVIYiWMHVG7rS61SMaESllyqTxkrcRU/view)">Grades</a> ·
+        <a href="[extra-courses](https://drive.google.com/file/d/1D3z3y6sKUg0MaK5rGoZvrykGRFlAcdOk/view)">Extra courses</a> ·
+        <a href="[international cooperation](https://drive.google.com/file/d/1KgUw_HTc51RGX6VVkrUTtVh2zfrgpXEz/view)">International cooperation</a> ·
+        <a href="[references](https://drive.google.com/file/d/1dj5vOcAGKw-qrIa63V-UigJ2MN-MjlRj/view)">References</a>
+      </p>
+    </section>
+
+    <section id="fao" aria-labelledby="fao-title">
+      <h2 id="fao-title">FAO Work</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Flood impact assessment in Pakistan, Aug–Sep 2025</h3>
+          <p class="meta"><a href="[KP](https://openknowledge.fao.org/handle/20.500.14283/cd7250en)">KP</a> · <a href="[Punjab](https://openknowledge.fao.org/handle/20.500.14283/cd7249en)">Punjab</a> · <a href="[Sindh](https://openknowledge.fao.org/handle/20.500.14283/cd7248en)">Sindh</a></p>
+        </article>
+        <article class="card">
+          <h3>Gambia GeoLab presented at Geo for Good Summit, Singapore</h3>
+          <p class="meta"><a href="[read](https://www.fao.org/geospatial/news/news-detail/fao-presents-the-gambia-geolab-at-geo-for-good-summit-in-singapore/en)">Read</a></p>
+        </article>
+        <article class="card">
+          <h3>2023 land cover map of the Gambia, 2025</h3>
+          <p class="meta"><a href="[read](https://openknowledge.fao.org/items/9bb51030-7521-4c72-97d0-5603c5221049)">Read</a></p>
+        </article>
+        <article class="card">
+          <h3>Land Cover Atlas of Yemen, 2025</h3>
+          <p class="meta"><a href="[read](https://openknowledge.fao.org/items/3ca05f72-f0b0-4ccb-9567-531fa8d84619)">Read</a></p>
+        </article>
+        <article class="card">
+          <h3>Monitoring geospatial indicators for ROTSA, 2024</h3>
+          <p class="meta"><a href="[read](https://openknowledge.fao.org/items/f3175f42-56ff-4b85-892b-528dd124b73a)">Read</a></p>
+        </article>
+        <article class="card">
+          <h3>Maputo &amp; Gaza provinces land cover, Mozambique, 2024</h3>
+          <p class="meta"><a href="[read](https://openknowledge.fao.org/server/api/core/bitstreams/94d03d6b-68ca-4ad7-9e9d-f9c1624bafb4/content)">Read</a></p>
+        </article>
+        <article class="card">
+          <h3>Land Cover for resilient agriculture in the Gambia, 2023</h3>
+          <p class="meta"><a href="[watch](https://www.youtube.com/watch?v=5cydX2MixNs)">Watch</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="papers" aria-labelledby="papers-title">
+      <h2 id="papers-title">Papers</h2>
+      <ul class="list">
+        <li>📚 A Near-Real-Time Operational Live Fuel Moisture Content (LFMC) Product to Support Decision-Making at the National Level, 2025 (<a href="[read](https://www.mdpi.com/2571-6255/8/5/178)">Read</a>)</li>
+        <li>📚 Regimes de fogo em Portugal Continental, 2022 (<a href="[read](https://www.researchgate.net/publication/366124207_Regimes_de_fogo_em_Portugal_Continental)">Read</a>)</li>
+        <li>📚 Cartografia de Regimes de Fogo à Escala da Freguesia (1980–2017), 2022 (<a href="[read](https://www.researchgate.net/publication/360227465_Cartografia_de_Regimes_de_Fogo_a_Escala_da_Freguesia_1980-2017)">Read</a>)</li>
+        <li>📚 Fuel Break Monitoring with Sentinel-2 Imagery and GEDI Validation, 2022 (<a href="[read](https://link.springer.com/chapter/10.1007/978-3-030-96466-5_5)">Read</a>)</li>
+        <li>📚 Describing fire regimes over Turkey using MODIS fire observations, 2020 (<a href="[read](https://www.researchgate.net/publication/389813750_Describing_fire_regimes_over_Turkey_using_MODIS_fire_observations?channel=doi&linkId=67d2d9137c5b5569dcba5162&showFulltext=true)">Read</a> · <a href="[cool maps!](https://drive.google.com/file/d/14u_IW1Lxuo61FKg9Rt7fMjjeLRXRlzNz/view)">Maps</a>)</li>
+        <li>📚 Using SEVIRI fire observations to drive smoke plumes in the CMAQ air quality model: a case study over Antalya in 2008, 2015 (<a href="[read](https://acp.copernicus.org/articles/15/8539/2015/acp-15-8539-2015.html)">Read</a>)</li>
+        <li>📚 Automatic RST-based system for rapid detection of fires, 2010 (<a href="[read](https://www.researchgate.net/publication/234055644_Automatic_RST-based_system_for_a_rapid_detection_of_fires)">Read</a>)</li>
+      </ul>
+    </section>
+
+    <section id="videos" aria-labelledby="videos-title">
+      <h2 id="videos-title">Videos</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Agroforestry practices in coffee production (NW Vietnam), 2023</h3>
+          <p class="meta"><a href="[watch](https://www.youtube.com/watch?v=i9aKtECsYz8)">Watch</a></p>
+        </article>
+        <article class="card">
+          <h3>The Garbage Dump of Chulucanas (Perú), 2011</h3>
+          <p class="meta"><a href="[watch](https://www.youtube.com/watch?v=av93xA8a-ls)">Watch</a></p>
+        </article>
+        <article class="card">
+          <h3>La realidad actual de los botaderos de basura en el Bajo Piura (Perú), 2011</h3>
+          <p class="meta"><a href="[watch](https://www.youtube.com/watch?v=MwyE_AYgdfQ)">Watch</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="platforms" aria-labelledby="platforms-title">
+      <h2 id="platforms-title">Platforms</h2>
+      <ul class="list">
+        <li>🌍 The Gambia GeoLab (<a href="[read](https://medium.com/@gi.baldassarre/turning-research-and-data-into-actionable-insights-for-agriculture-and-natural-resource-management-b2d035aa96a8)">Read</a> · <a href="[visit](http://34.78.39.234:8082/)">Visit</a>)</li>
+      </ul>
+    </section>
+
+    <section id="gee-apps" aria-labelledby="gee-title">
+      <h2 id="gee-title">GEE Apps</h2>
+      <ul class="list">
+        <li>🏝 the Gambia Mangrove Extent, Height and Biomass Explorer (<a href="[visit](https://ee-gibaldassarre.projects.earthengine.app/view/pf1)">Visit</a>)</li>
+        <li>🌳 the Gambia 2010 NFA Design Explorer (<a href="[visit](https://ee-gibaldassarre.projects.earthengine.app/view/gfidesignexplorer20101)">Visit</a>)</li>
+        <li>🌾 Vegetation Status of Monitored Rice Fields in the Gambia (<a href="[visit](https://ee-gibaldassarre.projects.earthengine.app/view/ind011)">Visit</a>)</li>
+        <li>🌳 Vietnam Forest Change Explorer (<a href="[visit](https://ee-gibaldassarre.projects.earthengine.app/view/tccvn#lat=15.409503;lon=106.008563;zoom=6;)">Visit</a>)</li>
+        <li>🏝️ Cà Mau Canopy Cover &amp; Mangrove Extent/Loss Explorer (2000–2020) (<a href="[visit](https://baldassarre.users.earthengine.app/view/srd)">Visit</a>)</li>
+        <li>📚 Geospatial Tools for Mangrove Monitoring in The Gambia (<a href="[visit](https://drive.google.com/file/d/1bKH9oAmR6DfebORUtqPH44YM-akl8gxG/view?usp=drive_link)">Visit</a>)</li>
+        <li>📚 SEPAL, Google Earth Engine &amp; CEO for Gambia Land Cover 2023 (<a href="[visit](https://drive.google.com/file/d/1gtUpSWBR5gW9FGgZv1lKpaMOALRHdjy3/view)">Visit</a>)</li>
+      </ul>
+    </section>
+
+    <section id="quotes" aria-labelledby="quotes-title">
+      <h2 id="quotes-title">Quotes</h2>
+      <blockquote>
+        “We shall not cease from exploration
+        And the end of all our exploring
+        Will be to arrive where we started
+        And know the place for the first time.”
+        <cite>— T.S. Eliot</cite>
+      </blockquote>
+      <blockquote>
+        “If only the possible happened,
+        nothing more would happen.
+        If I only did what I can do,
+        I wouldn't do anything.”
+        <cite>— Jacques Derrida</cite>
+      </blockquote>
+      <blockquote>
+        “As you set out for Ithaka,
+        hope your road is a long one,
+        full of adventure, full of discovery.”
+        <cite>— Konstantinos P. Kavafis</cite>
+      </blockquote>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>
+        <a href="mailto:Giuseppe.Baldassarre@fao.org" title="Email FAO address">Giuseppe.Baldassarre@fao.org</a><br>
+        <a href="mailto:gi.baldassarre@gmail.com" title="Email personal address">gi.baldassarre@gmail.com</a>
+      </p>
+      <p>
+        <span class="chip">Geospatial Analyst @ FAO</span>
+      </p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© <span id="year"></span> Giuseppe Baldassarre</p>
+    </div>
+    <script>
+      // Progressive enhancement: dynamic year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>

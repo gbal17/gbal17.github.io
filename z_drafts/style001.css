@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f7f9fc;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* HEADER */
+.hero {
+  padding: 60px 20px 40px;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+}
+
+.profile-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+h1 {
+  margin: 10px 0 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 5px 0 20px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #555;
+}
+
+/* ICON LINKS */
+.icons a {
+  margin: 0 6px;
+  text-decoration: none;
+  color: #0066cc;
+  font-weight: 500;
+}
+
+.email {
+  margin-top: 10px;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* NAV BUTTONS */
+.nav-buttons {
+  margin-top: 25px;
+}
+
+.nav-buttons a {
+  padding: 10px 16px;
+  border: 1px solid #0066cc;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #0066cc;
+  margin: 0 5px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-buttons a:hover {
+  background: #0066cc;
+  color: white;
+}
+
+/* SECTIONS */
+.section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.section h3 {
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  border-left: 4px solid #0066cc;
+  padding-left: 10px;
+}
+
+.section ul {
+  padding-left: 20px;
+}
+
+.section ul li {
+  margin-bottom: 8px;
+}
+
+/* DOCUMENT LINKS */
+.documents a {
+  color: #0066cc;
+}
+
+/* QUOTES */
+.quotes {
+  margin: 60px auto;
+  max-width: 700px;
+  text-align: center;
+}
+
+blockquote {
+  font-style: italic;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .nav-buttons a {
+    display: block;
+    margin: 8px auto;
+    width: 80%;
+  }
+}

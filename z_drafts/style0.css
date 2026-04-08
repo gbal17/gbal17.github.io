@@ -1,0 +1,554 @@
+/* ---------------- Core variables ---------------- */
+:root{
+  --section-bg-color: 255,255,255;
+  --section-opacity: 0.70;
+  --card-bg: rgba(20,28,58,0.35);
+}
+
+/* ---------------- Global & background video ---------------- */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  font-family:'Futura',sans-serif;
+  margin:0;
+  color:#000;
+  line-height:1.6;
+  background:none;
+  animation: panBackground 90s linear infinite;
+}
+@keyframes panBackground{
+  0%{background-position:0% 0%}
+  50%{background-position:100% 0%}
+  100%{background-position:0% 0%}
+}
+#bg-video{
+  position:fixed; inset:0; width:100%; height:100%;
+  object-fit:cover; z-index:-1; opacity:.9; pointer-events:none;
+}
+
+/* ---------------- Layout ---------------- */
+.container{
+  display:flex;
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+  position:relative;
+}
+.profile{
+  text-align:center;
+  width:25%;
+  min-width:250px;
+  padding:30px;
+  border-radius:10px;
+}
+.content{
+  flex:1.5;
+  flex-grow:2;
+  margin-left:30px;
+  display:block;
+}
+
+/* ---------------- Profile: circle + card ---------------- */
+.profile-pic-wrapper{
+  position:relative;
+  width:120px; height:120px;
+  border-radius:50%; overflow:hidden;
+  border:1px solid #000;
+  display:inline-flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  margin-top:-40px;  /* keep your offsets */
+  margin-left:-40px;
+  transition:transform .3s ease, box-shadow .3s ease;
+  transform-origin: top center;   /* ⬅️ ADD THIS */
+}
+
+
+.profile-pic-wrapper#profilePicToggle {
+  position: fixed;      /* ⬅️ was relative — now fixed */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border:1px solid #000;
+  overflow: hidden;
+  cursor: pointer;
+  top: 50px;            /* ⬅️ vertical position from top */
+  left: 130px;           /* ⬅️ horizontal position from left */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-pic-wrapper:not(.expanded):hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 16px rgba(0,0,0,.4);
+}
+
+.profile-img{
+  width:100%; height:100%; object-fit:contain; border-radius:50%;
+  display:block; pointer-events:none;
+}
+/* white outline variant when you add body.video2 if you need */
+body.video2 .profile-pic-wrapper{ border:1px solid #fff !important; }
+
+/* Profile info card — visible by default; JS toggles .is-hidden */
+.profile-info-panel{
+  display:block !important;
+  position:fixed;          /* fixed so it doesn’t shift with tabs */
+  left:24px;               /* adjust to taste */
+  top:120px;               /* adjust to taste */
+  width:max-content;
+  padding:12px 18px;
+  /* background:var(--card-bg); */
+  backdrop-filter: blur(6px);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  text-align:left;
+  z-index:1000;
+}
+
+
+.profile-info-panel.is-hidden{ display:none !important; }
+
+.name{
+  font-weight:normal;
+  color:#0c0c0c;
+  /* text-shadow:0 1px 4px rgba(0,0,0,.8); */
+}
+.job-title,
+.email1{
+  font-family:"American Typewriter",serif;
+  color:#fff;
+  text-shadow:0 1px 4px rgba(0,0,0,.8);
+  line-height:1.4;
+  margin:2px 0;
+}
+.job-title{ font-size:1em; font-weight:normal; margin-top:5px; }
+.email1 a{ color:inherit; text-decoration:none; }
+.email1 a:hover{ text-decoration:underline; }
+.email1 {
+  font-size: 0.85rem;   /* or 14px, adjust to taste */
+}
+/* Social / CV icons (blue by default) */
+.permanent-icons a,
+.cv-icon{
+  font-size: 1.1em;   /* ⬅️ change this to control icon size */
+  color:#0073e6 !important;
+  transition:color .3s ease;
+  margin-right:6px;
+}
+.permanent-icons a:hover,
+.cv-icon:hover{ color:#005bb5 !important; }
+
+/* ---------------- Tabs ---------------- */
+.tabbar{
+  position:sticky; top:8px;
+  display:flex; gap:10px; justify-content:center;
+  margin:0 0 8px 0; z-index:5;
+}
+.tab-btn{
+  background:transparent;
+  color:#000;
+  border:1px solid #070707;
+  border-radius:6px;
+  padding:4px 10px;
+  font: normal 12px 'Futura',sans-serif;
+  cursor:pointer;
+  box-shadow:0 2px 4px rgba(0,0,0,.1);
+  transition: background .2s ease, border-color .2s ease;
+}
+.tab-btn:hover{ background:#f7f7f7; border-color:#999; }
+.tab-btn.active{ background:#fff; border-color:#666; }
+
+.tab-section{ display:none; width:100%; margin:0; padding:0; }
+.tab-section.active{ display:block; }
+.tab-section > h2{ display:none; }
+.section-content{
+  background: rgba(var(--section-bg-color), var(--section-opacity));
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,.1);
+  padding:10px 15px;
+  margin:0;
+}
+.section-content > *:first-child{ margin-top:0; }
+.section-content p{ margin:6px 0; }
+
+/* ---------------- Typography & links ---------------- */
+h1,h2,.quick-info .dropdown-toggle,.journey .dropdown-toggle{
+  font-size:1.2em; margin:0 0 8px 0;
+  color:#FFD700 !important;
+  text-shadow:0 0 4px rgba(0,0,0,.7);
+}
+a{ color:#0073e6 !important; text-decoration:none !important; font-weight:normal; }
+a:hover{ color:#005bb5 !important; text-decoration:underline !important; }
+a:visited{ color:#0073e6 !important; }
+
+/* ---------------- Quotes ---------------- */
+#quote-box {
+  position: fixed;          /* same floating behavior as profile card */
+  left: 24px;
+  top: 320px;               /* adjust so it sits below profile card */
+  max-width: 320px;
+  padding: 12px 18px;
+  /* backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35); */
+  text-align: center;
+  z-index: 1000;
+}
+
+#quote-box .quote {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease, font-size .3s ease, transform .3s ease;
+  font-family: "American Typewriter", serif;
+  font-size: 0.8em;
+  line-height: 1.4;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,.8);
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+}
+
+#quote-box .quote.active{
+  opacity:1; pointer-events:auto; position:relative; z-index:1;
+}
+#quote-box .quote.active:hover{
+  font-size:0.8em; line-height:1.6; transform:scale(1.025);
+}
+
+#quote-box .quote {
+  font-size: 0.7em;
+  line-height: 1.4;
+}
+
+#quote-box .quote.active:hover {
+  font-size: 0.7em;
+  line-height: 1.5;
+  transform: scale(1.02);
+}
+
+
+/* ---------------- Sections quick tweaks ---------------- */
+section{ padding:10px 15px; margin-bottom:10px; border-radius:10px; }
+.content p{ line-height:1.2; margin-bottom:3px; }
+.interests-list{ display:flex; flex-wrap:wrap; gap:5px 12px; list-style:none; padding:0; }
+.interests-list li{ display:flex; align-items:center; white-space:nowrap; padding:1px 8px; }
+.affiliations p, .education p{ line-height:1.2; padding:2px 0; margin:0; }
+
+/* ---------------- Optional: when using body.video2 theme ---------------- */
+body.video2 h1,
+body.video2 h2,
+body.video2 .dropdown-toggle,
+body.video2 .quick-info .dropdown-toggle,
+body.video2 .journey .dropdown-toggle{
+  color:#fff !important;
+  text-shadow:0 0 8px rgba(0,0,0,.8) !important;
+}
+body.video2 .tab-btn{
+  color:#fff !important; border-color:#fff !important;
+  text-shadow:0 0 6px rgba(0,0,0,.6) !important;
+  background:transparent !important;
+}
+body.video2 .tab-btn:hover,
+body.video2 .tab-btn.active{
+  color:#fff !important; border-color:#fff !important;
+  background:rgba(255,255,255,.12) !important;
+}
+
+
+/* ---------------- Optional: when using back1.mp4 (bg-1) ---------------- */
+body[data-bg="bg-1"] .permanent-icons a,
+body[data-bg="bg-1"] .cv-icon {
+  color: #FFD700 !important;   /* yellow */
+}
+
+body[data-bg="bg-1"] .permanent-icons a:hover,
+body[data-bg="bg-1"] .cv-icon:hover {
+  color: #e6d300 !important;   /* darker yellow on hover */
+}
+
+/* ---------------- Optional: when using back2.mp4 (bg-2) ---------------- */
+body[data-bg="bg-2"] .profile-pic-wrapper {
+  border: 1px solid #fff !important;   /* white outline around profile */
+}
+
+body[data-bg="bg-2"] h1,
+body[data-bg="bg-2"] h2,
+body[data-bg="bg-2"] .dropdown-toggle,
+body[data-bg="bg-2"] .quick-info .dropdown-toggle,
+body[data-bg="bg-2"] .journey .dropdown-toggle {
+  color: #fff !important;              /* session titles white */
+  text-shadow: 0 0 8px rgba(0,0,0,0.8) !important;
+}
+
+body[data-bg="bg-2"] .tab-btn {
+  color: #fff !important;              /* tab buttons white */
+  border-color: #fff !important;       /* white outline */
+  text-shadow: 0 0 6px rgba(0,0,0,0.6) !important;
+  background: transparent !important;
+}
+
+body[data-bg="bg-2"] .tab-btn:hover,
+body[data-bg="bg-2"] .tab-btn.active {
+  color: #fff !important;
+  border-color: #fff !important;
+  background: rgba(255,255,255,0.12) !important;
+}
+
+
+
+
+/* ===================== */
+/* MOBILE OPTIMIZATIONS  */
+/* Paste this at the END */
+/* ===================== */
+
+/* Tablets & small laptops */
+@media (max-width: 900px) {
+  .container{
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .content{
+    margin-left: 0;
+  }
+
+  /* Make tabs scrollable if they overflow */
+  .tabbar{
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 4px;
+  }
+  .tabbar::-webkit-scrollbar{ display:none; }
+
+  /* Bigger tap targets */
+  .tab-btn{
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  /* Slightly tighter section box on mobile */
+  .section-content{
+    padding: 12px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  /* Keep the circle fixed but smaller and tucked to the top-left */
+  .profile-pic-wrapper#profilePicToggle{
+    width: 72px;
+    height: 72px;
+    top: 12px;      /* adjust here if you want */
+    left: 12px;     /* adjust here if you want */
+    border-width: 1px;
+  }
+
+  /* Card fixed under the circle, full width minus margins */
+  .profile-info-panel{
+    top: 92px;                     /* sits just below the circle */
+    left: 12px;
+    right: 12px;                   /* allow it to grow to the right edge */
+    width: auto;                   /* override max-content */
+    max-width: none;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  /* Text sizing inside the card */
+  .name{ font-size: .8rem; }
+  .job-title{ font-size: .8rem; }
+  .email1{ font-size: .9rem; }
+
+  /* Icon tap size */
+  .permanent-icons a, .cv-icon{
+    font-size: 1.2rem;     /* slightly larger for touch */
+    margin-right: 10px;
+  }
+
+  /* Content stack: more readable padding */
+  .section-content{
+    padding: 12px;
+  }
+
+  /* Make quotes fit and move off the extreme left */
+
+
+  #quote-box .quote{
+    font-size: .9em;
+    line-height: 1.5;
+  }
+
+  /* Allow the main page to breathe below the fixed card */
+  .content{
+    margin-top: 160px;   /* pushes sections below the fixed card; adjust if needed */
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    margin-top: 120px;   /* instead of 160px, adjust to taste */
+  }
+}
+
+
+/* Very small phones */
+@media (max-width: 380px){
+  .profile-info-panel{
+    top: 88px;
+    padding: 8px 10px;
+  }
+  #quote-box {
+    position: static !important;   /* stack below profile card */
+    max-width: 100%;
+    margin: 8px 10px 0;
+    padding: 8px 10px;
+    /* backdrop-filter: blur(6px); */
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 14px;
+    /* box-shadow: 0 6px 20px rgba(0,0,0); */
+    text-align: center;
+  }
+  .name{ font-size: .8rem; }
+  .job-title{ font-size: .8rem; }
+  .email1{ font-size: .85rem; }
+  .permanent-icons a, .cv-icon{ font-size: 1.1rem; }
+  .tab-btn{ font-size: 12px; padding: 7px 10px; }
+}
+
+
+
+
+
+
+
+
+/* ===== Mobile & Accessibility Enhancements ===== */
+html { font-size: clamp(14px, 1.4vw + 10px, 18px); }
+
+@media (prefers-reduced-motion: reduce) {
+  body, #bg-video { animation: none !important; }
+}
+
+/* iOS safe areas */
+:root{
+  --safe-top: env(safe-area-inset-top);
+  --safe-right: env(safe-area-inset-right);
+  --safe-bottom: env(safe-area-inset-bottom);
+  --safe-left: env(safe-area-inset-left);
+}
+
+.profile-info-panel{
+  padding-top: calc(12px + var(--safe-top));
+  padding-bottom: calc(12px + var(--safe-bottom));
+  margin-left: var(--safe-left);
+  margin-right: var(--safe-right);
+}
+
+@media (max-width: 600px){
+  .tabbar { top: calc(8px + var(--safe-top)); }
+  body { padding-bottom: var(--safe-bottom); }
+  a, .tab-btn { -webkit-tap-highlight-color: rgba(0,0,0,0.1); }
+  #quote-box .quote { font-size: .9em; line-height: 1.5; }
+}
+
+/* ===== Stack card, quote, and sessions on small screens ===== */
+@media (max-width: 700px){
+  .profile { width:100%; min-width:0; padding:16px; }
+  #profilePicToggle { position:static !important; display:block; margin:12px auto 0; }
+
+  /* Card becomes part of normal flow */
+  .profile-info-panel{
+    position:static !important;
+    left:auto; right:auto; top:auto;
+    width:auto; max-width:100%;
+    margin:10px 12px 0; /* top,horizontal,bottom */
+    z-index:auto;
+  }
+
+  /* Quote below card, compact */
+  #quote-box{
+    position:static !important;
+    width:auto;
+    margin:4px 12px 0;   /* tighter */
+    padding:6px 8px;
+    z-index:auto;
+  }
+
+  /* Section cards */
+  .section-content{ margin:6px 12px; }
+  .tab-section{ padding:4px 0; }
+
+  /* Sticky tabs */
+  nav.tabbar{ position:sticky; top:calc(8px + var(--safe-top)); z-index:10; }
+}
+
+
+
+/* ===== Phones: spacing under the card ===== */
+@media (max-width: 600px){
+  .content{ margin-top: -5px !important; }   /* was -10px, now softer */
+
+  .tabbar{
+    position: relative !important;   /* disable sticky on phones */
+    top: auto !important;            /* cancel sticky offset */
+    margin: 10px 0 4px !important;    /* was -20px, now pushes DOWN slightly */
+    justify-content:flex-start;
+  }
+
+  .tab-btn{ padding:5px 8px !important; }
+  .tab-section:first-of-type .section-content:first-child{ margin-top:2px !important; } /* tiny breathing room */
+  h1, h2{ margin:0 0 6px 0 !important; }
+}
+
+
+/* ===== Very small phones ===== */
+@media (max-width: 380px){
+  #quote-box{ margin:4px 10px 0 !important; padding:4px 6px !important; }
+
+  .tabbar{
+    position: relative !important;   /* disable sticky */
+    top: auto !important;
+    margin: 8px 0 4px !important;    /* safe buffer below card */
+    justify-content:flex-start;
+  }
+
+  .section-content{ margin:4px 10px !important; }
+  .tab-section:first-of-type .section-content:first-child{ margin-top:2px !important; }
+}
+
+/* smooth tab movement */
+.tabbar { transition: margin 0.25s ease; }
+
+/* phones */
+@media (max-width: 600px){
+  /* when profile is enlarged, add space under it */
+  body.profile-expanded .tabbar{
+    margin-top: 60px !important;  /* adjust: ~ (scale-1)*100px; e.g., scale(1.6) → 60px */
+  }
+}
+
+/* very small phones */
+@media (max-width: 380px){
+  body.profile-expanded .tabbar{
+    margin-top: 56px !important;  /* tweak for tiny screens if needed */
+  }
+}
+
+
+
+
+/* Profile picture grows when active */
+.profile-pic-wrapper.expanded {
+  transform: scale(2);   /* adjust scale to taste */
+  transition: transform 0.3s ease;
+}
+
+
+
+
