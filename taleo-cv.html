@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Giuseppe Baldassarre — Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+<style>
+  :root{
+    --ink: #1c1c1c;
+    --muted: #6b6b6b;
+    --rule: #e4e0d6;
+    --gold: #b8962e;
+    --gold-line: #d8b84a;
+    --blue: #0073e6;
+    --fao-blue: #116AAB;
+    --paper: #fdfcf9;
+    --paper-edge: #f4f1e9;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper-edge);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .sheet{
+    max-width:840px;
+    margin:0 auto;
+    background:var(--paper);
+    box-shadow:0 0 0 1px var(--rule);
+    min-height:100vh;
+  }
+
+  /* ---------- Header ---------- */
+  header.cv-head{
+    padding:64px 56px 40px;
+    border-bottom:2px solid var(--ink);
+  }
+  .eyebrow{
+    font-family:'Fraunces', serif;
+    font-size:0.72rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 14px;
+  }
+  h1.name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(2.1rem, 4.4vw, 3rem);
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .role-line{
+    font-size:1.15rem;
+    color:#333;
+    margin:0 0 22px;
+  }
+  .header-icons{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin:0 0 14px;
+  }
+  .header-icons a{
+    display:inline-flex;
+    align-items:center;
+    font-size:1.35rem;
+    line-height:1;
+    color:var(--blue);
+    text-decoration:none;
+    transition:color .15s ease;
+  }
+  .header-icons a:hover{ color:var(--fao-blue); }
+  .header-cv-icon{
+    font-family:'Fraunces', serif !important;
+    font-size:0.95rem !important;
+    font-weight:700 !important;
+    letter-spacing:0.02em;
+  }
+  .header-emails{
+    font-size:0.92rem;
+    color:var(--muted);
+  }
+  .header-emails a{ color:var(--blue); text-decoration:none; }
+  .header-emails a:hover{ text-decoration:underline; }
+  .header-emails .sep{ color:var(--rule); margin:0 8px; }
+
+  nav.backlink{
+    padding:14px 56px;
+    background:var(--paper-edge);
+    font-size:0.85rem;
+  }
+  nav.backlink a{ color:var(--muted); text-decoration:none; }
+  nav.backlink a:hover{ color:var(--blue); }
+
+  /* ---------- Sections ---------- */
+  main{ padding:8px 56px 80px; }
+  section.block{ margin-top:52px; }
+  h2.section-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.5rem;
+    color:var(--ink);
+    margin:0 0 4px;
+    position:relative;
+    display:inline-block;
+  }
+  h2.section-title::after{
+    content:"";
+    display:block;
+    width:46px;
+    height:3px;
+    background:var(--gold-line);
+    margin-top:10px;
+  }
+  p.section-intro{
+    color:#333;
+    font-size:1.02rem;
+    max-width:66ch;
+    margin:18px 0 0;
+  }
+
+  /* ---------- Timeline (Employment) ---------- */
+  .timeline{
+    margin-top:30px;
+    position:relative;
+    padding-left:26px;
+    border-left:2px solid var(--rule);
+  }
+  .entry{
+    position:relative;
+    padding-bottom:38px;
+  }
+  .entry:last-child{ padding-bottom:0; }
+  .entry::before{
+    content:"";
+    position:absolute;
+    left:-33px;
+    top:4px;
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2.5px solid var(--gold);
+    transition:background .25s ease;
+  }
+  .entry.current::before,
+  .entry.nav-active::before{
+    background:var(--gold);
+  }
+  .entry-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:6px 20px;
+  }
+  .entry-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.12rem;
+    margin:0;
+  }
+  .entry-dates{
+    font-size:0.85rem;
+    color:var(--gold);
+    font-weight:600;
+    letter-spacing:0.02em;
+    white-space:nowrap;
+  }
+  .entry-meta{
+    font-size:0.92rem;
+    color:var(--muted);
+    margin:2px 0 12px;
+    font-style:italic;
+  }
+  .entry-body p{ margin:0 0 12px; font-size:0.98rem; }
+  .entry-body p:last-of-type{ margin-bottom:10px; }
+  .entry-body a{ color:var(--blue); text-decoration:none; word-break:break-word; }
+  .edu-detail a{ color:var(--blue); text-decoration:none; word-break:break-word; }
+  .edu-detail a:hover{ text-decoration:underline; }
+  .entry-body a:hover{ text-decoration:underline; }
+  .supervisor{
+    font-size:0.85rem;
+    color:var(--muted);
+    border-top:1px dotted var(--rule);
+    padding-top:10px;
+    margin-top:14px;
+  }
+  .supervisor strong{ color:#444; font-weight:600; }
+
+  /* ---------- Education & Certifications ---------- */
+  .edu-entry{
+    padding:20px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .edu-entry:first-of-type{ padding-top:26px; }
+  .edu-entry:last-of-type{ border-bottom:none; }
+  .edu-head{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:6px 20px;
+  }
+  .edu-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.05rem;
+    margin:0;
+  }
+  .edu-title a{ color:inherit; text-decoration:none; border-bottom:1px solid var(--rule); }
+  .edu-title a:hover{ color:var(--blue); border-bottom-color:var(--blue); }
+  .edu-dates{ font-size:0.85rem; color:var(--gold); font-weight:600; white-space:nowrap; }
+  .edu-inst{ font-size:0.92rem; color:var(--muted); font-style:italic; margin:2px 0 10px; }
+  .edu-detail{ font-size:0.95rem; color:#333; margin:0; }
+  .edu-detail + .edu-detail{ margin-top:8px; }
+  .honours{ color:var(--gold); font-weight:600; }
+
+  .doc-list{
+    margin-top:26px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  .doc-entry{
+    padding:18px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .doc-entry:last-child{ border-bottom:none; }
+  .doc-name{ margin:0; }
+  .doc-name a{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.05rem;
+    color:var(--blue);
+    text-decoration:none;
+  }
+  .doc-name a:hover{ text-decoration:underline; }
+  .doc-explain{
+    font-size:0.92rem;
+    color:#333;
+    line-height:1.6;
+    margin:6px 0 0;
+  }
+
+  .lang-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 28px;
+    margin-top:22px;
+  }
+  .lang-item{ font-size:0.95rem; }
+  .lang-item b{ font-family:'Fraunces', serif; font-weight:600; }
+  .lang-item span{ color:var(--muted); font-size:0.85rem; }
+
+  footer{
+    padding:36px 56px 56px;
+    border-top:2px solid var(--ink);
+    font-size:0.85rem;
+    color:var(--muted);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:10px;
+  }
+  footer a{ color:var(--blue); text-decoration:none; }
+  footer a:hover{ text-decoration:underline; }
+
+  @media (max-width:640px){
+    header.cv-head{ padding:44px 24px 28px; }
+    nav.backlink{ padding:12px 24px; }
+    main{ padding:8px 24px 60px; }
+    footer{ padding:28px 24px 40px; }
+    .timeline{ padding-left:20px; }
+    .entry::before{ left:-27px; }
+  }
+
+  @media print{
+    body{ background:#fff; }
+    .sheet{ box-shadow:none; }
+    nav.backlink{ display:none; }
+    .toc, .toc-mobile{ display:none !important; }
+    .entry, .edu-entry{ page-break-inside:avoid; }
+  }
+
+  /* ---------- Layout wrapper (nav + sheet) ---------- */
+  .layout{
+    display:flex;
+    align-items:flex-start;
+    gap:36px;
+    max-width:1220px;
+    margin:0 auto 0 max(24px, calc(50vw - 645px));
+    padding:0 24px;
+  }
+  .layout .sheet{ margin:0; flex:1; min-width:0; }
+
+  /* ---------- Desktop sidebar TOC ---------- */
+  .toc{
+    position:sticky;
+    top:24px;
+    width:320px;
+    flex-shrink:0;
+    max-height:calc(100vh - 48px);
+    overflow-y:auto;
+    padding:26px 18px 26px 0;
+    font-family:'Source Serif 4', Georgia, serif;
+  }
+
+  .toc-heading{
+    font-family:'Fraunces', serif;
+    font-size:0.7rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 14px;
+  }
+
+  /* Single continuous rail behind the whole list; one dot travels along it */
+  .toc-nav{ position:relative; }
+  .toc-rail{
+    position:absolute;
+    left:4px;
+    top:6px;
+    bottom:6px;
+    width:1px;
+    background:var(--rule);
+    z-index:0;
+  }
+  .toc-dot{
+    position:absolute;
+    left:0px;
+    width:9px;
+    height:9px;
+    margin-top:-4.5px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 0 3px var(--paper);
+    z-index:2;
+    transition:top .3s cubic-bezier(.4,0,.2,1);
+    opacity:0;
+  }
+  .toc-dot.ready{ opacity:1; }
+
+  .toc-group{ margin-bottom:22px; position:relative; z-index:1; }
+  .toc-group:last-child{ margin-bottom:0; }
+  .toc-top a{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:0.95rem;
+    color:var(--ink);
+    text-decoration:none;
+    padding:3px 0 3px 14px;
+    transition:color .15s ease;
+  }
+  .toc-top a:hover{ color:var(--gold); }
+  .toc-top a.active{ color:var(--gold); }
+  .toc-sub{
+    list-style:none;
+    margin:6px 0 0;
+    padding:0;
+    max-height:0;
+    overflow:hidden;
+  }
+  .toc-group.expanded .toc-sub{ max-height:900px; }
+  .toc-sub li{ margin:0; }
+  .toc-sub a{
+    display:block;
+    font-size:0.78rem;
+    line-height:1.5;
+    color:var(--muted);
+    text-decoration:none;
+    padding:3px 0 3px 22px;
+    transition:color .15s ease;
+  }
+  .toc-sub a:hover{ color:var(--blue); }
+  .toc-sub a.fao-proj{ color:var(--fao-blue); }
+  .toc-year{
+    color:var(--muted);
+    font-weight:400;
+    font-size:0.7rem;
+    margin-left:5px;
+    white-space:nowrap;
+  }
+  .toc-sub a.active{
+    color:var(--gold);
+    font-weight:600;
+  }
+  .toc-sub a.active .toc-year{ color:inherit; opacity:0.75; }
+
+  /* ---------- Mobile TOC bar ---------- */
+  .toc-mobile{ display:none; }
+  @media (max-width:1000px){
+    .layout{ display:block; padding:0; }
+    .toc{ display:none; }
+    .toc-mobile{
+      display:block;
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:var(--paper);
+      border-bottom:1px solid var(--rule);
+    }
+    .toc-mobile-row{
+      display:flex;
+      gap:8px;
+      overflow-x:auto;
+      padding:12px 20px;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+    }
+    .toc-mobile-row::-webkit-scrollbar{ display:none; }
+    .toc-mobile-row a{
+      flex-shrink:0;
+      font-family:'Fraunces', serif;
+      font-size:0.8rem;
+      font-weight:600;
+      color:var(--ink);
+      text-decoration:none;
+      padding:6px 14px;
+      border:1px solid var(--rule);
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .toc-mobile-row a.active{
+      color:#fff;
+      background:var(--gold);
+      border-color:var(--gold);
+    }
+  }
+
+  /* anchor offset so jumped-to entries aren't flush against the mobile bar */
+  .entry, .edu-entry, .doc-entry, .entry-head, .edu-head, section.block, #personal-info{ scroll-margin-top:80px; }
+</style>
+</head>
+<body>
+
+<div class="toc-mobile" id="tocMobile">
+  <div class="toc-mobile-row">
+    <a href="#personal-info" data-target="personal-info">Info</a>
+    <a href="#employment" data-target="employment">Employment</a>
+    <a href="#education" data-target="education">Education</a>
+    <a href="#documents" data-target="documents">Documents</a>
+    <a href="#languages" data-target="languages">Languages</a>
+  </div>
+</div>
+
+<div class="layout">
+
+  <aside class="toc" id="tocDesktop">
+    <p class="toc-heading">On this page</p>
+
+    <div class="toc-nav" id="tocNav">
+    <div class="toc-rail"></div>
+    <div class="toc-dot" id="tocDot"></div>
+
+    <div class="toc-group toc-top">
+      <a href="#personal-info" data-target="personal-info">Personal Info</a>
+    </div>
+
+    <div class="toc-group toc-top">
+      <a href="#employment" data-target="employment">Employment History</a>
+      <ul class="toc-sub">
+        <li><a href="#job-fao-nsld" data-target="job-fao-nsld" class="fao-proj">Land Degradation Neutrality <span class="toc-year">2026–</span></a></li>
+        <li><a href="#job-fao-afghanistan" data-target="job-fao-afghanistan" class="fao-proj">Monitoring Resilience — Afghanistan <span class="toc-year">2026</span></a></li>
+        <li><a href="#job-fao-syria" data-target="job-fao-syria" class="fao-proj">Land Cover — Syria <span class="toc-year">2025</span></a></li>
+        <li><a href="#job-fao-pakistan" data-target="job-fao-pakistan" class="fao-proj">Flood Impact — Pakistan <span class="toc-year">2025</span></a></li>
+        <li><a href="#job-roots-nslhq" data-target="job-roots-nslhq" class="fao-proj">The Gambia GeoLab <span class="toc-year">2025</span></a></li>
+        <li><a href="#job-prorefish" data-target="job-prorefish" class="fao-proj">Mangrove Monitoring — Gambia <span class="toc-year">2025</span></a></li>
+        <li><a href="#job-nfi-design" data-target="job-nfi-design" class="fao-proj">Forest Inventory — Gambia <span class="toc-year">2025</span></a></li>
+        <li><a href="#job-roots-platform" data-target="job-roots-platform" class="fao-proj">Agricultural Impact Monitoring — Gambia <span class="toc-year">2024</span></a></li>
+        <li><a href="#job-yemen" data-target="job-yemen" class="fao-proj">Land Cover Atlas — Yemen <span class="toc-year">2024</span></a></li>
+        <li><a href="#job-roots-2023" data-target="job-roots-2023" class="fao-proj">Monitoring Indicators — Gambia <span class="toc-year">2023–24</span></a></li>
+        <li><a href="#job-lisbon-postdoc" data-target="job-lisbon-postdoc">University of Lisbon <span class="toc-year">2020–23</span></a></li>
+        <li><a href="#job-srd-vietnam" data-target="job-srd-vietnam">SRD Vietnam <span class="toc-year">2021–22</span></a></li>
+        <li><a href="#job-istanbul" data-target="job-istanbul">Istanbul Technical University <span class="toc-year">2012–18</span></a></li>
+        <li><a href="#job-aprode" data-target="job-aprode">Aprode Peru <span class="toc-year">2011</span></a></li>
+      </ul>
+    </div>
+
+    <div class="toc-group toc-top">
+      <a href="#education" data-target="education">Education</a>
+      <ul class="toc-sub">
+        <li><a href="#edu-medfor" data-target="edu-medfor">M.S. Forestry</a></li>
+        <li><a href="#edu-phd" data-target="edu-phd">PhD, Remote Sensing</a></li>
+        <li><a href="#edu-msc" data-target="edu-msc">M.S., Env. Engineering</a></li>
+        <li><a href="#edu-bsc" data-target="edu-bsc">B.S., Env. Engineering</a></li>
+      </ul>
+    </div>
+
+    <div class="toc-group toc-top">
+      <a href="#documents" data-target="documents">Supporting Documents</a>
+      <ul class="toc-sub">
+        <li><a href="#doc-certificates" data-target="doc-certificates">Certificates</a></li>
+        <li><a href="#doc-grades" data-target="doc-grades">Subjects and Grades</a></li>
+        <li><a href="#doc-trainings" data-target="doc-trainings">Trainings</a></li>
+        <li><a href="#doc-cooperation" data-target="doc-cooperation">International Cooperation</a></li>
+        <li><a href="#doc-grants" data-target="doc-grants">Grants</a></li>
+        <li><a href="#doc-references" data-target="doc-references">References</a></li>
+      </ul>
+    </div>
+
+    <div class="toc-group toc-top">
+      <a href="#languages" data-target="languages">Languages</a>
+    </div>
+
+    </div><!-- /.toc-nav -->
+  </aside>
+
+<div class="sheet">
+
+  <nav class="backlink">&larr; <a href="https://gbal17.github.io/" target="_blank">Go to my personal web-page</a></nav>
+
+  <header class="cv-head" id="personal-info">
+    <p class="eyebrow">Curriculum Vitae — FAO Taleo Format</p>
+    <h1 class="name">Giuseppe Baldassarre, PhD</h1>
+    <p class="role-line">Geospatial Analyst — FAO Land and Water Division (NSLD)</p>
+    <div class="header-icons">
+      <a href="https://www.linkedin.com/in/giuseppe-baldassarre-671a7623/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://scholar.google.com/citations?user=M8b10awAAAAJ&hl=en-EN" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://www.researchgate.net/profile/Giuseppe-Baldassarre?ev=prf_overview" target="_blank" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+      <a href="https://github.com/gbal17" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a class="header-cv-icon" href="https://gbal17.github.io/cv.pdf" target="_blank">CV</a>
+      <a href="https://medium.com/@gi.baldassarre" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+    </div>
+    <div class="header-emails">
+      <a href="mailto:Giuseppe.Baldassarre@fao.org">Giuseppe.Baldassarre@fao.org</a>
+      <span class="sep">·</span>
+      <a href="mailto:gi.baldassarre@gmail.com">gi.baldassarre@gmail.com</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ EMPLOYMENT HISTORY ============ -->
+    <section class="block" id="employment">
+      <h2 class="section-title">Employment History</h2>
+      <p class="section-intro">Presented in reverse-chronological order, following the structure of my official FAO personnel record. Full role descriptions and source links are preserved as documented.</p>
+
+      <div class="timeline">
+
+        <div class="entry current">
+          <div class="entry-head" id="job-fao-nsld">
+            <p class="entry-title">Land Degradation Neutrality</p>
+            <p class="entry-dates">Apr 2026 – Present</p>
+          </div>
+          <p class="entry-meta">NSLD, Land and Water Division</p>
+          <div class="entry-body">
+            <p>Serving as Geospatial Analyst under FAO NSLD (GCP/GLO/11848/GFF), supporting 21 UNCCD country Parties in SDG Indicator 15.3.1 / Land Degradation Neutrality reporting for the 2026 PRAIS4 cycle (COP17 deadline).</p>
+            <p>Designed and implemented a modular GEE-to-PRAIS4 Python pipeline covering all four SO1 sub-indicators (Land Cover, Land Productivity Dynamics, Soil Organic Carbon, SDG 15.3.1 composite), generating PRAIS4-ready tabular and raster outputs directly from Google Earth Engine exports — replacing a manual, non-standardized process with a repeatable one applicable across all 21 country contexts.</p>
+            <p>Piloted the full workflow for Mongolia, validating its transferability ahead of rollout to the remaining countries in the 2026 reporting cycle.</p>
+            <p>Led migration of GEE scripts and assets from third-party vendor infrastructure into FAO-controlled infrastructure (corporate GEE project, GitHub repository), removing external dependency and giving FAO direct ownership of the toolchain. Provided hands-on country-level support for PRAIS4 data upload, technical documentation, and knowledge transfer.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Livia Peiser, Senior Land and Water Officer</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-fao-afghanistan">
+            <p class="entry-title">Monitoring Resilience — Afghanistan</p>
+            <p class="entry-dates">Feb – Apr 2026</p>
+          </div>
+          <p class="entry-meta">FAO Afghanistan, in collaboration with UNOSAT/UNITAR</p>
+          <div class="entry-body">
+            <p>Served as Geospatial Analyst under FAO Afghanistan, in collaboration with UNOSAT/UNITAR, supporting the AWARE platform (Afghanistan Watch for Agriculture, Resilience and Risk Exposure; <a href="https://data.apps.fao.org/aware" target="_blank">data.apps.fao.org/aware</a>) — a geospatial decision-support system covering ~401 sub-national districts with 60+ indicators across six thematic pillars.</p>
+            <p>Supervised design and computation of the district-level INFORM Risk Index, structured across three pillars (Hazard &amp; Exposure, Vulnerability, Lack of Coping Capacity) in a Pillar → Category → Sub-component → Indicator hierarchy. Led systematic QA of the underlying calculation workbook against the AFG Final Narrative Report 2026 (UNOSAT/UNITAR v1.0), producing a traceability document that established a verifiable audit trail for the index's methodology.</p>
+            <p>Prepared and published 35 composite INFORM layers to the CKAN catalogue in compliance with FAO interoperability standards. Developed stakeholder presentations and capacity-development materials supporting platform dissemination among FAO Afghanistan colleagues and national partners.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Matieu Henry, Technical Officer, NSL (Land and Water Division)</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-fao-syria">
+            <p class="entry-title">Land Cover — Syria</p>
+            <p class="entry-dates">Nov – Dec 2025</p>
+          </div>
+          <p class="entry-meta">FAO Syria</p>
+          <div class="entry-body">
+            <p>Designed and implemented an automated national land cover production workflow in Google Earth Engine and Python, integrating AlphaEarth Foundations Satellite Embeddings V1, Sentinel-2 imagery, and Random Forest classification to produce a 10m-resolution national land cover map for drought impact assessment (<a href="https://openknowledge.fao.org/handle/20.500.14283/ce0956en" target="_blank">openknowledge.fao.org</a>).</p>
+            <p>Built and harmonized training/validation datasets using Collect Earth Online, applying FAO geospatial standards (LCML/ISO 19144-2) throughout classification and accuracy assessment. Delivered national land cover, cropland (irrigated/rainfed), and grazing-land datasets that directly support Syria's agricultural monitoring and drought decision-making. Produced full technical documentation and metadata ensuring the product's interoperability and reuse.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Matieu Henry, Technical Officer, NSL (Land and Water Division)</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-fao-pakistan">
+            <p class="entry-title">Flood Impact — Pakistan</p>
+            <p class="entry-dates">Oct – Nov 2025</p>
+          </div>
+          <p class="entry-meta">FAO Pakistan</p>
+          <div class="entry-body">
+            <p>Provided technical assistance to FAO Pakistan for geospatial impact assessment of floods on cropland using GIS/RS tools (<a href="https://www.fao.org/geospatial/news/news-detail/fao-releases-geospatial-flood-impact-assessment-for-pakistan--2025/en" target="_blank">FAO news release</a>). Processed Sentinel-1/2, Landsat, and VIIRS imagery for land and water monitoring, classification, and accuracy assessment in line with FAO LCML/ISO standards.</p>
+            <p>Updated 2023–2024 cropland and crop-type layers, generated flood extent and duration maps (<a href="https://data.apps.fao.org/catalog/iso/332526e6-7669-445a-91e9-219bd87e76a5" target="_blank">KP</a>, <a href="https://data.apps.fao.org/catalog/iso/28507600-651e-4363-aa2e-49bd3180cd7f" target="_blank">Punjab</a>, <a href="https://data.apps.fao.org/catalog/iso/19672128-fd1b-43d7-ad4d-ffd82bb20518" target="_blank">Sindh</a>), and assessed impacts by irrigation system and crop type (crop-type maps: <a href="https://data.apps.fao.org/catalog/iso/a26f049e-aecc-407b-bdc1-ef400e9965c0" target="_blank">KP</a>, <a href="https://data.apps.fao.org/catalog/iso/0b276f92-0cc0-4342-a250-b4b4a9c69365" target="_blank">Punjab</a>, <a href="https://data.apps.fao.org/catalog/iso/286bb57f-8716-4bf2-a6fa-26a1390b82ac" target="_blank">Sindh</a>).</p>
+            <p>Developed automated workflows in Google Earth Engine, harmonized spatial datasets, and uploaded the newly developed layers to the FAO Agro-Informatics Platform — directly informing FAO's national flood response. Supported capacity development materials, technical documentation, and presentations for FAO and national partners, including province-level one-pagers (<a href="https://openknowledge.fao.org/handle/20.500.14283/cd7250en" target="_blank">KP</a>, <a href="https://openknowledge.fao.org/handle/20.500.14283/cd7249en" target="_blank">Punjab</a>, <a href="https://openknowledge.fao.org/handle/20.500.14283/cd7248en" target="_blank">Sindh</a>) and the <a href="https://openknowledge.fao.org/items/a3d91bad-bbcb-42a1-85f1-0b9f6457d858" target="_blank">full published report</a>.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Matieu Henry, Technical Officer, NSL (Land and Water Division)</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-roots-nslhq">
+            <p class="entry-title">The Gambia GeoLab</p>
+            <p class="entry-dates">Aug – Sep 2025</p>
+          </div>
+          <p class="entry-meta">FAO Gambia</p>
+          <div class="entry-body">
+            <p>Served as Remote Sensing Specialist under NSL HQ supporting the ROOTS project (GF.NSLSD.RY1020000CT69), finalizing the project's geospatial results-visualization platform in full compliance with FAO's LCML/ISO 19144-2 standards. Integrated zonal statistics and automated GEE workflows for spatial data harmonization and validation.</p>
+            <p>Presented the <a href="https://gambia-geolab.netlify.app/" target="_blank">Gambia GeoLab platform</a> at the Geo for Good Summit in Singapore, featured in the official FAO NSL publication <a href="https://www.fao.org/geospatial/news/news-detail/fao-presents-the-gambia-geolab-at-geo-for-good-summit-in-singapore/en" target="_blank">"FAO presents the Gambia GeoLab at Geo for Good Summit in Singapore"</a> and in the essay <a href="https://medium.com/@gi.baldassarre/turning-research-and-data-into-actionable-insights-for-agriculture-and-natural-resource-management-b2d035aa96a8" target="_blank">"Turning Research and Data into Actionable Insights for Agriculture and Natural Resource Management in The Gambia"</a> — extending the platform's visibility beyond the project's national scope. Delivered training materials and capacity-development sessions aligned with the Hand-in-Hand Geospatial Platform's dissemination standards.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Matieu Henry, Technical Officer, Acting Head of Geospatial Unit (NSL)</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-prorefish">
+            <p class="entry-title">Mangrove Monitoring — Gambia</p>
+            <p class="entry-dates">Jul 2025</p>
+          </div>
+          <p class="entry-meta">FAO Gambia · Banjul, Gambia</p>
+          <div class="entry-body">
+            <p>Served as GIS &amp; Remote Sensing Specialist for the PROREFISH climate-resilient fisheries initiative (GCP/GAM/044/GCF), leading mangrove restoration and coastal ecosystem monitoring. Conducted institutional capacity assessments and developed a geospatial methodology for coastal/land-water monitoring aligned with FAO standards.</p>
+            <p>Designed and delivered technical trainings and materials on satellite data processing, NDVI-based vegetation monitoring, and cloud-computing tools (Google Earth Engine, SEPAL). Developed and published a dedicated <a href="https://ee-gibaldassarre.projects.earthengine.app/view/pf1" target="_blank">GEE application for mangrove monitoring</a>, and led classification, validation, and accuracy assessment of mangrove extent — producing baseline spatial datasets that now underpin national mangrove management planning.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Moshibudi Rampedi, FAO Representative in The Gambia</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-nfi-design">
+            <p class="entry-title">Forest Inventory — Gambia</p>
+            <p class="entry-dates">Apr 2025</p>
+          </div>
+          <p class="entry-meta">FAO Gambia · Banjul, Gambia</p>
+          <div class="entry-body">
+            <p>Supported the design of the National Forest Inventory (NFI) by preparing and harmonizing spatial datasets (accessibility, tree cover, forest mask, density, land cover) and integrating field and national data sources. Developed a dedicated <a href="https://ee-gibaldassarre.projects.earthengine.app/view/gfidesignexplorer20101" target="_blank">GEE application for forest inventory design and visualization</a>, and contributed directly to sampling design optimization for the National Forest Assessment and Inventory (NFAI), balancing cost, accuracy, and statistical robustness.</p>
+            <p>Developed and delivered training materials and sessions for government staff on GIS/RS monitoring techniques, spatial data management, and use of cloud-computing platforms (Google Earth Engine, SEPAL) and Python for geospatial processing and automation, building durable in-country technical capacity.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Matieu Henry, Technical Officer, Acting Head of Geospatial Unit (NSL)</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-roots-platform">
+            <p class="entry-title">Agricultural Impact Monitoring — Gambia</p>
+            <p class="entry-dates">Nov 2024</p>
+          </div>
+          <p class="entry-meta">FAO Gambia</p>
+          <div class="entry-body">
+            <p>Provided Geospatial Technical Assistance (GTA) to the IFAD-funded ROOTS project in The Gambia (UTF/GAM/047/GAM). Finalized and operationalized the ROOTS geospatial platform, integrating datasets, zonal statistics, and Google Earth Engine applications into a single production system. Developed Python and GEE scripts for automated analysis and reporting, and processed spatial data and metadata for FAO's Agro-Informatics Platform.</p>
+            <p>Prepared technical reports, one-pagers (<a href="https://openknowledge.fao.org/items/9bb51030-7521-4c72-97d0-5603c5221049" target="_blank">2023 land cover map of the Gambia</a>), and training materials, and delivered capacity-development sessions for national staff on monitoring techniques, spatial data management, and quality assurance.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Matieu Henry, Technical Officer, Acting Head of Geospatial Unit (NSL)</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-yemen">
+            <p class="entry-title">Land Cover Atlas — Yemen</p>
+            <p class="entry-dates">Feb – Jun 2024</p>
+          </div>
+          <p class="entry-meta">FAO Yemen</p>
+          <div class="entry-body">
+            <p>Led the finalization of Yemen's national land cover map, land representation system, legend, and atlas — designing and implementing the full GIS/RS production chain from data collection through classification, QA/QC, validation, and publication using Python, SEPAL, and Google Earth Engine.</p>
+            <p>Built and managed a field data collection system with optimized sampling design and quality-controlled databases. Delivered capacity development on legend development, LCML/LCCS standards, and accuracy assessment, and use of FAO tools (Collect Earth Online, SEPAL, GEE). Ensured full compliance with FAO geospatial standards and supported publication of the <a href="https://openknowledge.fao.org/items/3ca05f72-f0b0-4ccb-9567-531fa8d84619" target="_blank">Yemen Land Cover Atlas</a> on the Hand-in-Hand Geospatial Platform.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Matieu Henry, Technical Officer, Acting Head of Geospatial Unit (NSL)</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-roots-2023">
+            <p class="entry-title">Monitoring Indicators — Gambia</p>
+            <p class="entry-dates">Jul 2023 – Jan 2024</p>
+          </div>
+          <p class="entry-meta">FAO Gambia · Banjul, Gambia</p>
+          <div class="entry-body">
+            <p>Served as International GIS/RS Land and Water Monitoring Expert for the ROOTS project, leading field data collection design, harmonization, and validation (Python, SEPAL, GEE) and collaborating with national partners on thematic maps and spatial indicators under FAO LCML/LCCS standards.</p>
+            <p>Published the 2023 Land Cover Map of The Gambia — the first developed under the new LCML/ISO 19144-2 reference system — through the FAO video <a href="https://www.youtube.com/watch?v=5cydX2MixNs" target="_blank">"Land Cover as a fundamental spatial information for sustainable resilient agriculture in The Gambia"</a> and the FAO booklet <a href="https://openknowledge.fao.org/items/f3175f42-56ff-4b85-892b-528dd124b73a" target="_blank">"A framework for monitoring geospatial indicators of the ROOTS project"</a>, ensuring metadata integrity and full compliance with FAO interoperability standards.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Matieu Henry, Technical Officer, Acting Head of Geospatial Unit (NSL)</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-lisbon-postdoc">
+            <p class="entry-title">University of Lisbon</p>
+            <p class="entry-dates">Mar 2020 – Jul 2023</p>
+          </div>
+          <p class="entry-meta">Post-Doctoral Researcher · School of Agriculture, University of Lisbon · Lisbon, Portugal</p>
+          <div class="entry-body">
+            <p>Estimated shrub live fuel moisture content across mainland Portugal using GIS/RS techniques and satellite-derived indicators, contributing to a near-real-time operational LFMC product supporting national decision-making (<a href="https://www.mdpi.com/2571-6255/8/5/178" target="_blank">MDPI, 2025</a>). Mapped national fire regimes using Landsat imagery and time-series analysis, published as <a href="https://www.researchgate.net/publication/366124207_Regimes_de_fogo_em_Portugal_Continental" target="_blank">"Regimes de fogo em Portugal Continental"</a> and <a href="https://www.researchgate.net/publication/360227465_Cartografia_de_Regimes_de_Fogo_a_Escala_da_Freguesia_1980-2017" target="_blank">"Cartografia de Regimes de Fogo à Escala da Freguesia (1980–2017)"</a>, and analyzed traditional extensive pastoralism and its dependence on fire through spatial and temporal GIS/RS assessments.</p>
+            <p>Developed and automated monitoring of the national fuel break network using Sentinel-2, Google Earth Engine, and Python, validated against GEDI data (<a href="https://link.springer.com/chapter/10.1007/978-3-030-96466-5_5" target="_blank">Springer, 2022</a>). Applied image classification, validation, and accuracy assessment following international and FAO geospatial standards throughout. Extended this fire-regime methodology to Turkey using MODIS fire observations.</p>
+            <p style="font-size:0.85rem; color:var(--muted); font-style:italic;">Undertaken concurrently with an EU Aid Volunteers deployment to SRD Vietnam (Jan 2021 – Nov 2022, below).</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> José M.C. Pereira, Full Professor</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-srd-vietnam">
+            <p class="entry-title">SRD Vietnam</p>
+            <p class="entry-dates">Jan 2021 – Nov 2022</p>
+          </div>
+          <p class="entry-meta">GIS and Remote Sensing Expert · The Centre for Sustainable Rural Development (SRD) · Hanoi, Viet Nam</p>
+          <div class="entry-body">
+            <p>Used open-source, moderate-resolution satellite imagery for mapping smallholder coffee production systems driving land use change in Thuan Chau district, NW Vietnam — also explored in the public essay <a href="https://medium.com/the-new-climate/coffee-is-not-forest-but-can-it-become-part-of-a-solution-4ea160d843ad" target="_blank">"Coffee Is Not Forest!" — But Can It Become Part of a Solution?</a> — and analyzed trends in tree canopy cover over 2000–2021. Developed a public <a href="https://ee-gibaldassarre.projects.earthengine.app/view/tccvn#lat=15.409503;lon=106.008563;zoom=6;" target="_blank">GEE application</a> to visualize tree canopy cover change across Vietnam.</p>
+            <p>Estimated aboveground biomass and carbon stock using SAR data for the "Mangrove and Climate Protection Combined with Income Generation for Vulnerable Communities" program (VM069), and developed a companion <a href="https://ee-gibaldassarre.projects.earthengine.app/view/srd" target="_blank">GEE app</a> to monitor mangrove extent in Southern Vietnam — delivered as part of an EU Aid Volunteers deployment, undertaken concurrently with a post-doctoral position at the University of Lisbon.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Vu Thi Bich Hop, Executive Director of SRD</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-istanbul">
+            <p class="entry-title">Istanbul Technical University</p>
+            <p class="entry-dates">Oct 2012 – May 2018</p>
+          </div>
+          <p class="entry-meta">Post-Doctoral Researcher · Eurasia Institute of Earth Science, Istanbul Technical University · Istanbul, Türkiye</p>
+          <div class="entry-body">
+            <p>Worked as a post-doctoral researcher at the Eurasia Institute of Earth Science, on the KAMAG–TÜBİTAK project to develop an integrated emission inventory over Turkey. Conducted GIS/RS-based atmospheric and land monitoring analyses using Python and satellite data from geostationary and polar-orbiting sensors. Demonstrated that geostationary observations improve the prediction of atmospheric chemical composition during large fire events, with results published in <a href="https://acp.copernicus.org/articles/15/8539/2015/acp-15-8539-2015.html" target="_blank">Atmospheric Chemistry and Physics (2015)</a>.</p>
+            <p>Produced a multi-temporal satellite analysis of biomass burning over Turkey and contributed to the design and implementation of the national Fire Information System of Turkey (<a href="https://fires.itu.edu.tr/" target="_blank">UYANBIL</a>) and the <a href="https://fires.itu.edu.tr/bbeurasia/index.html" target="_blank">Biomass Burning Eurasia platform</a>, ensuring data standardization, validation, and alignment with international geospatial best practices.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Luca Pozzoli, Senior Scientist, Climate and Environmental Research Institute NILU</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head" id="job-aprode">
+            <p class="entry-title">Aprode Peru</p>
+            <p class="entry-dates">Jun – Oct 2011</p>
+          </div>
+          <p class="entry-meta">Environmental Consultant · Aprode Peru · Chulucanas, Peru</p>
+          <div class="entry-body">
+            <p>Volunteered in a project on environmental management and rural waste systems in northern Peru. Conducted field observations and data collection to assess solid waste management practices in remote communities. Prepared reports proposing measures to support local <em>recicladores</em> (informal waste collectors), including safety training, protective equipment, and workplace health measures. Documented field findings in the videos <a href="https://www.youtube.com/watch?v=av93xA8a-ls" target="_blank">"The Garbage Dump of Chulucanas (Perú)"</a> and <a href="https://www.youtube.com/watch?v=MwyE_AYgdfQ" target="_blank">"La realidad actual de los botaderos de basura en el Bajo Piura (Perú)"</a>.</p>
+          </div>
+          <p class="supervisor"><strong>Supervisor:</strong> Marieke Van der Zon, Environmental Program Manager at Aprode Peru</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="block" id="education">
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-entry">
+        <div class="edu-head" id="edu-medfor">
+          <p class="edu-title">M.S. — Mediterranean Forestry and Natural Resource Management (<a href="https://www.medfor.eu/testimonial/7th-edition-20182020/giuseppe-baldassarre" target="_blank">MEDfOR, Erasmus Mundus</a>)</p>
+          <p class="edu-dates">Sep 2018 – Dec 2020</p>
+        </div>
+        <p class="edu-inst">University of Lisbon (coordinator), with Valladolid, Padova, Porto, and Lleida</p>
+        <p class="edu-detail">Consortium program across five European universities covering natural resource management, decision support systems, forest governance, fire ecology, and GIS. Thesis: <a href="https://www.researchgate.net/publication/389813750_Describing_fire_regimes_over_Turkey_using_MODIS_fire_observations?channel=doi&linkId=67d2d9137c5b5569dcba5162&showFulltext=true" target="_blank">"Characterization of fire regimes in Turkey using MODIS active fire and burned area data."</a></p>
+        <p class="edu-detail"><span class="honours">Graduated with Excellent standing — overall average 8.91/10</span></p>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-head" id="edu-phd">
+          <p class="edu-title">PhD in Environmental Engineering — Remote Sensing</p>
+          <p class="edu-dates">Nov 2007 – Feb 2011</p>
+        </div>
+        <p class="edu-inst">University of Wisconsin–Madison, USA (primary research site) — degree conferred by Università degli Studi della Basilicata, Italy</p>
+        <p class="edu-detail">Dissertation: "Performance of the most advanced satellite techniques for real-time monitoring of forest fires over Italy." Research focused on development and assessment of advanced satellite fire detection products using statistical tools and GIS, carried out between the University of Wisconsin–Madison (2 years) and the University of Basilicata (1 year).</p>
+        <p class="edu-detail">Related publications: <a href="https://www.researchgate.net/publication/306536266_Assessment_of_the_Robust_Satellite_Technique_RST_in_real_time_detection_of_summer_fires" target="_blank">"Assessment of the Robust Satellite Technique (RST) in real time detection of summer fires"</a>; <a href="https://www.researchgate.net/publication/234055644_Automatic_RST-based_system_for_a_rapid_detection_of_fires" target="_blank">"Automatic RST-based system for a rapid detection of fires"</a>; <a href="https://www.researchgate.net/publication/234245164_A_Total_Validation_Approach_for_assessing_the_RST_technique_in_forest_fire_detection_and_monitoring" target="_blank">"A Total Validation Approach for assessing the RST technique in forest fire detection and monitoring"</a>.</p>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-head" id="edu-msc">
+          <p class="edu-title">M.S. — Environmental Engineering</p>
+          <p class="edu-dates">Sep 2004 – Jul 2007</p>
+        </div>
+        <p class="edu-inst">Università degli Studi della Basilicata, Potenza, Italy</p>
+        <p class="edu-detail">Thesis: "Robust satellite techniques for fire monitoring: analysis of expected performances using geostationary satellites (MSG-SEVIRI)."</p>
+        <p class="edu-detail">Related publication: <a href="https://www.researchgate.net/publication/234055648_Assessment_of_a_Robust_Satellite_Technique_for_forest_fire_detection_and_monitoring_by_using_a_Total_Validation_Approach_TVA" target="_blank">"Assessment of a Robust Satellite Technique for forest fire detection and monitoring by using a Total Validation Approach (TVA)"</a>.</p>
+        <p class="edu-detail"><span class="honours">Graduated with honours — final score 110/110.</span></p>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-head" id="edu-bsc">
+          <p class="edu-title">B.S. — Environmental Engineering</p>
+          <p class="edu-dates">Sep 2001 – Dec 2004</p>
+        </div>
+        <p class="edu-inst">Università degli Studi della Basilicata, Potenza, Italy</p>
+        <p class="edu-detail">Thesis: "Soil magnetic susceptivity measurements in industrial areas for the study of metal contamination levels."</p>
+        <p class="edu-detail"><span class="honours">Graduated with honours — final score 110/110.</span></p>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section class="block" id="documents">
+      <h2 class="section-title">Supporting Documents</h2>
+      <p class="section-intro">Source documents referenced throughout this CV, held on file and available on request.</p>
+
+      <div class="doc-list">
+
+        <div class="doc-entry" id="doc-certificates">
+          <p class="doc-name"><a href="https://drive.google.com/file/d/1TurHo7zIqE6_efP7Ho0fWwewve0lyJq2/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Certificates</a></p>
+          <p class="doc-explain">Academic diplomas and degree certificates: PhD, M.S., B.S., MEDfOR, and Italian Professional Engineer license.</p>
+        </div>
+
+        <div class="doc-entry" id="doc-grades">
+          <p class="doc-name"><a href="https://drive.google.com/file/d/1QmVIYiWMHVG7rS61SMaESllyqTxkrcRU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Subjects and Grades</a></p>
+          <p class="doc-explain">Subject-by-subject grade transcripts: University of Lleida (MEDfOR) and University of Basilicata (B.S. and M.S. in Environmental Engineering).</p>
+        </div>
+
+        <div class="doc-entry" id="doc-trainings">
+          <p class="doc-name"><a href="https://drive.google.com/file/d/1D3z3y6sKUg0MaK5rGoZvrykGRFlAcdOk/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Trainings</a></p>
+          <p class="doc-explain">Training certificates: EU Aid Volunteers pre-deployment programme, Eumetsat/UW–Madison summer school, and the Young Researchers Meeting on Forest Systems.</p>
+        </div>
+
+        <div class="doc-entry" id="doc-cooperation">
+          <p class="doc-name"><a href="https://drive.google.com/file/d/1KgUw_HTc51RGX6VVkrUTtVh2zfrgpXEz/view?usp=drive_link" target="_blank" rel="noopener noreferrer">International Cooperation</a></p>
+          <p class="doc-explain">Completion certificates for field deployments: EU Aid Volunteers (Vietnam) and Aprode Peru.</p>
+        </div>
+
+        <div class="doc-entry" id="doc-grants">
+          <p class="doc-name"><a href="https://drive.google.com/file/d/1x8ODQtGOG1d1N1F1Aq9565e-nlRHKhl3/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Grants</a></p>
+          <p class="doc-explain">Award letters for competitive funding: TUBITAK Research Fellowship and the Erasmus Mundus MEDfOR scholarship.</p>
+        </div>
+
+        <div class="doc-entry" id="doc-references">
+          <p class="doc-name"><a href="https://drive.google.com/file/d/1dj5vOcAGKw-qrIa63V-UigJ2MN-MjlRj/view?usp=drive_link" target="_blank" rel="noopener noreferrer">References</a></p>
+          <p class="doc-explain">Letters of recommendation supporting research fellowship and academic programme applications.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============ LANGUAGES ============ -->
+    <section class="block" id="languages">
+      <h2 class="section-title">Languages</h2>
+      <div class="lang-row">
+        <div class="lang-item"><b>Italian</b> <span>— Mother tongue</span></div>
+        <div class="lang-item"><b>English</b> <span>— Excellent / working knowledge</span></div>
+        <div class="lang-item"><b>Spanish</b> <span>— Excellent / working knowledge</span></div>
+        <div class="lang-item"><b>Portuguese</b> <span>— Intermediate</span></div>
+        <div class="lang-item"><b>Turkish</b> <span>— Intermediate</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Curriculum vitae of Giuseppe Baldassarre — structured to mirror FAO's official personnel record format.</span>
+    <span><a href="https://gbal17.github.io/" target="_blank">Go to my personal web-page</a></span>
+  </footer>
+
+</div>
+</div><!-- /.layout -->
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = Array.from(document.querySelectorAll('.toc-top a[data-target], .toc-sub a[data-target], .toc-mobile-row a[data-target]'));
+  const targets = navLinks
+    .map(a => document.getElementById(a.dataset.target))
+    .filter(Boolean);
+
+  if (!targets.length) return;
+
+  const tocNav = document.getElementById('tocNav');
+  const tocDot = document.getElementById('tocDot');
+
+  const moveDot = () => {
+    if (!tocNav || !tocDot) return;
+    const activeLink = tocNav.querySelector('a.active');
+    if (!activeLink) return;
+    // getBoundingClientRect-based, not offsetTop-based: offsetTop would be
+    // relative to the nearest *positioned* ancestor, which is each
+    // .toc-group (needed for its own z-index stacking) rather than
+    // .toc-nav as a whole — that would silently reset per group. Rect
+    // subtraction sidesteps that, and stays correct under internal scroll
+    // too, since both rects shift by the same amount together.
+    const navRect = tocNav.getBoundingClientRect();
+    const linkRect = activeLink.getBoundingClientRect();
+    const top = (linkRect.top - navRect.top) + linkRect.height / 2;
+    tocDot.style.top = top + 'px';
+    tocDot.classList.add('ready');
+  };
+
+  const setActive = (id) => {
+    navLinks.forEach(a => a.classList.toggle('active', a.dataset.target === id));
+
+    // Expand only the sidebar sub-list belonging to the active section;
+    // collapse every other one. No CSS transition on .toc-sub (deliberately
+    // removed) — with instant show/hide there's no animation for rapid,
+    // successive calls (e.g. fast scrolling) to race against, so moveDot()
+    // always measures the true, settled layout.
+    const activeNavLink = tocNav && tocNav.querySelector(`[data-target="${id}"]`);
+    const activeGroup = activeNavLink && activeNavLink.closest('.toc-group');
+    document.querySelectorAll('.toc-group').forEach(g => g.classList.toggle('expanded', g === activeGroup));
+    moveDot();
+
+    // Fill the timeline marker for whichever employment entry is active
+    // (the "current job" entry keeps its own permanent fill separately —
+    // this just adds a second, temporary fill for wherever you're viewing).
+    document.querySelectorAll('.entry.nav-active').forEach(e => e.classList.remove('nav-active'));
+    const activeTarget = document.getElementById(id);
+    const activeEntry = activeTarget && activeTarget.closest('.entry');
+    if (activeEntry) activeEntry.classList.add('nav-active');
+
+    const mobileBar = document.querySelector('.toc-mobile-row');
+    const activeChip = mobileBar && mobileBar.querySelector('a.active');
+    if (activeChip) {
+      const barRect = mobileBar.getBoundingClientRect();
+      const chipRect = activeChip.getBoundingClientRect();
+      if (chipRect.left < barRect.left || chipRect.right > barRect.right) {
+        activeChip.scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
+      }
+    }
+  };
+
+  // Scrollspy: pick whichever target's top has most recently passed the
+  // reference line, scanning ALL targets (order-independent, so duplicate
+  // mobile/desktop links to the same id never confuse the result).
+  const REF_Y = 190;
+  // Query the actual content elements directly (not derived from nav link
+  // order) so this is always in true top-to-bottom document order —
+  // querySelectorAll guarantees document order for a single compound query,
+  // regardless of how many selectors are combined.
+  const uniqueTargets = Array.from(document.querySelectorAll(
+    '#personal-info, main section.block[id], main .entry-head[id], main .edu-head[id], main .doc-entry[id]'
+  ));
+
+  function computeActive(){
+    // At the absolute bottom of the page (reached by plain scrolling, not
+    // a nav click — those are handled separately above), the last section
+    // is always the correct answer even if it never reaches the reference
+    // line.
+    const atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 2);
+    if (atBottom) {
+      setActive(uniqueTargets[uniqueTargets.length - 1].id);
+      return;
+    }
+
+    let current = null;
+    let bestTop = -Infinity;
+    for (const t of uniqueTargets) {
+      const top = t.getBoundingClientRect().top;
+      if (top - REF_Y <= 0 && top > bestTop) {
+        bestTop = top;
+        current = t;
+      }
+    }
+    if (!current) current = uniqueTargets[0];
+    setActive(current.id);
+  }
+
+  // Clicking a nav link expresses direct intent: activate it immediately
+  // and ignore scroll-driven recalculation until the resulting smooth-scroll
+  // has actually finished. A fixed timer here is unreliable — a long jump
+  // (e.g. Employment History to Education) can take longer to animate than
+  // any reasonable guessed duration, and once the timer expires mid-flight,
+  // a scroll-driven update reads a still-in-transit position and can
+  // briefly re-activate the wrong section before the animation settles.
+  // Instead, poll scrollY and only lift suppression once it's stopped
+  // changing, with a generous hard cap as a safety net.
+  let suppressed = false;
+  function suppressUntilScrollSettles(maxMs = 2500) {
+    suppressed = true;
+    const startTime = Date.now();
+    let lastY = window.scrollY;
+    let stableFrames = 0;
+
+    function check() {
+      const y = window.scrollY;
+      if (y === lastY) {
+        stableFrames++;
+      } else {
+        stableFrames = 0;
+        lastY = y;
+      }
+      if (stableFrames >= 4 || (Date.now() - startTime) > maxMs) {
+        suppressed = false;
+        return;
+      }
+      requestAnimationFrame(check);
+    }
+    requestAnimationFrame(check);
+  }
+
+  navLinks.forEach(a => {
+    a.addEventListener('click', (e) => {
+      const targetId = a.dataset.target;
+      const inSub = a.closest('.toc-sub') !== null;
+      const group = a.closest('.toc-group');
+      const subList = group ? group.querySelector('.toc-sub') : null;
+
+      if (!inSub && subList) {
+        // A top-level session that owns sub-items: first click opens the
+        // list and jumps straight to its first sub-item (rather than just
+        // the section heading); clicking the same session again while
+        // it's already open closes the list back up.
+        e.preventDefault();
+        const wasExpanded = group.classList.contains('expanded');
+
+        if (wasExpanded) {
+          setActive(targetId);
+          group.classList.remove('expanded');
+        } else {
+          const firstSubLink = subList.querySelector('a[data-target]');
+          const firstId = firstSubLink ? firstSubLink.dataset.target : targetId;
+          const el = document.getElementById(firstId);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setActive(firstId);
+        }
+      } else {
+        setActive(targetId);
+      }
+      suppressUntilScrollSettles();
+    });
+  });
+
+  let ticking = false;
+  function onScroll(){
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(() => {
+        if (!suppressed) computeActive();
+        ticking = false;
+      });
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', onScroll);
+
+  computeActive();
+});
+</script>
+
+</body>
+</html>
