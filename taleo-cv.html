@@ -42,6 +42,29 @@
   header.cv-head{
     padding:64px 56px 40px;
     border-bottom:2px solid var(--ink);
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:28px;
+  }
+  .header-text{
+    min-width:0;
+  }
+  .profile-photo{
+    width:112px;
+    height:112px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid #000;
+    flex-shrink:0;
+    cursor:pointer;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .profile-photo:hover{
+    transform:translateY(-1px) scale(1.5);
+    transform-origin:center;
+    box-shadow:0 8px 16px rgba(0,0,0,.4);
   }
   .eyebrow{
     font-family:'Fraunces', serif;
@@ -521,23 +544,28 @@
   <nav class="backlink">&larr; <a href="https://gbal17.github.io/" target="_blank">Go to my personal web-page</a></nav>
 
   <header class="cv-head" id="personal-info">
-    <p class="eyebrow">Curriculum Vitae — FAO Taleo Format</p>
-    <h1 class="name">Giuseppe Baldassarre, PhD</h1>
-    <p class="role-line">Geospatial Analyst — FAO Land and Water Division (NSLD)</p>
-    <div class="header-icons">
-      <a href="https://www.linkedin.com/in/giuseppe-baldassarre-671a7623/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://scholar.google.com/citations?user=M8b10awAAAAJ&hl=en-EN" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-      <a href="https://www.researchgate.net/profile/Giuseppe-Baldassarre?ev=prf_overview" target="_blank" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
-      <a href="https://github.com/gbal17" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a class="header-cv-icon" href="https://gbal17.github.io/cv.pdf" target="_blank">CV</a>
-      <a class="header-cv-icon" href="./taleo.pdf" target="_blank">Taleo</a>
-      <a href="https://medium.com/@gi.baldassarre" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+    <div class="header-text">
+      <p class="eyebrow">Curriculum Vitae — FAO Taleo Format</p>
+      <h1 class="name">Giuseppe Baldassarre, PhD</h1>
+      <p class="role-line">Geospatial Analyst — FAO Land and Water Division (NSLD)</p>
+      <div class="header-icons">
+        <a href="https://www.linkedin.com/in/giuseppe-baldassarre-671a7623/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=M8b10awAAAAJ&hl=en-EN" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.researchgate.net/profile/Giuseppe-Baldassarre?ev=prf_overview" target="_blank" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+        <a href="https://github.com/gbal17" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a class="header-cv-icon" href="https://gbal17.github.io/cv.pdf" target="_blank">CV</a>
+        <a class="header-cv-icon" href="./taleo.pdf" target="_blank">Taleo</a>
+        <a href="https://medium.com/@gi.baldassarre" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+      </div>
+      <div class="header-emails">
+        <a href="mailto:Giuseppe.Baldassarre@fao.org">Giuseppe.Baldassarre@fao.org</a>
+        <span class="sep">·</span>
+        <a href="mailto:gi.baldassarre@gmail.com">gi.baldassarre@gmail.com</a>
+      </div>
     </div>
-    <div class="header-emails">
-      <a href="mailto:Giuseppe.Baldassarre@fao.org">Giuseppe.Baldassarre@fao.org</a>
-      <span class="sep">·</span>
-      <a href="mailto:gi.baldassarre@gmail.com">gi.baldassarre@gmail.com</a>
-    </div>
+    <a href="https://gbal17.github.io/" target="_blank">
+      <img class="profile-photo" src="profile.jpg" alt="Giuseppe Baldassarre">
+    </a>
   </header>
 
   <main>
@@ -1023,6 +1051,20 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', onScroll);
 
   computeActive();
+
+  // Profile photo opens in a new tab; on some browsers :hover stays stuck
+  // on the original tab if the pointer never moves afterward. Toggling
+  // pointer-events off and back on forces the hover match to drop.
+  const profilePhoto = document.querySelector('.profile-photo');
+  const profileLink = profilePhoto && profilePhoto.closest('a');
+  if (profileLink) {
+    profileLink.addEventListener('click', () => {
+      profilePhoto.style.pointerEvents = 'none';
+      requestAnimationFrame(() => {
+        profilePhoto.style.pointerEvents = '';
+      });
+    });
+  }
 });
 </script>
 
